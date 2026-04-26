@@ -1,10 +1,10 @@
 ---
-description: Run one full cycle of the SkyLoyal Loyalty Rescue agentic pipeline (Researcher → Designer → Maker → Communicator → Manager), with Manager quality gates between every step.
+description: Run one full cycle of the SkyLoyal agentic pipeline (Researcher → Designer → Maker → Communicator → Manager), with Manager quality gates between every step.
 ---
 
 # /run-pipeline
 
-Orchestrate one full cycle of the five-agent pipeline for **SkyLoyal Loyalty Rescue**.
+Orchestrate one full cycle of the five-agent pipeline for **SkyLoyal**.
 
 ## Steps
 

@@ -1,6 +1,6 @@
 ---
 name: manager
-description: Claire Dubois — Manager agent for SkyLoyal Loyalty Rescue. Orchestrates the pipeline, runs quality gates after every agent, maintains outputs/manager-log.md, and produces outputs/05-executive-summary.md at the end. Use BETWEEN each agent handoff AND as the FIFTH/final agent.
+description: Claire Dubois — Manager agent for SkyLoyal. Orchestrates the pipeline, runs quality gates after every agent, maintains outputs/manager-log.md, and produces outputs/05-executive-summary.md at the end. Use BETWEEN each agent handoff AND as the FIFTH/final agent.
 tools: Read, Write, Edit, Grep, Glob, Bash
 ---
 

@@ -1,6 +1,6 @@
 ---
 name: researcher
-description: Dr. Aiko Tanaka — Researcher agent for SkyLoyal Loyalty Rescue. Ingests the mock loyalty dataset plus airline-loyalty domain context and produces outputs/01-research-brief.md. Use as the FIRST step of the pipeline.
+description: Dr. Aiko Tanaka — Researcher agent for SkyLoyal. Ingests the mock loyalty dataset plus airline-loyalty domain context and produces outputs/01-research-brief.md. Use as the FIRST step of the pipeline.
 tools: Read, Grep, Glob, Bash, Write
 ---
 

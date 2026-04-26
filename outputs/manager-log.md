@@ -1,4 +1,4 @@
-# Manager Log — SkyLoyal Loyalty Rescue
+# Manager Log — SkyLoyal
 
 Maintained by the Manager agent ("Claire Dubois"). Each pipeline cycle appends one block. Manager reads each artefact as it is produced, scores it against the H9CEAI rubric, and either **APPROVES** (hand off to next agent) or **RETURNS** (with feedback — agent re-runs and increments cycle number).
 

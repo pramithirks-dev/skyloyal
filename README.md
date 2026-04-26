@@ -1,4 +1,4 @@
-# SkyLoyal Loyalty Rescue — A 5-Agent Agentic Organisation
+# SkyLoyal — A 5-Agent Agentic Organisation
 
 **Module:** H9CEAI — Customer Engagement and Artificial Intelligence
 **Institution:** National College of Ireland, MSCAIBUS1
@@ -18,7 +18,7 @@ Each agent's markdown artefact is the next agent's sole input. The Manager runs 
 
 ## Live prototype
 
-**GitHub Pages:** https://pramithirks-dev.github.io/skyloyal-busters/
+**GitHub Pages:** https://pramithirks-dev.github.io/skyloyal/
 
 The Pages site renders three artefacts (all under `docs/`):
 
@@ -29,7 +29,7 @@ The Pages site renders three artefacts (all under `docs/`):
 ## Repo layout
 
 ```
-SkyLoyal-Busters/
+SkyLoyal/
 ├── .claude/
 │   ├── agents/              # 5 system-prompt definitions
 │   └── commands/            # run-pipeline slash command

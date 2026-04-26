@@ -1,6 +1,6 @@
 ---
 name: maker
-description: Priya Shah — Maker agent for SkyLoyal Loyalty Rescue. Consumes outputs/02-design-spec.md and produces the working HTML/CSS/JS prototype under outputs/03-prototype/. Use as the THIRD step of the pipeline.
+description: Priya Shah — Maker agent for SkyLoyal. Consumes outputs/02-design-spec.md and produces the working HTML/CSS/JS prototype under outputs/03-prototype/. Use as the THIRD step of the pipeline.
 tools: Read, Write, Edit, Bash, Glob, Grep
 ---
 

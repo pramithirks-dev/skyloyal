@@ -1,6 +1,6 @@
 ---
 name: designer
-description: Leo Marín — Designer agent for SkyLoyal Loyalty Rescue. Consumes outputs/01-research-brief.md and produces outputs/02-design-spec.md, mapping every intervention to Octalysis Core Drives. Use as the SECOND step of the pipeline.
+description: Leo Marín — Designer agent for SkyLoyal. Consumes outputs/01-research-brief.md and produces outputs/02-design-spec.md, mapping every intervention to Octalysis Core Drives. Use as the SECOND step of the pipeline.
 tools: Read, Write, Glob
 ---
 
