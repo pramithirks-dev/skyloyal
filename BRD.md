@@ -1,6 +1,6 @@
 # Business Requirements Document
 
-## SkyLoyal — Agentic AI Platform for Frequent-Flyer Retention
+## SkyLoyal, Agentic AI Platform for Frequent-Flyer Retention
 
 ---
 
@@ -13,7 +13,7 @@
 | Date issued | 2026-04-21 |
 | Author | Pramithi Raroth Karimpanakkal, Product Manager |
 | Module context | H9CEAI Customer Engagement & AI, MSCAIBUS1, National College of Ireland |
-| Sponsor (fictional) | SkyLoyal Airways — Chief Customer Officer |
+| Sponsor (fictional) | SkyLoyal Airways, Chief Customer Officer |
 | Target audience | Loyalty P&L owner, Customer Success Leadership, Data Protection Officer, Marketing, Engineering |
 | Related artefacts | `README.md` · `submission/process-log.md` · `.claude/agents/*.md` · `docs/` (prototype) |
 | Repository | https://github.com/pramithirks-dev/skyloyal |
@@ -24,15 +24,15 @@
 | Version | Date | Author | Change |
 |---|---|---|---|
 | 0.1 | 2026-04-21 | Pramithi | Initial structure, scaffolded from H9CEAI brief |
-| 1.0 | 2026-04-21 | Pramithi | First complete draft for review — pivoted from SaaS (Churn-Busters proposal) to Airline (SkyLoyal) domain |
+| 1.0 | 2026-04-21 | Pramithi | First complete draft for review, pivoted from SaaS (Churn-Busters proposal) to Airline (SkyLoyal) domain |
 
 ---
 
 ## 1. Executive summary
 
-SkyLoyal Airways loses **23% of its Gold-tier and 17% of its Silver-tier frequent flyers** to silent disengagement every year — flyers who do not formally leave the programme but migrate spend to alliance partners, low-cost carriers, or competitor programmes. The commercial impact is estimated at **€42m annually in forgone premium-cabin and ancillary revenue**, dwarfing the cost of any retention intervention.
+SkyLoyal Airways loses **23% of its Gold-tier and 17% of its Silver-tier frequent flyers** to silent disengagement every year, flyers who do not formally leave the programme but migrate spend to alliance partners, low-cost carriers, or competitor programmes. The commercial impact is estimated at **€42m annually in forgone premium-cabin and ancillary revenue**, dwarfing the cost of any retention intervention.
 
-This document proposes **SkyLoyal** — an agentic AI platform that predicts loyalty lapse, designs ethically-grounded interventions anchored in the **Octalysis gamification framework**, produces the marketing collateral to execute those interventions, and reports commercially to the loyalty P&L. Five specialised AI agents collaborate in an unbroken pipeline to deliver a closed-loop system: Researcher → Designer → Maker → Communicator → Manager.
+This document proposes **SkyLoyal**, an agentic AI platform that predicts loyalty lapse, designs ethically-grounded interventions anchored in the **Octalysis gamification framework**, produces the marketing collateral to execute those interventions, and reports commercially to the loyalty P&L. Five specialised AI agents collaborate in an unbroken pipeline to deliver a closed-loop system: Researcher → Designer → Maker → Communicator → Manager.
 
 The platform is designed to meet **GDPR Article 22** requirements for automated decision-making affecting customers, and is classified as a **limited-risk system under Title IV of the EU AI Act**. A strict White-Hat / Black-Hat audit governs all flyer-facing gamification to protect trust.
 
@@ -44,7 +44,7 @@ The platform is designed to meet **GDPR Article 22** requirements for automated 
 
 ### 2.1 Industry picture
 
-The global airline loyalty market was worth approximately **€190bn in programme-earned revenue in 2025**, with the top-tier 5% of members driving 40–60% of loyalty revenue at most major carriers. Churn in FFP context is almost never expressed as cancellation — it is **silent disengagement**, where the member retains the account but migrates flying to a competitor, a partner, or a low-cost alternative.
+The global airline loyalty market was worth approximately **€190bn in programme-earned revenue in 2025**, with the top-tier 5% of members driving 40–60% of loyalty revenue at most major carriers. Churn in FFP context is almost never expressed as cancellation, it is **silent disengagement**, where the member retains the account but migrates flying to a competitor, a partner, or a low-cost alternative.
 
 Industry benchmarks:
 
@@ -63,7 +63,7 @@ SkyLoyal Airways is a mid-sized European network carrier hubbed in Dublin (DUB) 
 | Proactive save-rate | 6% of at-risk flyers contacted | 18% (IAG Loyalty 2025 public figures) | −12pp |
 | Miles-liability write-off from expiry | €11m | €5m (target) | +€6m |
 
-Current customer-success practice is **reactive** — CSMs engage a flyer only after a cancellation, complaint, or explicit call. By the time a status-slipper declines their tier, alternative flying patterns are often entrenched.
+Current customer-success practice is **reactive**, CSMs engage a flyer only after a cancellation, complaint, or explicit call. By the time a status-slipper declines their tier, alternative flying patterns are often entrenched.
 
 ### 2.3 Problem statement
 
@@ -110,7 +110,7 @@ A RACI matrix for each workstream is maintained in a separate operational docume
 
 ---
 
-## 5. Proposed solution — agentic organisation
+## 5. Proposed solution, agentic organisation
 
 ### 5.1 Architecture
 
@@ -165,8 +165,8 @@ The full system prompt for each agent is stored in `.claude/agents/<agent>.md` a
 - Blue-tier members (volume too high for personalised interventions in pilot).
 - Non-European hubs (data-residency complexity, different regulatory regimes).
 - Cargo, corporate, charter, and interline-only accounts.
-- Real-time intervention triggers during an active IROP event (future phase — requires integration with operations control).
-- Mobile app push notifications (future phase — requires mobile SDK integration).
+- Real-time intervention triggers during an active IROP event (future phase, requires integration with operations control).
+- Mobile app push notifications (future phase, requires mobile SDK integration).
 - Full production integration with the booking PSS / reservation system (pilot uses a data extract).
 
 ---
@@ -222,7 +222,7 @@ Requirements are grouped by agent and tagged `FR-<agent>-<seq>` for traceability
 |---|---|---|
 | FR-MGR-01 | The Manager shall review every artefact after its producing agent finishes | `manager-log.md` contains one block per artefact per cycle |
 | FR-MGR-02 | The Manager shall issue either APPROVED or RETURNED verdicts with specific feedback | RETURNED entries include ≤ 3 bullet points of actionable feedback |
-| FR-MGR-03 | The Manager shall maintain cycle counters per agent | Log entries follow the format `## Cycle <N> — <Agent> — <timestamp>` |
+| FR-MGR-03 | The Manager shall maintain cycle counters per agent | Log entries follow the format `## Cycle <N>, <Agent>, <timestamp>` |
 | FR-MGR-04 | The Manager shall produce `outputs/05-executive-summary.md` after all prior artefacts are APPROVED | Summary contains sections 1–8 as per the agent output contract |
 | FR-MGR-05 | The Manager shall self-score the output against the H9CEAI rubric | §7 of the executive summary contains a rubric self-assessment table |
 
@@ -234,7 +234,7 @@ Requirements are grouped by agent and tagged `FR-<agent>-<seq>` for traceability
 |---|---|---|
 | NFR-01 | Performance | The prototype site shall render the dashboard from 30 records in ≤ 500ms on a baseline laptop |
 | NFR-02 | Accessibility | All UI surfaces shall meet WCAG 2.1 AA on contrast, keyboard navigation, and landmark structure |
-| NFR-03 | Privacy | All processing during pilot shall use synthetic or pseudonymised data — no production PII in the prototype repo |
+| NFR-03 | Privacy | All processing during pilot shall use synthetic or pseudonymised data, no production PII in the prototype repo |
 | NFR-04 | Security | The public repo shall contain no secrets, API keys, or credentials; `.gitignore` enforces this |
 | NFR-05 | Auditability | Every agent artefact shall be a plain markdown file committed to the repo, enabling line-by-line diff review |
 | NFR-06 | Reproducibility | The mock dataset shall be generated with a fixed random seed so analyses are repeatable |
@@ -251,14 +251,14 @@ The platform's flyer-facing interventions are designed around **Yu-kai Chou's Oc
 
 | # | Core Drive | White/Black | Airline expression in SkyLoyal |
 |---|---|---|---|
-| CD1 | Epic Meaning & Calling | White | "Your tier funds our sustainable aviation fuel programme — your flying carries the whole airline's green commitment" — identity + contribution framing |
+| CD1 | Epic Meaning & Calling | White | "Your tier funds our sustainable aviation fuel programme, your flying carries the whole airline's green commitment", identity + contribution framing |
 | CD2 | Development & Accomplishment | White | Tier progress ring: "3 flights to retain Gold, 9 to unlock Platinum". Skill badges for first long-haul, first partner-airline booking, first lounge use |
 | CD3 | Empowerment of Creativity & Feedback | White | Custom trip themes ("business-quick", "family-slow"), preferred-seat auto-selection, flyer-submitted route suggestions with public credit |
-| CD4 | Ownership & Possession | White | "Your miles, your history" — personalised year-in-review: "You flew 42,800 miles — Dublin to Sydney and back". Mile bank visualised as an owned asset, not a liability |
+| CD4 | Ownership & Possession | White | "Your miles, your history", personalised year-in-review: "You flew 42,800 miles, Dublin to Sydney and back". Mile bank visualised as an owned asset, not a liability |
 | CD5 | Social Influence & Relatedness | White | Optional alliance leaderboard (opt-in only), family-pooled miles, "people in your home hub also booked…" peer-based suggestions |
-| CD6 | Scarcity & Impatience | Black — use sparingly | Limited award-seat windows, tier-anniversary bonus-mile windows, exclusive experiential offers (stadium tours, chef dinners) for Platinum |
-| CD7 | Unpredictability & Curiosity | Black — use sparingly | Surprise upgrade drops for consistent flyers, mystery perks ("a gift at boarding on your next flight"), randomised double-miles days |
-| CD8 | Loss & Avoidance | Black — strictly governed | "Your Gold tier expires in 63 days — here are three ways to retain it without a status run" (**frames the loss, but opens doors, not traps**) |
+| CD6 | Scarcity & Impatience | Black, use sparingly | Limited award-seat windows, tier-anniversary bonus-mile windows, exclusive experiential offers (stadium tours, chef dinners) for Platinum |
+| CD7 | Unpredictability & Curiosity | Black, use sparingly | Surprise upgrade drops for consistent flyers, mystery perks ("a gift at boarding on your next flight"), randomised double-miles days |
+| CD8 | Loss & Avoidance | Black, strictly governed | "Your Gold tier expires in 63 days, here are three ways to retain it without a status run" (**frames the loss, but opens doors, not traps**) |
 
 ### 9.2 Mapping to at-risk segments
 
@@ -285,9 +285,9 @@ The framework explicitly warns that Black-Hat drives (CD6 Scarcity, CD7 Unpredic
 
 | Area | Treatment |
 |---|---|
-| **Lawful basis** | Legitimate interest (Art. 6(1)(f)) for the risk-scoring, with a published Legitimate Interest Assessment. Explicit consent (Art. 6(1)(a)) for marketing communications — existing consent captured at enrolment and re-confirmable in flyer profile settings. |
+| **Lawful basis** | Legitimate interest (Art. 6(1)(f)) for the risk-scoring, with a published Legitimate Interest Assessment. Explicit consent (Art. 6(1)(a)) for marketing communications, existing consent captured at enrolment and re-confirmable in flyer profile settings. |
 | **Automated decision-making (Art. 22)** | Risk scores inform human-reviewed interventions; no fully-automated decisions affecting the flyer (e.g., tier downgrades) are taken by the model. CSMs retain discretion on every outreach. |
-| **Data minimisation (Art. 5(1)(c))** | Pilot uses only features with demonstrated predictive value (see FR-RES-04). No free-text complaint contents enter the model — only categorical tags. |
+| **Data minimisation (Art. 5(1)(c))** | Pilot uses only features with demonstrated predictive value (see FR-RES-04). No free-text complaint contents enter the model, only categorical tags. |
 | **Retention (Art. 5(1)(e))** | Risk scores retained 90 days; source features follow programme's existing 7-year retention. |
 | **Data subject rights** | Flyers can view their current risk factors in the flyer-facing view (Art. 15 Right of Access), object to profiling via account settings (Art. 21), and request erasure (Art. 17) per the existing loyalty terms. |
 
@@ -298,12 +298,12 @@ The framework explicitly warns that Black-Hat drives (CD6 Scarcity, CD7 Unpredic
 | **Risk classification** | Limited-risk system under Title IV. It is a profiling tool used in a consumer-retention context; it is not a high-risk system under Annex III because it does not evaluate creditworthiness, access to essential services, or employment. |
 | **Transparency obligations (Art. 52)** | Flyers are informed they are interacting with an AI-assisted system when they view their risk factors. Disclosures embedded in the flyer-facing view and in the privacy notice. |
 | **Human oversight** | CSMs review every high-risk intervention before it is sent. Manager agent's log acts as a tertiary audit layer. |
-| **Logging** | Every agent invocation, every artefact, every Manager verdict is version-controlled in git — providing tamper-evident logs for regulator inspection. |
+| **Logging** | Every agent invocation, every artefact, every Manager verdict is version-controlled in git, providing tamper-evident logs for regulator inspection. |
 | **Model cards** | A model card documenting the risk scorer's inputs, outputs, performance, and known limitations is to be published before the production rollout (Phase 3). |
 
 ### 10.3 Trust framing
 
-The single most important ethical commitment of this platform is **transparency over urgency**. A flyer who understands *why* they received a retention offer is more likely to accept it, stay, and trust the airline with more data. A flyer who feels surveilled is a flyer lost — regardless of whether the intervention "saved" them in the current quarter.
+The single most important ethical commitment of this platform is **transparency over urgency**. A flyer who understands *why* they received a retention offer is more likely to accept it, stay, and trust the airline with more data. A flyer who feels surveilled is a flyer lost, regardless of whether the intervention "saved" them in the current quarter.
 
 ---
 
@@ -317,8 +317,8 @@ The single most important ethical commitment of this platform is **transparency 
 | Gold retention (year-on-year) | 77% | 81% | 82% | Annual + monthly cohort |
 | Proactive save-rate (% at-risk contacted in 30d) | 6% | 14% | 18% | Weekly |
 | Miles-liability write-off | €11m | €8m | €7m | Quarterly |
-| Customer Lifetime Value uplift — treated cohort | 0 | +€48 per flyer | +€120 per flyer | Quarterly |
-| Cost per Save | — | ≤ €42 | ≤ €35 | Monthly |
+| Customer Lifetime Value uplift, treated cohort | 0 | +€48 per flyer | +€120 per flyer | Quarterly |
+| Cost per Save | - | ≤ €42 | ≤ €35 | Monthly |
 
 ### 11.2 Trust KPIs (reported to DPO and CCO)
 
@@ -345,9 +345,9 @@ The single most important ethical commitment of this platform is **transparency 
 
 - Mock loyalty data is representative of real data in structure and distribution (production rollout requires validation against a real extract).
 - SkyLoyal's existing consent records cover marketing communications for the target cohorts.
-- Anthropic Claude (Opus 4.7, 1M context) is the LLM used throughout the pilot — swapping model provider would require re-validation of system prompts.
+- Anthropic Claude (Opus 4.7, 1M context) is the LLM used throughout the pilot, swapping model provider would require re-validation of system prompts.
 - GitHub Pages remains available and free for public repos.
-- The Octalysis framework, while proprietary in its naming, is usable for internal design work under fair dealing — no licence required for the pilot.
+- The Octalysis framework, while proprietary in its naming, is usable for internal design work under fair dealing, no licence required for the pilot.
 
 ### 12.2 Dependencies
 
@@ -380,10 +380,10 @@ The single most important ethical commitment of this platform is **transparency 
 
 | Phase | Duration | Scope | Budget | Go / No-Go criteria |
 |---|---|---|---|---|
-| **Phase 0 — Pilot design** | 2 months | This BRD approved, DPO sign-off, data extract specification | €80k | DPO green-lights LIA + DPIA |
-| **Phase 1 — Closed pilot** | 6 months | 4,200 Gold flyers, Dublin hub only, CSM-mediated every intervention | €520k | ≥ +3pp retention lift vs control, ≤ 2.5% unsubscribe, zero complaints citing "feeling targeted" |
-| **Phase 2 — Scaled pilot** | 6 months | 42,000 Gold + Silver flyers across DUB/AMS/MAD, partial automation of low-risk interventions | €750k | ≥ +5pp retention lift, €4m+ reduction in miles-liability write-off, NPS delta +10 |
-| **Phase 3 — Production rollout** | 6 months | Full European FFP base, mobile app integration, IROP real-time triggers | €450k ongoing + capex | Approved by CCO + CFO based on Phase 2 commercial outcomes |
+| **Phase 0, Pilot design** | 2 months | This BRD approved, DPO sign-off, data extract specification | €80k | DPO green-lights LIA + DPIA |
+| **Phase 1, Closed pilot** | 6 months | 4,200 Gold flyers, Dublin hub only, CSM-mediated every intervention | €520k | ≥ +3pp retention lift vs control, ≤ 2.5% unsubscribe, zero complaints citing "feeling targeted" |
+| **Phase 2, Scaled pilot** | 6 months | 42,000 Gold + Silver flyers across DUB/AMS/MAD, partial automation of low-risk interventions | €750k | ≥ +5pp retention lift, €4m+ reduction in miles-liability write-off, NPS delta +10 |
+| **Phase 3, Production rollout** | 6 months | Full European FFP base, mobile app integration, IROP real-time triggers | €450k ongoing + capex | Approved by CCO + CFO based on Phase 2 commercial outcomes |
 | **Total 18-month programme** | | | **€1.8m** | |
 
 ---
@@ -406,9 +406,9 @@ The pilot will be deemed successful and production-ready if and only if **all** 
 | # | Question | Owner | Resolve by |
 |---|---|---|---|
 | Q-01 | Do we need a separate flyer-facing consent flow beyond the existing FFP T&Cs for the risk-scoring feature? | DPO | Pilot kick-off |
-| Q-02 | What is the appropriate human-oversight SLA — CSM reviews every intervention within 48h? 24h? | CCO | Pilot kick-off |
+| Q-02 | What is the appropriate human-oversight SLA, CSM reviews every intervention within 48h? 24h? | CCO | Pilot kick-off |
 | Q-03 | Should the alliance leaderboard (CD5) be opt-in or off-by-default? | Design + Legal | Phase 1 start |
-| Q-04 | Which LLM provider will be used in production — Claude, an on-prem model, or a hybrid? | Engineering + CISO | Phase 2 start |
+| Q-04 | Which LLM provider will be used in production, Claude, an on-prem model, or a hybrid? | Engineering + CISO | Phase 2 start |
 | Q-05 | Is miles-liability write-off reduction a proper KPI, or does accounting treat it differently? | CFO | Phase 1 start |
 
 ---
@@ -419,13 +419,13 @@ The pilot will be deemed successful and production-ready if and only if **all** 
 |---|---|
 | **Active Member Ratio (AMR)** | % of programme members flying ≥ 1 segment in trailing 12 months |
 | **CD (Core Drive)** | One of the 8 motivational drives in Yu-kai Chou's Octalysis framework |
-| **CSM** | Customer Success Manager — SkyLoyal staff who engage high-value flyers directly |
+| **CSM** | Customer Success Manager, SkyLoyal staff who engage high-value flyers directly |
 | **FFP** | Frequent Flyer Programme |
-| **IROP** | Irregular Operations — delays > 3h, cancellations, denied boarding, baggage mishandling |
+| **IROP** | Irregular Operations, delays > 3h, cancellations, denied boarding, baggage mishandling |
 | **Mattress-running** | Booking unnecessary flights purely to preserve elite status |
 | **Miles liability** | The balance-sheet provision airlines hold for unredeemed miles |
 | **NPS** | Net Promoter Score |
-| **PNR** | Passenger Name Record — booking identifier |
+| **PNR** | Passenger Name Record, booking identifier |
 | **Silent churn / silent disengagement** | Member retains the account but stops flying with the carrier |
 | **Status run** | A booking taken specifically to cross a tier-qualification threshold |
 | **White Hat / Black Hat** | Octalysis classification: White Hat drives empower; Black Hat drives create urgency or fear |
@@ -437,13 +437,13 @@ The pilot will be deemed successful and production-ready if and only if **all** 
 1. Chou, Y. (2015). *Actionable Gamification: Beyond Points, Badges and Leaderboards*. Octalysis Media.
 2. IATA. (2024). *Global Passenger Survey 2024*. International Air Transport Association.
 3. IAG Loyalty. (2025). *Annual Review*. International Airlines Group.
-4. European Parliament & Council. (2016). *Regulation (EU) 2016/679 — General Data Protection Regulation*.
-5. European Parliament & Council. (2024). *Regulation (EU) 2024/1689 — Artificial Intelligence Act*.
-6. McKinsey & Company. (2026). *State of AI Trust in 2026 — Shifting to the Agentic Era*.
+4. European Parliament & Council. (2016). *Regulation (EU) 2016/679, General Data Protection Regulation*.
+5. European Parliament & Council. (2024). *Regulation (EU) 2024/1689, Artificial Intelligence Act*.
+6. McKinsey & Company. (2026). *State of AI Trust in 2026, Shifting to the Agentic Era*.
 7. Tesseract Learning. (2025). *Gamification in 2026: Going Beyond Stars, Badges and Points*.
 8. European Data Protection Board. (2023). *Guidelines on Automated Decision-Making and Profiling (updated)*.
 9. Yu-kai Chou (n.d.). *The Octalysis Framework for Gamification*. https://yukaichou.com/gamification-examples/octalysis-gamification-framework/
-10. National College of Ireland. (2026). *H9CEAI Customer Engagement & AI — Final Project Brief (MSCAIBUS1)*.
+10. National College of Ireland. (2026). *H9CEAI Customer Engagement & AI, Final Project Brief (MSCAIBUS1)*.
 
 ---
 
@@ -456,7 +456,7 @@ The pilot will be deemed successful and production-ready if and only if **all** 
 
 ---
 
-**End of Business Requirements Document — Version 1.0**
+**End of Business Requirements Document, Version 1.0**
 
 _Signed off by: (pending)_
 _Approved for pilot funding: (pending)_
