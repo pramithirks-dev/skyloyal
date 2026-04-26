@@ -1,6 +1,6 @@
 # Business Requirements Document
 
-## SkyLoyal, Agentic AI Platform for Frequent-Flyer Retention
+## SkyLoyal: Agentic AI Platform for Frequent-Flyer Retention
 
 ---
 
@@ -110,7 +110,7 @@ A RACI matrix for each workstream is maintained in a separate operational docume
 
 ---
 
-## 5. Proposed solution, agentic organisation
+## 5. Proposed solution: agentic organisation
 
 ### 5.1 Architecture
 

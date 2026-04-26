@@ -1,4 +1,4 @@
-# SkyLoyal, A 5-Agent Agentic Organisation
+# SkyLoyal: A 5-Agent Agentic Organisation
 
 **Module:** H9CEAI, Customer Engagement and Artificial Intelligence
 **Institution:** National College of Ireland, MSCAIBUS1

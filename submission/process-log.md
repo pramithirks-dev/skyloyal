@@ -1,4 +1,4 @@
-# SkyLoyal, Process Log
+# SkyLoyal: Process Log
 
 **Module:** H9CEAI Customer Engagement & AI (MSCAIBUS1)
 **Author:** Pramithi Raroth Karimpanakkal
@@ -37,7 +37,7 @@ Status legend: ✅ done · 🔄 in progress · ⏳ pending
 
 ---
 
-## Step 0, Setup & scaffolding ✅
+## Step 0: Setup & scaffolding ✅
 
 **Goal:** create a clean working folder, git-ready, with the structure the rest of the pipeline expects.
 
@@ -66,7 +66,7 @@ SkyLoyal/
 
 ---
 
-## Step 1, Author 5 agent system prompts ✅
+## Step 1: Author 5 agent system prompts ✅
 
 **Goal:** give each agent a distinct persona, airline-loyalty domain priming, Octalysis anchoring (where relevant), a strict output contract, and explicit handoff etiquette. Hitting "Excellent band" on rubric Criterion 1 (Agent Architecture, 25 marks) depends on this step.
 
@@ -87,12 +87,12 @@ SkyLoyal/
 - **Every agent has a named human persona**, not just a role label, this lifts the system prompts into the EXCELLENT band ("genuinely embodies its archetype with distinct personality and deep domain expertise").
 - **Every agent's output contract specifies exact markdown sections with word budgets**, makes handoffs auditable and prevents drift.
 - **Every agent must reference prior artefacts by filename** in its output, this is the mechanism that proves the chain is unbroken (rubric Criterion 2, Handoff, 25 marks).
-- **Every agent ends its artefact with a handoff footer**: `**Artefact complete, handing off to [next agent].** <2-sentence summary>.`
+- **Every agent ends its artefact with a handoff footer**: `**Artefact complete. Handing off to [next agent].** <2-sentence summary>.`
 - **The Manager agent has two distinct roles**: gatekeeper (between every handoff, reads artefact, APPROVES or RETURNS with feedback logged to `manager-log.md`) AND final synthesiser (writes the executive summary at the end).
 
 ---
 
-## Step 2, Generate mock loyalty dataset ✅
+## Step 2: Generate mock loyalty dataset ✅
 
 **Goal:** give the Researcher agent real-feeling data to analyse, so its brief is grounded in numbers rather than generic prose.
 
@@ -119,7 +119,7 @@ SkyLoyal/
 
 ---
 
-## Step 3, GitHub repo + Pages live ✅
+## Step 3: GitHub repo + Pages live ✅
 
 **Goal:** satisfy the brief's mandatory GitHub Pages requirement *before* we have content, so the URL is locked in and the rest of the work feeds into a live site.
 
@@ -134,7 +134,7 @@ SkyLoyal/
 
 ---
 
-## Step 4, Cycle 1, run the agentic pipeline ⏳
+## Step 4: Cycle 1, run the agentic pipeline ⏳
 
 **Goal:** run one full end-to-end cycle of the 5-agent pipeline, capturing screenshots and Manager verdicts at every handoff.
 
@@ -162,7 +162,7 @@ SkyLoyal/
 
 ---
 
-## Step 5, Cycle 2, act on Manager critique ⏳
+## Step 5: Cycle 2, act on Manager critique ⏳
 
 **Goal:** demonstrate iteration, the Reflection rubric criterion explicitly rewards "evidence of iteration."
 
@@ -175,7 +175,7 @@ SkyLoyal/
 
 ---
 
-## Step 6, Verify the prototype site ⏳
+## Step 6: Verify the prototype site ⏳
 
 **Goal:** confirm the working prototype satisfies rubric Criterion 3 (Working Prototype, 20 marks).
 
@@ -191,7 +191,7 @@ SkyLoyal/
 
 ---
 
-## Step 7, Draft reflection notes (Pramithi's voice) ⏳
+## Step 7: Draft reflection notes (Pramithi's voice) ⏳
 
 **Goal:** seed the 300-word Reflection section of the PPTX in Pramithi's own voice, not Claude's. This is a Prof rule and an AI Usage Policy rule.
 
@@ -211,7 +211,7 @@ SkyLoyal/
 
 ---
 
-## Step 8, Assemble PPTX submission ⏳
+## Step 8: Assemble PPTX submission ⏳
 
 **Goal:** produce `submission/SkyLoyal.pptx`, the single deliverable that gets uploaded to Turnitin via Moodle. **Target length: 1,500–2,500 words** (diagrams, screenshots, code excerpts don't count).
 
@@ -229,7 +229,7 @@ SkyLoyal/
 
 ---
 
-## Step 9, Final verification & Turnitin submission ⏳
+## Step 9: Final verification & Turnitin submission ⏳
 
 **Pre-submission checklist (all must be YES):**
 
