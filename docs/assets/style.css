@@ -166,12 +166,13 @@ body.has-hero { padding-top: 0; }
   position: absolute; inset: 0; z-index: 0;
   background-size: cover;
   background-position: center;
+  filter: brightness(1.22) saturate(1.18) contrast(1.04);
 }
 .hero-cinema .scrim {
   position: absolute; inset: 0; z-index: 1;
   background:
-    linear-gradient(180deg, rgba(10,26,58,0.35) 0%, rgba(10,26,58,0.05) 40%, rgba(10,26,58,0.60) 100%),
-    linear-gradient(90deg, rgba(10,26,58,0.22) 0%, rgba(10,26,58,0.00) 65%);
+    linear-gradient(180deg, rgba(10,26,58,0.18) 0%, rgba(10,26,58,0.00) 40%, rgba(10,26,58,0.40) 100%),
+    linear-gradient(90deg, rgba(10,26,58,0.18) 0%, rgba(10,26,58,0.00) 70%);
 }
 .hero-cinema .inner {
   position: relative; z-index: 2;
