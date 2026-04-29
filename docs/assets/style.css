@@ -97,21 +97,26 @@ body.has-hero { padding-top: 0; }
 }
 .nav-links .login:hover { background: var(--navy-2); color: white; }
 
-/* Hero variant: nav becomes transparent so the hero image shows through. */
+/* Hero variant: nav floats over the hero image with a subtle dark backdrop
+   so the white text stays legible no matter what the image looks like. */
 .nav.on-hero {
-  background: transparent;
-  backdrop-filter: none;
-  border-bottom-color: rgba(255,255,255,0.18);
+  background: linear-gradient(180deg, rgba(10,26,58,0.62) 0%, rgba(10,26,58,0.18) 100%);
+  backdrop-filter: blur(4px);
+  border-bottom-color: rgba(255,255,255,0.10);
 }
 .nav.on-hero .brand,
 .nav.on-hero .brand .tag,
-.nav.on-hero .nav-links a { color: white; }
+.nav.on-hero .nav-links a {
+  color: white;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.45), 0 1px 2px rgba(0,0,0,0.35);
+}
 .nav.on-hero .brand .tag { border-left-color: rgba(255,255,255,0.5); }
 .nav.on-hero .nav-links a:not(.login):hover { color: var(--metal); }
 .nav.on-hero .login {
   background: var(--metal);
   color: var(--navy);
   border: 1px solid var(--metal);
+  text-shadow: none;
 }
 .nav.on-hero .login:hover { background: white; color: var(--navy); border-color: white; }
 
