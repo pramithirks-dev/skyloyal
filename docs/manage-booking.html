@@ -1,0 +1,402 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Manage your trip · SkyJet Airways</title>
+<link rel="stylesheet" href="assets/style.css?v=19">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  .booking-hero {
+    background: linear-gradient(135deg, var(--navy), var(--navy-2));
+    color: white; padding: 2.5rem 2rem 1.8rem;
+  }
+  .booking-hero .container { max-width: 1240px; margin: 0 auto; }
+  .booking-hero h1 { font-family: Georgia, serif; font-size: 2rem; margin: 0 0 .4rem; font-weight: 500; }
+  .booking-hero .breadcrumb-pill { color: var(--metal); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .5rem; }
+  .booking-hero .pnr {
+    color: rgba(255,255,255,0.85); font-size: .98rem;
+  }
+  .booking-hero .pnr strong { color: var(--metal); font-family: Georgia, serif; letter-spacing: .04em; }
+
+  .booking-section { padding: 2.5rem 2rem 4rem; }
+  .booking-section .container { max-width: 1240px; margin: 0 auto; }
+
+  .booking-grid {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;
+  }
+  @media (max-width: 1000px) { .booking-grid { grid-template-columns: 1fr; } }
+
+  /* Big trip card */
+  .trip-big {
+    background: white; border: 1px solid var(--line-2); border-radius: var(--radius);
+    overflow: hidden; box-shadow: var(--shadow-md);
+  }
+  .trip-big .pic {
+    height: 160px;
+    background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover; background-position: center;
+    position: relative;
+  }
+  .trip-big .pic::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(10,26,58,0.55), rgba(10,26,58,0.20));
+  }
+  .trip-big .pic .label {
+    position: absolute; left: 1.5rem; bottom: 1.1rem; color: white; z-index: 2;
+  }
+  .trip-big .pic .label .small { font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; opacity: 0.85; }
+  .trip-big .pic .label .big { font-family: Georgia, serif; font-size: 1.6rem; }
+
+  .trip-big .body { padding: 1.4rem 1.6rem 1.5rem; }
+  .trip-big .timeline {
+    display: grid; grid-template-columns: 1fr auto 1fr; gap: 1.2rem; align-items: center; margin-bottom: 1.2rem;
+  }
+  .trip-big .timeline .city { font-family: Georgia, serif; font-size: 1.6rem; color: var(--navy); line-height: 1.05; }
+  .trip-big .timeline .city .sub { display: block; font-size: .85rem; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin-top: .2rem; }
+  .trip-big .timeline .city.right { text-align: right; }
+  .trip-big .timeline .arrow {
+    position: relative; height: 1px; background: var(--line-2); min-width: 100px;
+  }
+  .trip-big .timeline .arrow::after {
+    content: "✈"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    background: white; padding: 0 .4rem; color: var(--metal-2); font-size: 1.2rem;
+  }
+
+  .trip-big .meta-row {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+    padding: 1.2rem 0; border-top: 1px solid var(--line-2); border-bottom: 1px solid var(--line-2);
+    color: var(--ink-2); font-size: .92rem;
+  }
+  @media (max-width: 700px) { .trip-big .meta-row { grid-template-columns: repeat(2, 1fr); } }
+  .trip-big .meta-row .item .k { color: var(--muted); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; display: block; margin-bottom: .15rem; }
+  .trip-big .meta-row .item .v { color: var(--ink); font-weight: 600; }
+
+  .trip-big .pax {
+    margin-top: 1.2rem; padding: 1rem 1.2rem; background: var(--soft-bg); border-radius: var(--radius);
+  }
+  .trip-big .pax h4 { font-family: Georgia, serif; color: var(--navy); margin: 0 0 .5rem; font-size: 1rem; }
+  .trip-big .pax-row { display: flex; justify-content: space-between; padding: .35rem 0; font-size: .92rem; }
+  .trip-big .pax-row .name { color: var(--ink); font-weight: 600; }
+  .trip-big .pax-row .meta { color: var(--muted); font-size: .85rem; }
+
+  /* Action panel (right column) */
+  .actions-panel {
+    background: white; border: 1px solid var(--line-2); border-radius: var(--radius);
+    padding: 1.4rem 1.5rem; box-shadow: var(--shadow-sm);
+  }
+  .actions-panel h3 {
+    font-family: Georgia, serif; color: var(--navy); margin: 0 0 .8rem; font-size: 1.15rem;
+  }
+  .actions-panel .action-row {
+    display: flex; align-items: center; gap: .8rem;
+    padding: .8rem 0; border-bottom: 1px solid var(--line-2);
+    text-decoration: none; color: var(--ink);
+    transition: background-color .12s ease;
+  }
+  .actions-panel .action-row:last-child { border-bottom: none; }
+  .actions-panel .action-row:hover { color: var(--navy); }
+  .actions-panel .action-row .icon {
+    width: 36px; height: 36px;
+    background: var(--soft-bg); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--metal-2); font-size: 1rem; flex-shrink: 0;
+  }
+  .actions-panel .action-row .body .label { font-weight: 600; color: var(--navy); }
+  .actions-panel .action-row .body .meta { color: var(--muted); font-size: .85rem; }
+  .actions-panel .action-row .arrow { margin-left: auto; color: var(--metal-2); font-size: 1.2rem; }
+
+  /* Check-in specific: boarding pass preview */
+  .boarding-pass {
+    background: white; border: 2px dashed var(--metal); border-radius: var(--radius);
+    padding: 1.4rem 1.6rem; margin-top: 1.2rem;
+    box-shadow: var(--shadow-sm);
+  }
+  .boarding-pass .head { font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; color: var(--metal-2); margin-bottom: .6rem; }
+  .boarding-pass .pass-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 1.2rem; align-items: center; }
+  @media (max-width: 700px) { .boarding-pass .pass-grid { grid-template-columns: 1fr 1fr; } }
+  .boarding-pass .name { font-family: Georgia, serif; color: var(--navy); font-size: 1.2rem; }
+  .boarding-pass .name .sub { display: block; font-size: .8rem; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .boarding-pass .item .k { font-size: .68rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: .15rem; }
+  .boarding-pass .item .v { font-family: Georgia, serif; font-size: 1.15rem; color: var(--navy); }
+  .boarding-pass .barcode {
+    margin-top: 1rem; padding-top: 1rem; border-top: 1px dashed var(--line-2);
+    font-family: monospace; letter-spacing: 1px; color: var(--ink-2); text-align: center; font-size: 1.4rem;
+  }
+
+  /* Mode-specific show/hide */
+  body[data-mode="manage"] .checkin-only { display: none; }
+  body[data-mode="checkin"] .manage-only { display: none; }
+
+  .btn-row { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1.4rem; }
+</style>
+</head>
+<body>
+
+<header class="nav" id="topnav">
+  <a class="brand" href="skyjet.html">SkyJet<span class="tag">Airways</span></a>
+  <nav class="nav-links">
+    <a href="skyjet.html">Home</a>
+    <a href="skyjet.html#book">Book</a>
+    <a href="skyjet.html#destinations">Destinations</a>
+    <a href="index.html">SkyLoyal</a>
+    <a href="skyjet.html#help">Help</a>
+    <a href="flyer-view.html" class="login">Sign in</a>
+  </nav>
+</header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <a class="home" href="skyjet.html">SkyJet</a>
+    <span class="sep">›</span>
+    <span class="current" id="bc-current">Manage trip</span>
+    <a class="back-link" href="skyjet.html">Back to SkyJet</a>
+  </div>
+</nav>
+
+<section class="booking-hero">
+  <div class="container">
+    <div class="breadcrumb-pill" id="hero-breadcrumb">SkyJet · Manage trip</div>
+    <h1 id="hero-title">Manage your trip</h1>
+    <p class="pnr">Booking reference <strong>SLY7K2</strong> · Found 1 trip for Nuala Doyle</p>
+  </div>
+</section>
+
+<section class="booking-section">
+  <div class="container">
+    <div class="booking-grid">
+
+      <!-- Trip card -->
+      <div class="trip-big">
+        <div class="pic">
+          <div class="label">
+            <span class="small">SkyJet · SL188</span>
+            <span class="big">Dublin to Boston</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="timeline">
+            <div class="city">DUB <span class="sub">07:25 · Sun 12 Jul 2026 · Terminal 2</span></div>
+            <div class="arrow"></div>
+            <div class="city right">BOS <span class="sub">09:50 · Sun 12 Jul 2026 · Terminal E</span></div>
+          </div>
+          <div class="meta-row">
+            <div class="item"><span class="k">Flight</span><span class="v">SkyJet SL188</span></div>
+            <div class="item"><span class="k">Aircraft</span><span class="v">Boeing 787-9</span></div>
+            <div class="item"><span class="k">Cabin</span><span class="v">Premium economy</span></div>
+            <div class="item"><span class="k">Status</span><span class="v" style="color:var(--green);">On time</span></div>
+          </div>
+          <div class="pax">
+            <h4>Passengers</h4>
+            <div class="pax-row"><span class="name">Nuala Doyle</span><span class="meta">SkyLoyal Gold · SKY000234 · Seat 14A</span></div>
+            <div class="pax-row"><span class="name">Conor Doyle</span><span class="meta">Companion fare · Seat 14B</span></div>
+          </div>
+
+          <!-- Check-in only: boarding pass preview -->
+          <div class="boarding-pass checkin-only">
+            <div class="head">Boarding pass · ready 24 hours before departure</div>
+            <div class="pass-grid">
+              <div class="name">Nuala Doyle<span class="sub">SkyJet SL188 · Premium economy</span></div>
+              <div class="item"><span class="k">Seat</span><span class="v">14A</span></div>
+              <div class="item"><span class="k">Boarding</span><span class="v">06:55</span></div>
+              <div class="item"><span class="k">Gate</span><span class="v">A12</span></div>
+            </div>
+            <div class="barcode">||| ||  | ||  ||| | || |||  || | ||| || SLY7K2 ||| | || ||  |||</div>
+          </div>
+
+          <div class="btn-row">
+            <a class="btn btn-primary checkin-only" href="#">Confirm check-in</a>
+            <a class="btn btn-primary manage-only" href="#">Add a bag</a>
+            <a class="btn btn-ghost" href="#" style="color: var(--navy); border-color: var(--line-2);">Choose a different seat</a>
+            <a class="btn btn-ghost" href="#" style="color: var(--navy); border-color: var(--line-2);">Email itinerary</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action panel -->
+      <aside>
+        <div class="actions-panel">
+          <h3 id="actions-title">Trip actions</h3>
+
+          <a class="action-row manage-only" href="#">
+            <div class="icon" aria-hidden="true">★</div>
+            <div class="body">
+              <div class="label">Choose seat</div>
+              <div class="meta">14A &amp; 14B selected</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+          <a class="action-row manage-only" href="#">
+            <div class="icon" aria-hidden="true">▦</div>
+            <div class="body">
+              <div class="label">Add a bag</div>
+              <div class="meta">23 kg checked from €38</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+          <a class="action-row manage-only" href="#">
+            <div class="icon" aria-hidden="true">↑</div>
+            <div class="body">
+              <div class="label">Upgrade cabin</div>
+              <div class="meta">Business available, +€680 or 18,000 miles</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+          <a class="action-row manage-only" href="#">
+            <div class="icon" aria-hidden="true">⌚</div>
+            <div class="body">
+              <div class="label">Change date</div>
+              <div class="meta">Free if more than 24h before departure</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+          <a class="action-row manage-only" href="#" style="color: var(--red);">
+            <div class="icon" aria-hidden="true">✕</div>
+            <div class="body">
+              <div class="label">Cancel trip</div>
+              <div class="meta">Refund options will be shown</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+
+          <a class="action-row checkin-only" href="#">
+            <div class="icon" aria-hidden="true">★</div>
+            <div class="body">
+              <div class="label">Choose seat</div>
+              <div class="meta">14A · window, front of cabin</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+          <a class="action-row checkin-only" href="#">
+            <div class="icon" aria-hidden="true">▦</div>
+            <div class="body">
+              <div class="label">Add a bag</div>
+              <div class="meta">23 kg checked from €38</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+          <a class="action-row checkin-only" href="#">
+            <div class="icon" aria-hidden="true">⌂</div>
+            <div class="body">
+              <div class="label">Send to wallet</div>
+              <div class="meta">Apple, Google, or print</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+          <a class="action-row checkin-only" href="#">
+            <div class="icon" aria-hidden="true">✓</div>
+            <div class="body">
+              <div class="label">Lounge access</div>
+              <div class="meta">SkyLoyal Gold · 1 guest included</div>
+            </div>
+            <div class="arrow">›</div>
+          </a>
+        </div>
+
+        <div class="actions-panel" style="margin-top: 1rem;">
+          <h3>Need help?</h3>
+          <a class="action-row" href="#">
+            <div class="icon" aria-hidden="true">☎</div>
+            <div class="body">
+              <div class="label">Call us</div>
+              <div class="meta">+353 1 800 SKY-JET, 24/7</div>
+            </div>
+          </a>
+          <a class="action-row" href="#">
+            <div class="icon" aria-hidden="true">✉</div>
+            <div class="body">
+              <div class="label">Live chat</div>
+              <div class="meta">Average wait 2 minutes</div>
+            </div>
+          </a>
+        </div>
+
+      </aside>
+    </div>
+
+    <p style="color: var(--muted); font-size: .85rem; margin-top: 2rem;">
+      Changes you make here are billed to the same payment method as your original booking. Free changes are allowed up to 24 hours before departure for SkyLoyal Gold and Platinum members. <a href="#">View change policy</a>.
+    </p>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    <div class="brand-block">
+      <div class="logo">SkyJet Airways</div>
+      <p class="blurb">Ireland's network airline, hubbed in Dublin. 78 destinations, one promise: direct, transparent, on time.</p>
+    </div>
+    <div>
+      <h4>Travel</h4>
+      <ul>
+        <li><a href="skyjet.html#book">Book a flight</a></li>
+        <li><a href="skyjet.html#destinations">Destinations</a></li>
+        <li><a href="manage-booking.html?mode=manage">Manage trip</a></li>
+        <li><a href="manage-booking.html?mode=checkin">Check in</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>SkyLoyal</h4>
+      <ul>
+        <li><a href="index.html">Programme overview</a></li>
+        <li><a href="flyer-view.html">My SkyLoyal</a></li>
+        <li><a href="award-results.html">Use miles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Travel waivers</a></li>
+        <li><a href="#">Refunds</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About SkyJet</h4>
+      <ul>
+        <li><a href="#">Our airline</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div>© 2026 SkyJet Airways. All rights reserved.</div>
+    <div class="legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+<script>
+  // Read ?mode=manage|checkin and adapt the page
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var mode = (params.get('mode') || 'manage').toLowerCase();
+    if (mode !== 'checkin') mode = 'manage';
+    document.body.dataset.mode = mode;
+
+    var bcCurrent = document.getElementById('bc-current');
+    var heroBc = document.getElementById('hero-breadcrumb');
+    var heroTitle = document.getElementById('hero-title');
+    var actionsTitle = document.getElementById('actions-title');
+
+    if (mode === 'checkin') {
+      if (bcCurrent) bcCurrent.textContent = 'Check in';
+      if (heroBc) heroBc.textContent = 'SkyJet · Check in';
+      if (heroTitle) heroTitle.textContent = 'Check in for your trip';
+      if (actionsTitle) actionsTitle.textContent = 'Before you fly';
+      document.title = 'Check in · SkyJet Airways';
+    } else {
+      if (bcCurrent) bcCurrent.textContent = 'Manage trip';
+      if (heroBc) heroBc.textContent = 'SkyJet · Manage trip';
+      if (heroTitle) heroTitle.textContent = 'Manage your trip';
+      if (actionsTitle) actionsTitle.textContent = 'Trip actions';
+      document.title = 'Manage your trip · SkyJet Airways';
+    }
+  })();
+</script>
+
+</body>
+</html>
