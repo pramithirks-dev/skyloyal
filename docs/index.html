@@ -5,10 +5,10 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SkyLoyal Loyalty Rescue: A loyalty programme that notices before you leave</title>
 <meta name="description" content="SkyLoyal Loyalty Rescue. The proactive loyalty programme that listens for the signals other airlines miss, and reaches out the way a good travel agent would. Pilot from Q3 2026.">
-<link rel="stylesheet" href="assets/style.css">
+<link rel="stylesheet" href="assets/style.css?v=3">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 </head>
-<body>
+<body class="has-hero">
 
 <header class="nav on-hero" id="topnav">
   <div class="brand">SkyLoyal<span class="tag">Airways</span></div>
@@ -73,7 +73,7 @@
       </div>
       <div class="field">
         <label>&nbsp;</label>
-        <a href="flyer-view.html" class="btn btn-dark" style="text-align:center;">Search →</a>
+        <a href="flight-results.html" class="btn btn-dark" style="text-align:center;">Search →</a>
       </div>
     </div>
 
@@ -106,7 +106,7 @@
       </div>
       <div class="field">
         <label>&nbsp;</label>
-        <a href="flyer-view.html" class="btn btn-dark" style="text-align:center;">Find awards →</a>
+        <a href="award-results.html" class="btn btn-dark" style="text-align:center;">Find awards →</a>
       </div>
     </div>
 
@@ -370,6 +370,8 @@
   })();
 
   // Lookup card: tab switching (Book / Miles / Status)
+  // Note: .row has display: grid, which overrides the HTML `hidden` attribute,
+  // so we toggle .style.display directly instead.
   (function () {
     var card = document.querySelector('.lookup-card');
     if (!card) return;
@@ -382,11 +384,15 @@
         t.setAttribute('aria-selected', active ? 'true' : 'false');
       });
       panels.forEach(function (p) {
-        p.hidden = p.dataset.panel !== name;
+        p.style.display = (p.dataset.panel === name) ? 'grid' : 'none';
+        p.hidden = (p.dataset.panel !== name);
       });
     }
+    // initialise on page load (force the active tab)
+    var initialTab = card.querySelector('.tab.active');
+    activate(initialTab ? initialTab.dataset.tab : 'book');
     tabs.forEach(function (t) {
-      t.addEventListener('click', function () { activate(t.dataset.tab); });
+      t.addEventListener('click', function (e) { e.preventDefault(); activate(t.dataset.tab); });
     });
   })();
 </script>

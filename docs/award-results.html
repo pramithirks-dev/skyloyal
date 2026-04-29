@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Award flights · SkyLoyal Airways</title>
+<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  .results-hero { background: linear-gradient(135deg, var(--navy), var(--navy-3)); color: white; padding: 2.5rem 2rem 1.8rem; }
+  .results-hero .container { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center; }
+  @media (max-width: 800px) { .results-hero .container { grid-template-columns: 1fr; } }
+  .results-hero h1 { font-family: Georgia, serif; font-size: 2rem; margin: 0 0 .4rem; font-weight: 500; }
+  .results-hero .breadcrumb { color: var(--metal); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .5rem; }
+  .miles-pill {
+    background: rgba(200,180,120,0.15);
+    border: 1px solid var(--metal);
+    padding: 1rem 1.4rem;
+    border-radius: var(--radius);
+    text-align: right;
+  }
+  .miles-pill .label { color: var(--metal); font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; }
+  .miles-pill .balance { font-family: Georgia, serif; font-size: 2rem; }
+  .award-section { padding: 2.5rem 2rem; }
+  .award-section .container { max-width: 1240px; margin: 0 auto; }
+  .award-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+  @media (max-width: 900px) { .award-grid { grid-template-columns: 1fr; } }
+  .award-card {
+    background: white; border: 1px solid var(--line-2); border-radius: var(--radius);
+    overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .15s, box-shadow .15s;
+  }
+  .award-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .award-card .pic { height: 180px; background-size: cover; background-position: center; }
+  .award-card .body { padding: 1.2rem 1.3rem 1.4rem; }
+  .award-card .city { font-family: Georgia, serif; font-size: 1.4rem; color: var(--navy); margin: 0 0 .2rem; }
+  .award-card .meta { color: var(--muted); font-size: .85rem; margin-bottom: .8rem; }
+  .award-card .miles { font-family: Georgia, serif; font-size: 1.5rem; color: var(--navy); }
+  .award-card .miles .unit { font-size: .9rem; color: var(--muted); margin-left: .3rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .award-card .extras { font-size: .82rem; color: var(--ink-2); margin-top: .6rem; }
+  .award-card .extras .tag {
+    display: inline-block; background: var(--soft-bg); padding: .15rem .5rem; border-radius: 2px; margin-right: .3rem; margin-top: .3rem; font-size: .76rem;
+  }
+  .award-card .cta { margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; }
+  .award-card .cta .price { color: var(--metal-2); font-size: .85rem; }
+  .progress-line { background: var(--soft-bg); padding: 1.2rem 1.4rem; border-radius: var(--radius); margin-top: 1.4rem; }
+  .progress-line h4 { margin: 0 0 .4rem; font-family: Georgia, serif; color: var(--navy); font-size: 1rem; }
+  .progress-line p { margin: 0; color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header class="nav" id="topnav">
+  <div class="brand">SkyLoyal<span class="tag">Airways</span></div>
+  <nav class="nav-links">
+    <a href="index.html">Loyalty</a>
+    <a href="index.html#destinations">Destinations</a>
+    <a href="index.html#tiers">Tiers</a>
+    <a href="index.html#help">Help</a>
+    <a href="flyer-view.html" class="login">Sign in</a>
+  </nav>
+</header>
+
+<section class="results-hero">
+  <div class="container">
+    <div>
+      <div class="breadcrumb">My SkyLoyal · Use miles · Award flights</div>
+      <h1>Where can your miles fly you?</h1>
+      <p style="color: rgba(255,255,255,0.85); margin: .3rem 0 0;">Six award destinations match your current balance. Awards from 11,000 miles return.</p>
+    </div>
+    <div class="miles-pill">
+      <div class="label">Miles available</div>
+      <div class="balance">92,400</div>
+    </div>
+  </div>
+</section>
+
+<section class="award-section">
+  <div class="container">
+
+    <div style="display:flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .8rem; margin-bottom: .8rem;">
+      <h3 style="font-family: Georgia, serif; color: var(--navy); margin: 0; font-size: 1.4rem; font-weight: 500;">European short-haul</h3>
+      <span style="color: var(--muted); font-size: .9rem;">Departing Dublin (DUB)</span>
+    </div>
+
+    <div class="award-grid">
+
+      <div class="award-card">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <h3 class="city">Lisbon</h3>
+          <div class="meta">LIS · 3h 10m · Direct daily</div>
+          <div class="miles">11,000<span class="unit">miles return</span></div>
+          <div class="extras">
+            <span class="tag">Economy</span><span class="tag">From €38 fees</span><span class="tag">No blackout</span>
+          </div>
+          <div class="cta">
+            <span class="price">or €138 cash</span>
+            <a class="btn btn-dark" href="#">Book →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <h3 class="city">Amsterdam</h3>
+          <div class="meta">AMS · 1h 50m · 4 daily departures</div>
+          <div class="miles">12,000<span class="unit">miles return</span></div>
+          <div class="extras">
+            <span class="tag">Economy</span><span class="tag">From €42 fees</span>
+          </div>
+          <div class="cta">
+            <span class="price">or €128 cash</span>
+            <a class="btn btn-dark" href="#">Book →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <h3 class="city">Madrid</h3>
+          <div class="meta">MAD · 2h 50m · 3 daily departures</div>
+          <div class="miles">14,000<span class="unit">miles return</span></div>
+          <div class="extras">
+            <span class="tag">Economy</span><span class="tag">From €38 fees</span><span class="tag">Family fare available</span>
+          </div>
+          <div class="cta">
+            <span class="price">or €164 cash</span>
+            <a class="btn btn-dark" href="#">Book →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div style="display:flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: .8rem; margin: 2.4rem 0 .8rem;">
+      <h3 style="font-family: Georgia, serif; color: var(--navy); margin: 0; font-size: 1.4rem; font-weight: 500;">Long-haul, available with your balance</h3>
+      <span style="color: var(--muted); font-size: .9rem;">Mixed-cabin awards on selected routes</span>
+    </div>
+
+    <div class="award-grid">
+
+      <div class="award-card">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <h3 class="city">Boston</h3>
+          <div class="meta">BOS · 7h 25m · Direct daily</div>
+          <div class="miles">32,000<span class="unit">miles return</span></div>
+          <div class="extras">
+            <span class="tag">Economy</span><span class="tag">From €112 fees</span>
+          </div>
+          <div class="cta">
+            <span class="price">or €342 cash</span>
+            <a class="btn btn-dark" href="#">Book →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1465778893808-9b3d1b443be4?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <h3 class="city">Family bundle</h3>
+          <div class="meta">2 returns to Lisbon · pooled miles</div>
+          <div class="miles">22,000<span class="unit">miles total</span></div>
+          <div class="extras">
+            <span class="tag">Economy</span><span class="tag">Family pool</span><span class="tag">CD3 Empowerment</span>
+          </div>
+          <div class="cta">
+            <span class="price">2 flyers · share allowed</span>
+            <a class="btn btn-dark" href="#">Book →</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="award-card">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <h3 class="city">Donate to good causes</h3>
+          <div class="meta">SkyLoyal partnership programmes</div>
+          <div class="miles">5,000<span class="unit">miles minimum</span></div>
+          <div class="extras">
+            <span class="tag">Climate fund</span><span class="tag">Refugee resettlement</span><span class="tag">Tax-deductible (IE)</span>
+          </div>
+          <div class="cta">
+            <span class="price">100% to charity</span>
+            <a class="btn btn-dark" href="#">Donate →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="progress-line">
+      <h4>Heads up</h4>
+      <p>You have <strong>7,800 miles</strong> reaching their inactivity window in 76 days. Three of the awards above are bookable using only those miles, no other balance touched. <a href="flyer-view.html">See in My SkyLoyal</a></p>
+    </div>
+
+    <p style="color: var(--muted); font-size: .85rem; margin-top: 2rem;">Award fares are dynamic and shown with current availability. Cash-equivalent prices are the lowest comparable fares we found today and are for guidance only. Awards are governed by the SkyLoyal programme T&amp;Cs. <a href="index.html">Search again</a></p>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    <div class="brand-block">
+      <div class="logo">SkyLoyal</div>
+      <p class="blurb">A European network airline hubbed in Dublin. Loyalty done the way it should be.</p>
+    </div>
+    <div>
+      <h4>Programme</h4>
+      <ul>
+        <li><a href="flyer-view.html">My SkyLoyal</a></li>
+        <li><a href="index.html#destinations">Destinations</a></li>
+        <li><a href="index.html#tiers">Tiers and benefits</a></li>
+        <li><a href="#">Earn miles</a></li>
+        <li><a href="#">Use miles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Travel waivers</a></li>
+        <li><a href="#">Refunds</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Trust</h4>
+      <ul>
+        <li><a href="#">Privacy notice</a></li>
+        <li><a href="#">How we use your data</a></li>
+        <li><a href="#">Cookie preferences</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About SkyLoyal</h4>
+      <ul>
+        <li><a href="#">Our airline</a></li>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div>© 2026 SkyLoyal Airways. All rights reserved.</div>
+    <div class="legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+</body>
+</html>

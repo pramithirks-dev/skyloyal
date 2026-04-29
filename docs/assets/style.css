@@ -43,13 +43,20 @@ a:hover { color: var(--metal-2); }
 .serif { font-family: "Georgia", "Iowan Old Style", "Times New Roman", serif; }
 
 /* ----------------------------- Top navigation ------------------------------ */
+/* Fixed-position nav that overlays the hero image on the homepage and any
+   page that opens with .hero-cinema. On other pages, the body adds 64px
+   top padding so the first section is not hidden under the nav. */
+body { padding-top: 64px; }
+body.has-hero { padding-top: 0; }
+
 .nav {
-  position: sticky; top: 0; z-index: 100;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   background: rgba(255,255,255,0.96);
   backdrop-filter: saturate(140%) blur(8px);
   border-bottom: 1px solid var(--line-2);
   padding: 0.9rem 2rem;
   display: flex; align-items: center; justify-content: space-between;
+  height: 64px;
 }
 .nav .brand {
   font-family: Georgia, serif;
@@ -86,13 +93,17 @@ a:hover { color: var(--metal-2); }
 }
 .nav-links .login:hover { background: var(--navy-2); color: white; }
 
-/* hero variant: nav becomes transparent on hero, switches at scroll */
+/* Hero variant: nav becomes transparent so the hero image shows through. */
 .nav.on-hero {
   background: transparent;
+  backdrop-filter: none;
   border-bottom-color: rgba(255,255,255,0.18);
 }
 .nav.on-hero .brand,
+.nav.on-hero .brand .tag,
 .nav.on-hero .nav-links a { color: white; }
+.nav.on-hero .brand .tag { border-left-color: rgba(255,255,255,0.5); }
+.nav.on-hero .nav-links a:not(.login):hover { color: var(--metal); }
 .nav.on-hero .login { background: white; color: var(--navy); }
 .nav.on-hero .login:hover { background: var(--metal); color: var(--navy); }
 
@@ -105,13 +116,14 @@ a:hover { color: var(--metal-2); }
 /* ----------------------------- Cinematic hero ------------------------------ */
 .hero-cinema {
   position: relative;
-  height: 78vh;
-  min-height: 520px;
-  max-height: 780px;
+  height: auto;
+  min-height: 720px;
   color: white;
-  overflow: hidden;
+  overflow: visible;
   display: flex; align-items: flex-end;
   background: linear-gradient(180deg, #0a1a3a, #1f3a6e);
+  padding-top: 64px; /* clear the fixed nav */
+  padding-bottom: 130px; /* room for the lookup card overlap below */
 }
 .hero-cinema .bg {
   position: absolute; inset: 0; z-index: 0;
@@ -130,8 +142,9 @@ a:hover { color: var(--metal-2); }
   width: 100%;
   max-width: 1240px;
   margin: 0 auto;
-  padding: 3rem 2rem 4rem;
+  padding: 4rem 2rem 5rem;
 }
+.hero-cinema .bg, .hero-cinema .scrim { bottom: 110px; }
 .hero-cinema .eyebrow {
   display: inline-block;
   color: var(--metal);
@@ -178,17 +191,17 @@ a:hover { color: var(--metal-2); }
 .btn-dark { background: var(--navy); color: white; }
 .btn-dark:hover { background: var(--navy-2); color: white; }
 
-/* The booking-style card (aa.com homepage style), repurposed as a "Find your loyalty status" panel */
+/* Booking-style card. Sits at the bottom of the hero, overflowing into the section below. */
 .lookup-card {
-  position: absolute; left: 0; right: 0; bottom: 0; z-index: 3;
-  transform: translateY(50%);
-  margin: 0 auto;
-  width: min(92%, 1100px);
+  position: absolute;
+  left: 50%; right: auto; bottom: -40px; z-index: 5;
+  transform: translateX(-50%);
+  width: min(94%, 1140px);
   background: white;
   color: var(--ink);
   border-top: 4px solid var(--metal);
   box-shadow: var(--shadow-lg);
-  padding: 1.2rem 1.4rem 1.4rem;
+  padding: 1.4rem 1.6rem 1.6rem;
   border-radius: var(--radius);
 }
 .lookup-card .tabs { display: flex; gap: 0; border-bottom: 1px solid var(--line-2); margin-bottom: 1rem; }
@@ -240,7 +253,7 @@ a:hover { color: var(--metal-2); }
 
 /* ------------------------------- Layout ----------------------------------- */
 section { padding: 4rem 2rem; }
-section.padded-top { padding-top: 7rem; }
+section.padded-top { padding-top: 9rem; }
 section .container { max-width: 1240px; margin: 0 auto; }
 section.alt { background: var(--soft-bg); }
 section .header-block { margin-bottom: 2rem; }

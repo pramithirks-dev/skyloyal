@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Flight results: Dublin to Boston · SkyLoyal Airways</title>
+<link rel="stylesheet" href="assets/style.css?v=3">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  .results-hero { background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: white; padding: 2.5rem 2rem 1.6rem; }
+  .results-hero .container { max-width: 1240px; margin: 0 auto; }
+  .results-hero h1 { font-family: Georgia, serif; font-size: 2rem; margin: 0 0 .4rem; font-weight: 500; }
+  .results-hero .breadcrumb { color: var(--metal); font-size: .8rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .5rem; }
+  .results-hero .summary { color: rgba(255,255,255,0.85); font-size: 1rem; }
+  .results-section { padding: 2rem; }
+  .results-section .container { max-width: 1240px; margin: 0 auto; }
+  .results-list { display: flex; flex-direction: column; gap: .8rem; }
+  .result-card {
+    background: white; border: 1px solid var(--line-2); border-left: 4px solid var(--metal);
+    padding: 1.4rem 1.6rem; border-radius: var(--radius);
+    display: grid; grid-template-columns: 1fr 2fr 1fr 1fr 0.9fr; gap: 1.2rem; align-items: center;
+    box-shadow: var(--shadow-sm);
+    transition: box-shadow .15s ease, transform .15s ease;
+  }
+  .result-card:hover { box-shadow: var(--shadow-md); transform: translateY(-1px); }
+  @media (max-width: 900px) { .result-card { grid-template-columns: 1fr 1fr; gap: 1rem; } }
+  .rc-time { font-family: Georgia, serif; }
+  .rc-time .from-to { font-size: 1.5rem; color: var(--navy); line-height: 1.1; }
+  .rc-time .label { color: var(--muted); font-size: .82rem; letter-spacing: .03em; margin-top: .2rem; }
+  .rc-route { color: var(--ink-2); font-size: .92rem; }
+  .rc-route .stops { color: var(--green); font-weight: 600; font-size: .85rem; }
+  .rc-route .meta { color: var(--muted); font-size: .82rem; margin-top: .25rem; }
+  .rc-cabin { color: var(--ink-2); font-size: .92rem; }
+  .rc-cabin .label { color: var(--muted); font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; display: block; margin-bottom: .15rem; }
+  .rc-fare { font-family: Georgia, serif; }
+  .rc-fare .price { font-size: 1.6rem; color: var(--navy); }
+  .rc-fare .miles { color: var(--metal-2); font-size: .9rem; margin-top: .2rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+  .rc-action a { display: inline-block; }
+  .filters-rail { background: white; border: 1px solid var(--line-2); padding: 1.2rem 1.3rem; border-radius: var(--radius); margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); }
+  .filters-rail h4 { margin: 0 0 .8rem; font-family: Georgia, serif; color: var(--navy); font-size: 1.05rem; }
+  .filter-row { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; font-size: .9rem; }
+  .chip { padding: .35rem .8rem; border: 1px solid var(--line-2); border-radius: 999px; cursor: pointer; background: white; }
+  .chip.active { background: var(--navy); color: white; border-color: var(--navy); }
+  .booking-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: .6rem; }
+  .booking-bar .left { color: var(--muted); font-size: .92rem; }
+  .booking-bar .left strong { color: var(--ink); }
+  .sort-by { font-size: .9rem; color: var(--muted); }
+  .sort-by select { padding: .4rem .6rem; border: 1px solid var(--line-2); border-radius: var(--radius); font-family: inherit; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<header class="nav" id="topnav">
+  <div class="brand">SkyLoyal<span class="tag">Airways</span></div>
+  <nav class="nav-links">
+    <a href="index.html">Loyalty</a>
+    <a href="index.html#destinations">Destinations</a>
+    <a href="index.html#tiers">Tiers</a>
+    <a href="index.html#help">Help</a>
+    <a href="flyer-view.html" class="login">Sign in</a>
+  </nav>
+</header>
+
+<section class="results-hero">
+  <div class="container">
+    <div class="breadcrumb">Loyalty · Book a flight · Results</div>
+    <h1>Dublin (DUB) to Boston (BOS)</h1>
+    <p class="summary">Sun 12 Jul 2026 · 1 adult · Economy · Showing 5 of 5 fares</p>
+  </div>
+</section>
+
+<section class="results-section">
+  <div class="container">
+
+    <div class="filters-rail">
+      <h4>Refine</h4>
+      <div class="filter-row">
+        <span class="chip active">All flights</span>
+        <span class="chip">Direct only</span>
+        <span class="chip">Morning</span>
+        <span class="chip">Afternoon</span>
+        <span class="chip">Evening</span>
+        <span class="chip">Earn 5x miles</span>
+      </div>
+    </div>
+
+    <div class="booking-bar">
+      <div class="left">Showing <strong>5 fares</strong> from €342</div>
+      <div class="sort-by">
+        Sort by
+        <select>
+          <option>Recommended</option>
+          <option>Price: low to high</option>
+          <option>Departure time</option>
+          <option>Duration</option>
+          <option>Miles earned</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="results-list">
+
+      <div class="result-card">
+        <div class="rc-time">
+          <div class="from-to">07:25 → 09:50</div>
+          <div class="label">DUB - BOS · Sun 12 Jul</div>
+        </div>
+        <div class="rc-route">
+          <div><strong>SkyLoyal SL188</strong> · <span class="stops">Direct</span></div>
+          <div class="meta">7h 25m · Airbus A330-200 · On-time 88%</div>
+        </div>
+        <div class="rc-cabin">
+          <span class="label">Cabin</span>
+          Economy
+        </div>
+        <div class="rc-fare">
+          <div class="price">€342</div>
+          <div class="miles">+ 4,180 miles · Gold 5x</div>
+        </div>
+        <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-time">
+          <div class="from-to">11:40 → 14:05</div>
+          <div class="label">DUB - BOS · Sun 12 Jul</div>
+        </div>
+        <div class="rc-route">
+          <div><strong>SkyLoyal SL192</strong> · <span class="stops">Direct</span></div>
+          <div class="meta">7h 25m · Boeing 787-9 · On-time 92%</div>
+        </div>
+        <div class="rc-cabin">
+          <span class="label">Cabin</span>
+          Premium economy
+        </div>
+        <div class="rc-fare">
+          <div class="price">€612</div>
+          <div class="miles">+ 7,520 miles · Gold 5x</div>
+        </div>
+        <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-time">
+          <div class="from-to">14:55 → 17:20</div>
+          <div class="label">DUB - BOS · Sun 12 Jul</div>
+        </div>
+        <div class="rc-route">
+          <div><strong>SkyLoyal SL196</strong> · <span class="stops">Direct</span></div>
+          <div class="meta">7h 25m · Airbus A330-200 · On-time 81%</div>
+        </div>
+        <div class="rc-cabin">
+          <span class="label">Cabin</span>
+          Economy
+        </div>
+        <div class="rc-fare">
+          <div class="price">€379</div>
+          <div class="miles">+ 4,520 miles · Gold 5x</div>
+        </div>
+        <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-time">
+          <div class="from-to">18:10 → 20:35</div>
+          <div class="label">DUB - BOS · Sun 12 Jul</div>
+        </div>
+        <div class="rc-route">
+          <div><strong>SkyLoyal SL204</strong> · <span class="stops">Direct</span></div>
+          <div class="meta">7h 25m · Boeing 787-9 · On-time 95%</div>
+        </div>
+        <div class="rc-cabin">
+          <span class="label">Cabin</span>
+          Business
+        </div>
+        <div class="rc-fare">
+          <div class="price">€1,840</div>
+          <div class="miles">+ 22,000 miles · Gold 5x</div>
+        </div>
+        <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
+      </div>
+
+      <div class="result-card">
+        <div class="rc-time">
+          <div class="from-to">21:50 → 06:35+1</div>
+          <div class="label">DUB - LHR - BOS · Sun 12 Jul</div>
+        </div>
+        <div class="rc-route">
+          <div><strong>SkyLoyal SL022 + SL716</strong> · <span class="stops" style="color:var(--amber);">1 stop · LHR</span></div>
+          <div class="meta">10h 45m · Layover 2h 10m</div>
+        </div>
+        <div class="rc-cabin">
+          <span class="label">Cabin</span>
+          Economy
+        </div>
+        <div class="rc-fare">
+          <div class="price">€298</div>
+          <div class="miles">+ 4,420 miles · Gold 5x</div>
+        </div>
+        <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
+      </div>
+
+    </div>
+
+    <p style="color: var(--muted); font-size: .85rem; margin-top: 2rem;">Fares shown are per adult, including taxes and carrier charges. Miles earned are estimates and confirmed once your flight is flown. Gold-tier 5x earn applies to the base fare only. <a href="index.html">Search again</a></p>
+
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container">
+    <div class="brand-block">
+      <div class="logo">SkyLoyal</div>
+      <p class="blurb">A European network airline hubbed in Dublin. Loyalty done the way it should be.</p>
+    </div>
+    <div>
+      <h4>Programme</h4>
+      <ul>
+        <li><a href="flyer-view.html">My SkyLoyal</a></li>
+        <li><a href="index.html#destinations">Destinations</a></li>
+        <li><a href="index.html#tiers">Tiers and benefits</a></li>
+        <li><a href="#">Earn miles</a></li>
+        <li><a href="#">Use miles</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Travel waivers</a></li>
+        <li><a href="#">Refunds</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Trust</h4>
+      <ul>
+        <li><a href="#">Privacy notice</a></li>
+        <li><a href="#">How we use your data</a></li>
+        <li><a href="#">Cookie preferences</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About SkyLoyal</h4>
+      <ul>
+        <li><a href="#">Our airline</a></li>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Careers</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div>© 2026 SkyLoyal Airways. All rights reserved.</div>
+    <div class="legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
