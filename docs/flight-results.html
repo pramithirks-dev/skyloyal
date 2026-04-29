@@ -39,8 +39,20 @@
   .filters-rail { background: white; border: 1px solid var(--line-2); padding: 1.2rem 1.3rem; border-radius: var(--radius); margin-bottom: 1.5rem; box-shadow: var(--shadow-sm); }
   .filters-rail h4 { margin: 0 0 .8rem; font-family: Georgia, serif; color: var(--navy); font-size: 1.05rem; }
   .filter-row { display: flex; flex-wrap: wrap; gap: .6rem; align-items: center; font-size: .9rem; }
-  .chip { padding: .35rem .8rem; border: 1px solid var(--line-2); border-radius: 999px; cursor: pointer; background: white; }
+  .chip {
+    padding: .4rem .9rem;
+    border: 1px solid var(--line-2);
+    border-radius: 999px;
+    cursor: pointer;
+    background: white;
+    color: var(--ink);
+    font-family: inherit;
+    font-size: .9rem;
+    transition: all .15s ease;
+  }
+  .chip:hover { border-color: var(--metal); color: var(--navy); }
   .chip.active { background: var(--navy); color: white; border-color: var(--navy); }
+  .chip.active:hover { background: var(--navy-2); }
   .booking-bar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: .6rem; }
   .booking-bar .left { color: var(--muted); font-size: .92rem; }
   .booking-bar .left strong { color: var(--ink); }
@@ -115,18 +127,18 @@
 
     <div class="filters-rail">
       <h4>Refine</h4>
-      <div class="filter-row">
-        <span class="chip active">All flights</span>
-        <span class="chip">Direct only</span>
-        <span class="chip">Morning</span>
-        <span class="chip">Afternoon</span>
-        <span class="chip">Evening</span>
-        <span class="chip">Earn 5x miles</span>
+      <div class="filter-row" id="filter-row">
+        <button class="chip active" data-filter="all">All flights</button>
+        <button class="chip" data-filter="direct">Direct only</button>
+        <button class="chip" data-filter="morning">Morning</button>
+        <button class="chip" data-filter="afternoon">Afternoon</button>
+        <button class="chip" data-filter="evening">Evening</button>
+        <button class="chip" data-filter="earn5x">Earn 5x miles</button>
       </div>
     </div>
 
     <div class="booking-bar">
-      <div class="left">Showing <strong>5 fares</strong> from €342</div>
+      <div class="left">Showing <strong id="result-count">5 fares</strong> <span id="result-from">from €342</span></div>
       <div class="sort-by">
         Sort by
         <select>
@@ -141,7 +153,7 @@
 
     <div class="results-list">
 
-      <div class="result-card">
+      <div class="result-card" data-stops="direct" data-time="morning" data-earn="5x" data-price="342">
         <div class="rc-time">
           <div class="from-to">07:25 → 09:50</div>
           <div class="label">DUB - BOS · Sun 12 Jul</div>
@@ -161,7 +173,7 @@
         <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
       </div>
 
-      <div class="result-card">
+      <div class="result-card" data-stops="direct" data-time="morning" data-earn="5x" data-price="612">
         <div class="rc-time">
           <div class="from-to">11:40 → 14:05</div>
           <div class="label">DUB - BOS · Sun 12 Jul</div>
@@ -181,7 +193,7 @@
         <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
       </div>
 
-      <div class="result-card">
+      <div class="result-card" data-stops="direct" data-time="afternoon" data-earn="5x" data-price="379">
         <div class="rc-time">
           <div class="from-to">14:55 → 17:20</div>
           <div class="label">DUB - BOS · Sun 12 Jul</div>
@@ -201,7 +213,7 @@
         <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
       </div>
 
-      <div class="result-card">
+      <div class="result-card" data-stops="direct" data-time="evening" data-earn="5x" data-price="1840">
         <div class="rc-time">
           <div class="from-to">18:10 → 20:35</div>
           <div class="label">DUB - BOS · Sun 12 Jul</div>
@@ -221,7 +233,7 @@
         <div class="rc-action"><a class="btn btn-dark" href="#">Select</a></div>
       </div>
 
-      <div class="result-card">
+      <div class="result-card" data-stops="connecting" data-time="evening" data-earn="5x" data-price="298">
         <div class="rc-time">
           <div class="from-to">21:50 → 06:35+1</div>
           <div class="label">DUB - LHR - BOS · Sun 12 Jul</div>
@@ -243,10 +255,53 @@
 
     </div>
 
+    <p id="no-results" style="color: var(--muted); font-size: .9rem; margin-top: 2rem; display: none; padding: 1.4rem; background: var(--soft-bg); border-radius: var(--radius); text-align: center;">No fares match this filter. <a href="#" onclick="document.querySelector('[data-filter=all]').click(); return false;">Show all fares</a> or <a href="index.html">search again</a>.</p>
+
     <p style="color: var(--muted); font-size: .85rem; margin-top: 2rem;">Fares shown are per adult, including taxes and carrier charges. Miles earned are estimates and confirmed once your flight is flown. Gold-tier 5x earn applies to the base fare only. <a href="index.html">Search again</a></p>
 
   </div>
 </section>
+
+<script>
+  // Filter the flight results by the active chip.
+  (function () {
+    var chips = document.querySelectorAll('#filter-row .chip');
+    var cards = document.querySelectorAll('.results-list .result-card');
+    var countEl = document.getElementById('result-count');
+    var fromEl = document.getElementById('result-from');
+    var noResults = document.getElementById('no-results');
+
+    function applyFilter(filter) {
+      var visible = 0;
+      var minPrice = null;
+      cards.forEach(function (card) {
+        var match = false;
+        if (filter === 'all') match = true;
+        else if (filter === 'direct') match = card.dataset.stops === 'direct';
+        else if (filter === 'morning' || filter === 'afternoon' || filter === 'evening') match = card.dataset.time === filter;
+        else if (filter === 'earn5x') match = card.dataset.earn === '5x';
+        card.style.display = match ? '' : 'none';
+        if (match) {
+          visible++;
+          var p = parseInt(card.dataset.price, 10);
+          if (!isNaN(p) && (minPrice === null || p < minPrice)) minPrice = p;
+        }
+      });
+      countEl.textContent = visible + (visible === 1 ? ' fare' : ' fares');
+      fromEl.textContent = (minPrice !== null) ? ('from €' + minPrice.toLocaleString()) : '';
+      noResults.style.display = visible === 0 ? '' : 'none';
+    }
+
+    chips.forEach(function (chip) {
+      chip.addEventListener('click', function () {
+        chips.forEach(function (c) { c.classList.remove('active'); });
+        chip.classList.add('active');
+        applyFilter(chip.dataset.filter);
+      });
+    });
+    applyFilter('all');
+  })();
+</script>
 
 <footer class="foot">
   <div class="container">
