@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SkyLoyal Airways: A loyalty programme that notices before you leave</title>
-<meta name="description" content="SkyLoyal Loyalty Rescue. A working multi-agent organisation that predicts, diagnoses, and intervenes on frequent-flyer loyalty churn for SkyLoyal Airways. H9CEAI Final Project, NCI MSCAIBUS1.">
+<title>SkyLoyal Loyalty Rescue: A loyalty programme that notices before you leave</title>
+<meta name="description" content="SkyLoyal Loyalty Rescue. The proactive loyalty programme that listens for the signals other airlines miss, and reaches out the way a good travel agent would. Pilot from Q3 2026.">
 <link rel="stylesheet" href="assets/style.css">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 </head>
@@ -14,9 +14,9 @@
   <div class="brand">SkyLoyal<span class="tag">Airways</span></div>
   <nav class="nav-links">
     <a href="index.html" class="active">Loyalty</a>
-    <a href="dashboard.html">CSM Dashboard</a>
-    <a href="flyer-view.html">My SkyLoyal</a>
-    <a href="https://github.com/pramithirks-dev/skyloyal" target="_blank" rel="noopener">Repo</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#tiers">Tiers</a>
+    <a href="#help">Help</a>
     <a href="flyer-view.html" class="login">Sign in</a>
   </nav>
 </header>
@@ -26,142 +26,124 @@
   <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1465778893808-9b3d1b443be4?auto=format&fit=crop&w=2000&q=80');"></div>
   <div class="scrim"></div>
   <div class="inner">
-    <span class="eyebrow">Loyalty Rescue · Pilot Q3 2026</span>
+    <span class="eyebrow">Loyalty Rescue · Pilot from Q3 2026</span>
     <h1>A loyalty programme that notices<br>before you leave.</h1>
-    <p class="sub">SkyLoyal Airways is piloting an agentic AI organisation that listens to four loyalty signals and reaches out the way a good travel agent would, with respect, transparency, and a real offer.</p>
+    <p class="sub">SkyLoyal Loyalty Rescue listens for the signals other airlines miss, the dormant miles, the quiet quarter, the missed retention window, and reaches out the way a good travel agent would. With respect, transparency, and a real offer.</p>
     <div class="cta">
-      <a class="btn btn-primary" href="dashboard.html">Open the CSM dashboard</a>
-      <a class="btn btn-ghost" href="flyer-view.html">See the flyer view</a>
+      <a class="btn btn-primary" href="flyer-view.html">Sign in to My SkyLoyal</a>
+      <a class="btn btn-ghost" href="#how">How it works</a>
     </div>
   </div>
 
-  <!-- aa.com-style booking module, repurposed as a loyalty lookup card -->
-  <div class="lookup-card" role="region" aria-label="Find your flyer profile">
+  <!-- Booking-style lookup card -->
+  <div class="lookup-card" role="region" aria-label="Plan your next trip">
     <div class="tabs">
-      <div class="tab active">Find a flyer</div>
-      <div class="tab">Tier lookup</div>
-      <div class="tab">Redemption finder</div>
+      <div class="tab active">Book a flight</div>
+      <div class="tab">Use miles</div>
+      <div class="tab">My status</div>
     </div>
     <div class="row">
       <div class="field">
-        <label>Member ID or name</label>
-        <input type="text" placeholder="SKY000234 or Nuala D." value="SKY000234">
+        <label>From</label>
+        <input type="text" placeholder="Dublin (DUB)" value="Dublin (DUB)">
       </div>
       <div class="field">
-        <label>Home hub</label>
+        <label>To</label>
         <select>
-          <option>Dublin (DUB)</option>
+          <option>Boston (BOS)</option>
+          <option>Lisbon (LIS)</option>
           <option>Amsterdam (AMS)</option>
           <option>Madrid (MAD)</option>
           <option>London (LHR)</option>
-          <option>Lisbon (LIS)</option>
         </select>
       </div>
       <div class="field">
-        <label>Tier</label>
-        <select>
-          <option>Any</option>
-          <option>Gold</option>
-          <option>Silver</option>
-          <option>Platinum</option>
-          <option>Blue</option>
-        </select>
+        <label>Depart</label>
+        <input type="date" value="2026-07-12">
       </div>
       <div class="field">
-        <label>Risk band</label>
+        <label>Flyers</label>
         <select>
-          <option>High</option>
-          <option>Medium</option>
-          <option>Low</option>
+          <option>1 adult</option>
+          <option>2 adults</option>
+          <option>2 adults + 1 child</option>
         </select>
       </div>
       <div class="field">
         <label>&nbsp;</label>
-        <a href="dashboard.html" class="btn btn-dark" style="text-align:center;">Search →</a>
+        <a href="flyer-view.html" class="btn btn-dark" style="text-align:center;">Search →</a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Stats strip -->
+<!-- Programme stats strip -->
 <section class="padded-top">
   <div class="container">
     <div class="header-block">
       <span class="eyebrow">SkyLoyal at a glance</span>
-      <h2>The numbers behind the pilot.</h2>
-      <p>Every figure here comes from the synthetic dataset analysed by Dr. Aiko Tanaka, our Researcher agent. The pilot targets the 105 high-risk members in this dataset across four operationally distinct segments.</p>
+      <h2>Loyalty done the way it should be.</h2>
+      <p>A programme designed around the way our flyers actually fly, not the way airlines wish they would. Built on four signals, four flyer journeys, and one promise: we notice before you leave.</p>
     </div>
     <div class="stats">
       <div class="stat">
-        <div class="num">500</div>
-        <span class="label">Members analysed in the pilot dataset</span>
+        <div class="num">9.4M</div>
+        <span class="label">SkyLoyal members worldwide</span>
       </div>
       <div class="stat">
-        <div class="num">41.2%<span class="delta down">silent quiet</span></div>
-        <span class="label">Members who flew last year and zero in last 3 months</span>
+        <div class="num">78</div>
+        <span class="label">Destinations across Europe and beyond</span>
       </div>
       <div class="stat">
-        <div class="num">831k</div>
-        <span class="label">Miles expiring in the next 90 days</span>
+        <div class="num">12&nbsp;months</div>
+        <span class="label">Miles validity from your last activity</span>
       </div>
       <div class="stat">
-        <div class="num">7 / 8</div>
-        <span class="label">Octalysis Core Drives represented (CD6 deliberately omitted)</span>
+        <div class="num">5x</div>
+        <span class="label">Maximum miles earn on Gold and Platinum</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- The pipeline -->
-<section class="alt">
+<!-- How it works for you (customer-facing rewrite of the agentic pipeline) -->
+<section class="alt" id="how">
   <div class="container">
     <div class="header-block">
       <span class="eyebrow">How it works</span>
-      <h2>Five agents, one unbroken pipeline.</h2>
-      <p>Each agent produces a markdown artefact that is the next agent's sole input. The Manager runs quality gates between every handoff and maintains a cycle log. This site is the third artefact; the others live in the repository.</p>
+      <h2>Three things we do, before you ask us to.</h2>
+      <p>Most loyalty programmes wait for you to leave. Loyalty Rescue does the opposite. Here is how, in plain English.</p>
     </div>
-    <div class="pipeline">
+    <div class="pipeline" style="grid-template-columns: repeat(3, 1fr);">
       <div class="node">
         <span class="step">1</span>
-        <strong>Researcher</strong>
-        <div class="role">Dr. Aiko Tanaka</div>
-        <p>Analyses the data. Produces <code>01-research-brief.md</code>: four at-risk segments, five testable hypotheses.</p>
+        <strong>We listen</strong>
+        <div class="role">Behind the scenes</div>
+        <p>Tier slip, dormant miles, partner-airline drift, post-trip residue. Four signals, every flyer, every quarter. Quietly, with your consent.</p>
       </div>
       <div class="node">
         <span class="step">2</span>
-        <strong>Designer</strong>
-        <div class="role">Leo Marín</div>
-        <p>Designs the journey. Produces <code>02-design-spec.md</code>: four flyer archetypes, Octalysis-anchored.</p>
+        <strong>We reach out</strong>
+        <div class="role">A real human</div>
+        <p>Every contact tells you why you got it, and a Customer Success Manager reviews it before it leaves our team. No automated decisions, ever.</p>
       </div>
       <div class="node">
         <span class="step">3</span>
-        <strong>Maker</strong>
-        <div class="role">Priya Shah</div>
-        <p>Builds the prototype. Produces this <code>docs/</code> site, no framework, no build step.</p>
-      </div>
-      <div class="node">
-        <span class="step">4</span>
-        <strong>Communicator</strong>
-        <div class="role">Dara Okafor</div>
-        <p>Writes the GTM pack. Produces <code>04-gtm-pack.md</code>: positioning, three emails, press release.</p>
-      </div>
-      <div class="node">
-        <span class="step">5</span>
-        <strong>Manager</strong>
-        <div class="role">Claire Dubois</div>
-        <p>Synthesises. Produces <code>05-executive-summary.md</code>: KPIs, ethics, rollout, rubric self-assessment.</p>
+        <strong>You decide</strong>
+        <div class="role">Always your call</div>
+        <p>Adjust the cadence, decline the offer, or take it. Every email has an opt-out. Every "surprise" is a real benefit, already loaded to your wallet.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Where SkyLoyal flies (destinations grid) -->
-<section>
+<!-- Where we fly -->
+<section id="destinations">
   <div class="container">
     <div class="header-block">
       <span class="eyebrow">Where we fly</span>
-      <h2>Five hubs, one programme.</h2>
-      <p>The pilot starts in Dublin, our home hub, and scales to Amsterdam and Madrid in Phase 2. These are the cities the four flyer archetypes call home.</p>
+      <h2>Five hubs. One programme.</h2>
+      <p>From our home in Dublin across Europe and onwards. Use your miles for any of them, on any seat, with no blackout dates on award seats above Silver.</p>
     </div>
 
     <div class="destinations">
@@ -170,34 +152,34 @@
         <div class="scrim"></div>
         <div class="label">
           <span class="city">Dublin</span>
-          <span class="meta">DUB · Home hub · Nuala &amp; Rashida fly here</span>
+          <span class="meta">DUB · Home hub · 84 weekly departures</span>
         </div>
       </a>
-      <a class="dest" href="dashboard.html" aria-label="Amsterdam">
+      <a class="dest" href="flyer-view.html" aria-label="Amsterdam">
         <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=900&q=80');"></div>
         <div class="scrim"></div>
-        <div class="label"><span class="city">Amsterdam</span><span class="meta">AMS · Marcus's home hub</span></div>
+        <div class="label"><span class="city">Amsterdam</span><span class="meta">AMS · From 12,000 miles return</span></div>
       </a>
-      <a class="dest" href="dashboard.html" aria-label="Madrid">
+      <a class="dest" href="flyer-view.html" aria-label="Madrid">
         <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=900&q=80');"></div>
         <div class="scrim"></div>
-        <div class="label"><span class="city">Madrid</span><span class="meta">MAD · Theo's home hub</span></div>
+        <div class="label"><span class="city">Madrid</span><span class="meta">MAD · From 14,000 miles return</span></div>
       </a>
-      <a class="dest" href="dashboard.html" aria-label="Boston">
+      <a class="dest" href="flyer-view.html" aria-label="Boston">
         <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80');"></div>
         <div class="scrim"></div>
-        <div class="label"><span class="city">Boston</span><span class="meta">BOS · Nuala's North-American route</span></div>
+        <div class="label"><span class="city">Boston</span><span class="meta">BOS · From 32,000 miles return</span></div>
       </a>
-      <a class="dest" href="dashboard.html" aria-label="Lisbon">
+      <a class="dest" href="flyer-view.html" aria-label="Lisbon">
         <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80');"></div>
         <div class="scrim"></div>
-        <div class="label"><span class="city">Lisbon</span><span class="meta">LIS · Marcus's redemption pick</span></div>
+        <div class="label"><span class="city">Lisbon</span><span class="meta">LIS · From 11,000 miles return</span></div>
       </a>
     </div>
   </div>
 </section>
 
-<!-- Story split: aviation discipline -->
+<!-- Story split: trust -->
 <section class="alt">
   <div class="container">
     <div class="story-split">
@@ -205,68 +187,47 @@
       <div class="text">
         <span class="eyebrow" style="color:var(--metal-2); font-size:.76rem; letter-spacing:.22em; text-transform:uppercase;">Built for trust</span>
         <h3>Loyalty done the way it should be.</h3>
-        <p>Our previous model assumed loyalty looked like cancellations. It does not. Loyalty looks like a flyer quietly choosing another carrier for the next trip.</p>
-        <p>We do not chase. We notice. Every contact opens with the reason it was sent. Every "surprise" is a real benefit, already loaded to the account. Every risk score is reviewed by a Customer Success Manager before a flyer ever hears from us.</p>
-        <p style="margin-top:1.2rem;"><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/05-executive-summary.md" target="_blank" rel="noopener" class="btn btn-dark">Read the executive summary</a></p>
+        <p>Most airline loyalty programmes assume the worst about their flyers. Countdown timers, fake scarcity, anxiety language. We refused to ship any of it.</p>
+        <p>Every contact opens with the reason it was sent. Every "surprise" is a real benefit, already loaded to your wallet. Every risk score is reviewed by a Customer Success Manager before a flyer ever hears from us. You see how we calculated your tier ring, and you can adjust how often we get in touch, in two clicks.</p>
+        <p style="margin-top:1.2rem;"><a href="flyer-view.html" class="btn btn-dark">Sign in to see yours</a></p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Four archetypes -->
-<section>
+<!-- Choose how you fly with us -->
+<section id="tiers">
   <div class="container">
     <div class="header-block">
-      <span class="eyebrow">Four archetypes</span>
-      <h2>The flyers we built this for.</h2>
-      <p>From the Researcher's segment analysis, refined by the Designer through Manager Cycle 2 critique. The dashboard rotates around them. The flyer view is built for Nuala.</p>
+      <span class="eyebrow">Pick the way you fly</span>
+      <h2>Four ways to get more from SkyLoyal.</h2>
+      <p>Whether you fly to keep your tier, save your miles for a once-a-year trip, or split your year across our partners, the programme adapts to you, not the other way around.</p>
     </div>
     <div class="cards">
       <div class="card">
         <div class="arch-img"></div>
-        <h3>Nuala</h3>
-        <div class="sub">Status-Slipper</div>
-        <p>Gold-tier Dubliner, 6 of 9 segments toward year-end retention. Lever: tier-downgrade exposure. Octalysis CD2, CD8.</p>
+        <h3>Climb your tier</h3>
+        <div class="sub">Status builder</div>
+        <p>Three more segments to retain Gold? We will show you the routes that fit the way you fly, and a tier ring that updates the moment you book.</p>
       </div>
       <div class="card">
         <div class="arch-img"></div>
-        <h3>Marcus</h3>
-        <div class="sub">Miles-Hoarder</div>
-        <p>Retired engineer in Amsterdam. 138,000 dormant miles, 12,400 expiring in 88 days. Lever: dormant-value redemption. CD4.</p>
+        <h3>Use your miles</h3>
+        <div class="sub">Saver</div>
+        <p>Six tailored trip ideas based on your balance and your travel history, plus a real "what could I do with these" calculator. No expiry surprises.</p>
       </div>
       <div class="card">
         <div class="arch-img"></div>
-        <h3>Theo</h3>
-        <div class="sub">Alliance-Drifter</div>
-        <p>Madrid consultant. 14 SkyLoyal segments and 11 partner segments. Lever: share-of-wallet. CD1, CD5.</p>
+        <h3>Fly across our alliance</h3>
+        <div class="sub">Multi-carrier</div>
+        <p>Earn and burn across our partners. We will tell you when SkyLoyal beats them on your routes, and when an alliance pool offer makes more sense for you.</p>
       </div>
       <div class="card">
         <div class="arch-img"></div>
-        <h3>Rashida</h3>
-        <div class="sub">Complaint-Scarred</div>
-        <p>Edinburgh academic, 4-day baggage delay, NPS -50. Lever: acknowledgement-first reset. CD3.</p>
+        <h3>Fresh start after a tough trip</h3>
+        <div class="sub">Reset</div>
+        <p>Bag late? Flight cancelled? We acknowledge what happened first, then offer you a choice gesture. You pick, we deliver.</p>
       </div>
-    </div>
-  </div>
-</section>
-
-<!-- Octalysis at a glance -->
-<section class="alt">
-  <div class="container">
-    <div class="header-block">
-      <span class="eyebrow">Octalysis Framework</span>
-      <h2>Seven of eight Core Drives, one deliberately absent.</h2>
-      <p>The flyer-facing view explicitly tags every gamification element with its Octalysis Core Drive via a <code>data-cd</code> attribute. CD6 Scarcity (countdown timers, fake seat counts) is deliberately omitted from the pilot.</p>
-    </div>
-    <div class="cd-grid">
-      <div class="cd-chip"><span class="cd-num">CD1</span><span class="cd-name">Epic Meaning</span><span class="cd-use">Sustainable Aviation Fuel attribution</span></div>
-      <div class="cd-chip"><span class="cd-num">CD2</span><span class="cd-name">Development</span><span class="cd-use">Tier ring, retention progress</span></div>
-      <div class="cd-chip"><span class="cd-num">CD3</span><span class="cd-name">Empowerment</span><span class="cd-use">Trip-mode picker, choice gestures</span></div>
-      <div class="cd-chip"><span class="cd-num">CD4</span><span class="cd-name">Ownership</span><span class="cd-use">Miles balance, year-in-review</span></div>
-      <div class="cd-chip"><span class="cd-num">CD5</span><span class="cd-name">Social</span><span class="cd-use">Peer recognition, alliance pool</span></div>
-      <div class="cd-chip disabled"><span class="cd-num">CD6</span><span class="cd-name">Scarcity</span><span class="cd-use">Omitted from pilot, by design</span></div>
-      <div class="cd-chip"><span class="cd-num">CD7</span><span class="cd-name">Unpredictability</span><span class="cd-use">Real surprises, never fake</span></div>
-      <div class="cd-chip"><span class="cd-num">CD8</span><span class="cd-name">Loss Avoidance</span><span class="cd-use">Always white-hat-framed as opportunity</span></div>
     </div>
   </div>
 </section>
@@ -276,61 +237,64 @@
   <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=2000&q=80');"></div>
   <div class="scrim"></div>
   <div class="container">
-    <h2>Read the four artefacts. Watch the agents talk.</h2>
-    <p>The agentic chain is unbroken. Every artefact references the prior one by filename. The Manager log captures all six cycles, including the substantive return on the Designer's first pass.</p>
+    <h2>Loyalty Rescue is in pilot. You are invited.</h2>
+    <p>Join 9.4 million SkyLoyal members. Sign in to see your tier, your miles, and the trips your balance can already cover, today.</p>
     <div style="display:flex; gap:.8rem; flex-wrap:wrap;">
-      <a class="btn btn-primary" href="https://github.com/pramithirks-dev/skyloyal/tree/main/outputs" target="_blank" rel="noopener">Browse the artefacts</a>
-      <a class="btn btn-ghost" href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/manager-log.md" target="_blank" rel="noopener">Read the Manager log</a>
+      <a class="btn btn-primary" href="flyer-view.html">Sign in to My SkyLoyal</a>
+      <a class="btn btn-ghost" href="#destinations">Where we fly</a>
     </div>
   </div>
 </section>
 
 <!-- Footer -->
-<footer class="foot">
+<footer class="foot" id="help">
   <div class="container">
     <div class="brand-block">
       <div class="logo">SkyLoyal</div>
-      <p class="blurb">A 5-agent agentic organisation built for the H9CEAI Customer Engagement &amp; AI module at the National College of Ireland.</p>
+      <p class="blurb">A European network airline hubbed in Dublin. Loyalty done the way it should be.</p>
     </div>
     <div>
-      <h4>The Programme</h4>
+      <h4>Programme</h4>
       <ul>
         <li><a href="flyer-view.html">My SkyLoyal</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#tiers">Tiers and benefits</a></li>
         <li><a href="#">Earn miles</a></li>
         <li><a href="#">Use miles</a></li>
-        <li><a href="#">Tiers and benefits</a></li>
+        <li><a href="#">Partners</a></li>
       </ul>
     </div>
     <div>
-      <h4>For CSM Teams</h4>
+      <h4>Help</h4>
       <ul>
-        <li><a href="dashboard.html">CSM Dashboard</a></li>
-        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/02-design-spec.md" target="_blank" rel="noopener">Design spec</a></li>
-        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/04-gtm-pack.md" target="_blank" rel="noopener">GTM pack</a></li>
-        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/manager-log.md" target="_blank" rel="noopener">Manager log</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Travel waivers</a></li>
+        <li><a href="#">Lost &amp; found</a></li>
+        <li><a href="#">Refunds</a></li>
+        <li><a href="#">Accessibility</a></li>
       </ul>
     </div>
     <div>
-      <h4>Trust &amp; Ethics</h4>
+      <h4>Trust</h4>
       <ul>
         <li><a href="#">Privacy notice</a></li>
-        <li><a href="#">GDPR Article 15 access</a></li>
-        <li><a href="#">EU AI Act disclosure</a></li>
-        <li><a href="#">White-Hat audit</a></li>
+        <li><a href="#">How we use your data</a></li>
+        <li><a href="#">Cookie preferences</a></li>
+        <li><a href="#">Adjust contact frequency</a></li>
       </ul>
     </div>
     <div>
-      <h4>Project</h4>
+      <h4>About SkyLoyal</h4>
       <ul>
-        <li><a href="https://github.com/pramithirks-dev/skyloyal" target="_blank" rel="noopener">GitHub</a></li>
-        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/BRD.md" target="_blank" rel="noopener">Business Requirements</a></li>
-        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/05-executive-summary.md" target="_blank" rel="noopener">Executive summary</a></li>
-        <li><a href="https://www.ncirl.ie/" target="_blank" rel="noopener">NCI</a></li>
+        <li><a href="#">Our airline</a></li>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Careers</a></li>
       </ul>
     </div>
   </div>
   <div class="bottom">
-    <div>© 2026 SkyLoyal Airways (fictional). Synthetic data only. Pramithi Raroth Karimpanakkal · NCI MSCAIBUS1.</div>
+    <div>© 2026 SkyLoyal Airways. All rights reserved.</div>
     <div class="legal">
       <a href="#">Terms</a>
       <a href="#">Privacy</a>
@@ -340,7 +304,6 @@
 </footer>
 
 <script>
-  // Toggle nav appearance once user scrolls past the cinematic hero
   (function () {
     var nav = document.getElementById('topnav');
     var hero = document.querySelector('.hero-cinema');
