@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkyJet Airways: Ireland's network airline · Fly with us</title>
+<meta name="description" content="SkyJet Airways. Ireland's network airline, hubbed in Dublin. 78 destinations across Europe and the Atlantic, served by a modern fleet of A330s and 787s. Book direct, fly direct.">
+<link rel="stylesheet" href="assets/style.css?v=16">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  /* SkyJet-page-specific accents */
+  .why-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4rem; margin-top: 2rem;
+  }
+  @media (max-width: 800px) { .why-grid { grid-template-columns: 1fr; } }
+  .why-card {
+    background: white; border: 1px solid var(--line-2);
+    padding: 1.6rem 1.5rem 1.5rem; border-radius: var(--radius);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .why-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .why-card .icon {
+    width: 48px; height: 48px;
+    background: var(--soft-bg); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--metal-2); font-size: 1.4rem;
+    margin-bottom: 1rem;
+  }
+  .why-card h3 { font-family: Georgia, serif; color: var(--navy); margin: 0 0 .4rem; font-size: 1.25rem; }
+  .why-card p { color: var(--ink-2); margin: 0; font-size: .95rem; line-height: 1.55; }
+
+  /* SkyLoyal callout band */
+  .loyalty-band {
+    position: relative;
+    color: white;
+    padding: 4rem 2rem 4.2rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a1a3a 0%, #1f3a6e 50%, #c8b478 220%);
+  }
+  .loyalty-band::after {
+    content: ""; position: absolute; right: -120px; top: -60px; width: 460px; height: 460px;
+    background: radial-gradient(circle at center, rgba(200,180,120,0.30), transparent 65%);
+    pointer-events: none;
+  }
+  .loyalty-band .container {
+    max-width: 1240px; margin: 0 auto; position: relative; z-index: 2;
+    display: grid; grid-template-columns: 1.5fr 1fr; gap: 2rem; align-items: center;
+  }
+  @media (max-width: 800px) { .loyalty-band .container { grid-template-columns: 1fr; } }
+  .loyalty-band .eyebrow {
+    color: var(--metal); font-size: .76rem; letter-spacing: .22em;
+    text-transform: uppercase; margin-bottom: .8rem; display: inline-block;
+    border-left: 2px solid var(--metal); padding-left: .8rem;
+  }
+  .loyalty-band h2 { font-family: Georgia, serif; font-size: clamp(1.8rem, 3.4vw, 2.6rem); font-weight: 500; margin: 0 0 .8rem; line-height: 1.15; max-width: 22ch; }
+  .loyalty-band p { color: rgba(255,255,255,0.88); font-size: 1.05rem; max-width: 50ch; margin: 0 0 1.4rem; line-height: 1.55; }
+  .loyalty-band .tier-mini {
+    display: flex; gap: .6rem; flex-wrap: wrap; justify-content: flex-end;
+  }
+  @media (max-width: 800px) { .loyalty-band .tier-mini { justify-content: flex-start; } }
+  .loyalty-band .tier-chip {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(200,180,120,0.4);
+    padding: .8rem 1.2rem; border-radius: var(--radius);
+    text-align: center; min-width: 88px;
+  }
+  .loyalty-band .tier-chip .tier-name { font-family: Georgia, serif; font-size: 1.05rem; color: var(--metal); }
+  .loyalty-band .tier-chip .tier-meta { font-size: .76rem; color: rgba(255,255,255,0.7); margin-top: .25rem; }
+
+  /* Newsroom */
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 1.4rem; }
+  @media (max-width: 900px) { .news-grid { grid-template-columns: 1fr; } }
+  .news-card { background: white; border: 1px solid var(--line-2); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-sm); transition: transform .15s, box-shadow .15s; }
+  .news-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .news-card .pic { height: 160px; background-size: cover; background-position: center; }
+  .news-card .body { padding: 1.1rem 1.2rem 1.3rem; }
+  .news-card .tag { color: var(--metal-2); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: .4rem; }
+  .news-card h3 { font-family: Georgia, serif; color: var(--navy); margin: 0 0 .4rem; font-size: 1.1rem; line-height: 1.25; }
+  .news-card p { color: var(--ink-2); margin: 0; font-size: .9rem; line-height: 1.5; }
+  .news-card .date { color: var(--muted); font-size: .8rem; margin-top: .6rem; }
+
+  /* Trust strip (small icon row above footer) */
+  .trust-strip {
+    background: var(--soft-bg);
+    padding: 2rem 2rem;
+    border-top: 1px solid var(--line-2);
+    border-bottom: 1px solid var(--line-2);
+  }
+  .trust-strip .container { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.2rem; text-align: center; }
+  @media (max-width: 700px) { .trust-strip .container { grid-template-columns: repeat(2, 1fr); } }
+  .trust-strip .item h4 { font-family: Georgia, serif; color: var(--navy); margin: 0 0 .25rem; font-size: 1rem; }
+  .trust-strip .item p { color: var(--muted); margin: 0; font-size: .85rem; }
+</style>
+</head>
+<body class="has-hero">
+
+<header class="nav on-hero" id="topnav">
+  <a class="brand" href="skyjet.html">SkyJet<span class="tag">Airways</span></a>
+  <nav class="nav-links">
+    <a href="skyjet.html" class="active">Home</a>
+    <a href="#book">Book</a>
+    <a href="#destinations">Destinations</a>
+    <a href="index.html">SkyLoyal</a>
+    <a href="#help">Help</a>
+    <a href="flyer-view.html" class="login">Sign in</a>
+  </nav>
+</header>
+
+<!-- Cinematic hero with aircraft wing imagery -->
+<section class="hero-cinema" aria-label="SkyJet hero">
+  <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=2000&q=80');"></div>
+  <div class="scrim"></div>
+  <div class="inner">
+    <span class="eyebrow">SkyJet Airways · Hubbed in Dublin</span>
+    <h1>Ireland to the world.<br>Direct.</h1>
+    <p class="sub">A modern fleet, a transparent fare promise, and an on-time record we are proud to publish. Fly Dublin to 78 destinations across Europe and the Atlantic.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#book">Book a flight</a>
+      <a class="btn btn-ghost" href="index.html">Join SkyLoyal</a>
+    </div>
+  </div>
+
+  <div class="lookup-card" id="book" role="region" aria-label="Plan your next trip">
+    <div class="tabs" role="tablist">
+      <button class="tab active" role="tab" aria-selected="true" data-tab="book">Book a flight</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="manage">Manage trip</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="checkin">Check in</button>
+    </div>
+
+    <div class="row" data-panel="book">
+      <div class="field">
+        <label>From</label>
+        <input type="text" placeholder="Dublin (DUB)" value="Dublin (DUB)">
+      </div>
+      <div class="field">
+        <label>To</label>
+        <select>
+          <option>Boston (BOS)</option>
+          <option>Lisbon (LIS)</option>
+          <option>Amsterdam (AMS)</option>
+          <option>Madrid (MAD)</option>
+          <option>London (LHR)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Depart</label>
+        <input type="date" value="2026-07-12">
+      </div>
+      <div class="field">
+        <label>Flyers</label>
+        <select>
+          <option>1 adult</option>
+          <option>2 adults</option>
+          <option>2 adults + 1 child</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>&nbsp;</label>
+        <a href="flight-results.html" class="btn btn-dark" style="text-align:center;">Search →</a>
+      </div>
+    </div>
+
+    <div class="row" data-panel="manage" hidden style="grid-template-columns: 1.4fr 1fr 0.9fr;">
+      <div class="field">
+        <label>Booking reference</label>
+        <input type="text" placeholder="ABC123" value="">
+      </div>
+      <div class="field">
+        <label>Last name</label>
+        <input type="text" placeholder="Doyle" value="">
+      </div>
+      <div class="field">
+        <label>&nbsp;</label>
+        <a href="flyer-view.html" class="btn btn-dark" style="text-align:center;">Find booking →</a>
+      </div>
+    </div>
+
+    <div class="row" data-panel="checkin" hidden style="grid-template-columns: 1.4fr 1fr 0.9fr;">
+      <div class="field">
+        <label>Booking reference</label>
+        <input type="text" placeholder="ABC123" value="">
+      </div>
+      <div class="field">
+        <label>Last name</label>
+        <input type="text" placeholder="Doyle" value="">
+      </div>
+      <div class="field">
+        <label>&nbsp;</label>
+        <a href="flyer-view.html" class="btn btn-dark" style="text-align:center;">Check in →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats strip -->
+<section class="padded-top">
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">Network at a glance</span>
+      <h2>Big enough to take you there. Small enough to know you.</h2>
+      <p>SkyJet has grown into Ireland's third-largest carrier without losing the discipline that made us. Direct flights, modern aircraft, transparent fares.</p>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="num">78</div>
+        <span class="label">Destinations across Europe and the Atlantic</span>
+      </div>
+      <div class="stat">
+        <div class="num">42</div>
+        <span class="label">Aircraft in service. A330s, 787s, A320neos</span>
+      </div>
+      <div class="stat">
+        <div class="num">88%</div>
+        <span class="label">On-time performance, last 12 months</span>
+      </div>
+      <div class="stat">
+        <div class="num">9.4M</div>
+        <span class="label">SkyLoyal members worldwide</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Featured destinations -->
+<section id="destinations" class="alt">
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">Where we fly</span>
+      <h2>Five hubs. One network.</h2>
+      <p>From our home in Dublin across Europe and onwards to Boston. Direct flights every day, every season, on the most modern fleet of any Irish carrier.</p>
+    </div>
+
+    <div class="destinations">
+      <a class="dest" href="flight-results.html?to=DUB" aria-label="Dublin, home hub">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1465778893808-9b3d1b443be4?auto=format&fit=crop&w=1400&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label">
+          <span class="city">Dublin</span>
+          <span class="meta">DUB · Home hub · 84 weekly departures</span>
+        </div>
+      </a>
+      <a class="dest" href="flight-results.html?to=AMS" aria-label="Amsterdam">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label"><span class="city">Amsterdam</span><span class="meta">AMS · 4 daily departures</span></div>
+      </a>
+      <a class="dest" href="flight-results.html?to=MAD" aria-label="Madrid">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label"><span class="city">Madrid</span><span class="meta">MAD · 3 daily departures</span></div>
+      </a>
+      <a class="dest" href="flight-results.html?to=BOS" aria-label="Boston">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label"><span class="city">Boston</span><span class="meta">BOS · 7h 25m · Direct daily</span></div>
+      </a>
+      <a class="dest" href="flight-results.html?to=LIS" aria-label="Lisbon">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label"><span class="city">Lisbon</span><span class="meta">LIS · 3h 10m · Direct daily</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Why SkyJet -->
+<section>
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">Why fly with us</span>
+      <h2>Three things we promise on every flight.</h2>
+      <p>The way Ireland's first generation of network airlines did it. With discipline, with care, and with the modern aircraft that make both possible.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="icon" aria-hidden="true">✈</div>
+        <h3>Direct, when it matters</h3>
+        <p>Every long-haul we operate is direct. No second-airport changes in winter. No surprise layovers built into the lowest fare to make it cheaper on paper.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon" aria-hidden="true">⚖</div>
+        <h3>Transparent fares</h3>
+        <p>The price you see on the search page is the price you pay at booking. Bag fees, seat fees, and tax are shown up front, not at the last screen.</p>
+      </div>
+      <div class="why-card">
+        <div class="icon" aria-hidden="true">🌱</div>
+        <h3>Sustainable fuel, real numbers</h3>
+        <p>We publish the percentage of Sustainable Aviation Fuel on every flight, every quarter. Currently 11%. We are working to 30% by 2030.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SkyLoyal programme callout -->
+<section class="loyalty-band">
+  <div class="container">
+    <div>
+      <span class="eyebrow">Our loyalty programme</span>
+      <h2>Every mile, every milestone, recognised.</h2>
+      <p>SkyLoyal is the loyalty programme designed around the way you actually fly. Earn miles on every SkyJet flight and on 28 partner airlines. Redeem from 11,000 miles return.</p>
+      <a class="btn btn-primary" href="index.html">Visit SkyLoyal →</a>
+    </div>
+    <div class="tier-mini">
+      <div class="tier-chip">
+        <div class="tier-name">Blue</div>
+        <div class="tier-meta">Earn 1x</div>
+      </div>
+      <div class="tier-chip">
+        <div class="tier-name">Silver</div>
+        <div class="tier-meta">Earn 2x · Lounge</div>
+      </div>
+      <div class="tier-chip">
+        <div class="tier-name">Gold</div>
+        <div class="tier-meta">Earn 5x · Priority</div>
+      </div>
+      <div class="tier-chip">
+        <div class="tier-name">Platinum</div>
+        <div class="tier-meta">Earn 5x · Concierge</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsroom -->
+<section>
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">Newsroom</span>
+      <h2>Latest from SkyJet.</h2>
+      <p>Network announcements, sustainability updates, and what we are working on.</p>
+    </div>
+    <div class="news-grid">
+      <a class="news-card" href="#">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <div class="tag">Network</div>
+          <h3>Boston frequencies up to 12 weekly from autumn 2026</h3>
+          <p>The Dublin-Boston route adds five more weekly departures from October, served by our newest 787-9.</p>
+          <div class="date">22 April 2026</div>
+        </div>
+      </a>
+      <a class="news-card" href="#">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <div class="tag">Sustainability</div>
+          <h3>SAF blend at 11% across long-haul, Q1 2026</h3>
+          <p>SkyJet's quarterly Sustainable Aviation Fuel report is now public. 412 tonnes of conventional fuel displaced.</p>
+          <div class="date">14 April 2026</div>
+        </div>
+      </a>
+      <a class="news-card" href="index.html">
+        <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1465778893808-9b3d1b443be4?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="body">
+          <div class="tag">Loyalty</div>
+          <h3>SkyLoyal Loyalty Rescue enters pilot from Q3</h3>
+          <p>The new proactive retention programme begins its closed pilot with 4,200 Gold flyers across the Dublin hub.</p>
+          <div class="date">29 April 2026</div>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Trust strip -->
+<div class="trust-strip">
+  <div class="container">
+    <div class="item">
+      <h4>Direct booking, lowest fare</h4>
+      <p>Always cheapest at SkyJet.com</p>
+    </div>
+    <div class="item">
+      <h4>24-hour cancellation</h4>
+      <p>Free, on every fare</p>
+    </div>
+    <div class="item">
+      <h4>EU 261 protected</h4>
+      <p>Compensation for delays over 3h</p>
+    </div>
+    <div class="item">
+      <h4>Customer Care Charter</h4>
+      <p>Published, audited annually</p>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="foot" id="help">
+  <div class="container">
+    <div class="brand-block">
+      <div class="logo">SkyJet Airways</div>
+      <p class="blurb">Ireland's network airline, hubbed in Dublin. 78 destinations, one promise: direct, transparent, on time.</p>
+    </div>
+    <div>
+      <h4>Travel</h4>
+      <ul>
+        <li><a href="#book">Book a flight</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#">Manage trip</a></li>
+        <li><a href="#">Check in</a></li>
+        <li><a href="#">Flight status</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>SkyLoyal</h4>
+      <ul>
+        <li><a href="index.html">Programme overview</a></li>
+        <li><a href="flyer-view.html">My SkyLoyal</a></li>
+        <li><a href="award-results.html">Use miles</a></li>
+        <li><a href="index.html#tiers">Tiers and benefits</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Help</h4>
+      <ul>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Travel waivers</a></li>
+        <li><a href="#">Refunds</a></li>
+        <li><a href="#">Accessibility</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>About SkyJet</h4>
+      <ul>
+        <li><a href="#">Our airline</a></li>
+        <li><a href="#">Sustainability</a></li>
+        <li><a href="#">Newsroom</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Investor relations</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div>© 2026 SkyJet Airways. All rights reserved.</div>
+    <div class="legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a></div>
+  </div>
+</footer>
+
+<script>
+  // Sticky-nav transparency on hero
+  (function () {
+    var nav = document.getElementById('topnav');
+    var hero = document.querySelector('.hero-cinema');
+    if (!nav || !hero) return;
+    function update() {
+      var threshold = hero.offsetHeight - 80;
+      if (window.scrollY > threshold) nav.classList.remove('on-hero');
+      else nav.classList.add('on-hero');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
+  // Lookup card tab switching (Book / Manage / Check-in)
+  (function () {
+    var card = document.querySelector('.lookup-card');
+    if (!card) return;
+    var tabs = card.querySelectorAll('.tab');
+    var panels = card.querySelectorAll('[data-panel]');
+    function activate(name) {
+      tabs.forEach(function (t) {
+        var active = t.dataset.tab === name;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      panels.forEach(function (p) {
+        p.style.display = (p.dataset.panel === name) ? 'grid' : 'none';
+        p.hidden = (p.dataset.panel !== name);
+      });
+    }
+    activate('book');
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function (e) { e.preventDefault(); activate(t.dataset.tab); });
+    });
+  })();
+</script>
+
+</body>
+</html>
