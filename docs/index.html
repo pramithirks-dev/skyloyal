@@ -3,105 +3,360 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SkyLoyal: Loyalty Rescue, a 5-agent agentic organisation</title>
-<meta name="description" content="A working multi-agent organisation that predicts, diagnoses, and intervenes on frequent-flyer loyalty churn for SkyLoyal Airways. H9CEAI Final Project, NCI MSCAIBUS1.">
+<title>SkyLoyal Airways: A loyalty programme that notices before you leave</title>
+<meta name="description" content="SkyLoyal Loyalty Rescue. A working multi-agent organisation that predicts, diagnoses, and intervenes on frequent-flyer loyalty churn for SkyLoyal Airways. H9CEAI Final Project, NCI MSCAIBUS1.">
 <link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<header class="top">
-  <div class="brand">SkyLoyal<span class="tag">Loyalty Rescue</span></div>
-  <nav>
-    <a href="index.html">Overview</a>
+
+<header class="nav on-hero" id="topnav">
+  <div class="brand">SkyLoyal<span class="tag">Airways</span></div>
+  <nav class="nav-links">
+    <a href="index.html" class="active">Loyalty</a>
     <a href="dashboard.html">CSM Dashboard</a>
-    <a href="flyer-view.html">Flyer View</a>
+    <a href="flyer-view.html">My SkyLoyal</a>
     <a href="https://github.com/pramithirks-dev/skyloyal" target="_blank" rel="noopener">Repo</a>
+    <a href="flyer-view.html" class="login">Sign in</a>
   </nav>
 </header>
 
-<section class="hero">
-  <div class="eyebrow">National College of Ireland · MSCAIBUS1 · H9CEAI</div>
-  <h1>SkyLoyal: Loyalty Rescue</h1>
-  <p>A working five-agent organisation that predicts which frequent flyers are about to lapse, designs an Octalysis-driven intervention journey, builds the dashboard, writes the marketing pack, and reports it commercially. Researcher to Designer to Maker to Communicator to Manager. Unbroken pipeline.</p>
-  <div class="cta">
-    <a class="btn btn-primary" href="dashboard.html">Open the CSM dashboard</a>
-    <a class="btn btn-ghost" href="flyer-view.html">See the flyer view</a>
+<!-- Cinematic hero with Dublin imagery -->
+<section class="hero-cinema" aria-label="SkyLoyal hero">
+  <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1465778893808-9b3d1b443be4?auto=format&fit=crop&w=2000&q=80');"></div>
+  <div class="scrim"></div>
+  <div class="inner">
+    <span class="eyebrow">Loyalty Rescue · Pilot Q3 2026</span>
+    <h1>A loyalty programme that notices<br>before you leave.</h1>
+    <p class="sub">SkyLoyal Airways is piloting an agentic AI organisation that listens to four loyalty signals and reaches out the way a good travel agent would, with respect, transparency, and a real offer.</p>
+    <div class="cta">
+      <a class="btn btn-primary" href="dashboard.html">Open the CSM dashboard</a>
+      <a class="btn btn-ghost" href="flyer-view.html">See the flyer view</a>
+    </div>
+  </div>
+
+  <!-- aa.com-style booking module, repurposed as a loyalty lookup card -->
+  <div class="lookup-card" role="region" aria-label="Find your flyer profile">
+    <div class="tabs">
+      <div class="tab active">Find a flyer</div>
+      <div class="tab">Tier lookup</div>
+      <div class="tab">Redemption finder</div>
+    </div>
+    <div class="row">
+      <div class="field">
+        <label>Member ID or name</label>
+        <input type="text" placeholder="SKY000234 or Nuala D." value="SKY000234">
+      </div>
+      <div class="field">
+        <label>Home hub</label>
+        <select>
+          <option>Dublin (DUB)</option>
+          <option>Amsterdam (AMS)</option>
+          <option>Madrid (MAD)</option>
+          <option>London (LHR)</option>
+          <option>Lisbon (LIS)</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Tier</label>
+        <select>
+          <option>Any</option>
+          <option>Gold</option>
+          <option>Silver</option>
+          <option>Platinum</option>
+          <option>Blue</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Risk band</label>
+        <select>
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>&nbsp;</label>
+        <a href="dashboard.html" class="btn btn-dark" style="text-align:center;">Search →</a>
+      </div>
+    </div>
   </div>
 </section>
 
-<main>
-
-<section>
-  <h2>The pipeline</h2>
-  <p>Five agents collaborate by handing off typed markdown artefacts. Each agent's output is the next agent's sole input. The Manager runs quality gates between every handoff and maintains a cycle log. This site is the third artefact; the others live in the repository.</p>
-  <div class="pipeline">
-    <div class="node"><strong>Researcher</strong><div class="role">Dr. Aiko Tanaka</div><div>Identifies the opportunity. Produces <code>01-research-brief.md</code>.</div></div>
-    <div class="arrow">→</div>
-    <div class="node"><strong>Designer</strong><div class="role">Leo Marín</div><div>Designs the journey. Produces <code>02-design-spec.md</code>.</div></div>
-    <div class="arrow">→</div>
-    <div class="node"><strong>Maker</strong><div class="role">Priya Shah</div><div>Builds the prototype. Produces this <code>docs/</code> site.</div></div>
-    <div class="arrow">→</div>
-    <div class="node"><strong>Communicator</strong><div class="role">Dara Okafor</div><div>Writes the GTM pack. Produces <code>04-gtm-pack.md</code>.</div></div>
-    <div class="arrow">→</div>
-    <div class="node"><strong>Manager</strong><div class="role">Claire Dubois</div><div>Synthesises. Produces <code>05-executive-summary.md</code>.</div></div>
-  </div>
-</section>
-
-<section>
-  <h2>The four flyer archetypes</h2>
-  <p>From the Researcher's segment analysis, refined by the Designer through Manager Cycle 2 critique. The dashboard rotates around them.</p>
-  <div class="cards">
-    <div class="card">
-      <h3>Nuala</h3>
-      <div class="sub">Status-Slipper</div>
-      <p>Gold-tier Dubliner, 6 of 9 segments to retain Gold by year-end. Lever: tier-downgrade exposure.</p>
+<!-- Stats strip -->
+<section class="padded-top">
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">SkyLoyal at a glance</span>
+      <h2>The numbers behind the pilot.</h2>
+      <p>Every figure here comes from the synthetic dataset analysed by Dr. Aiko Tanaka, our Researcher agent. The pilot targets the 105 high-risk members in this dataset across four operationally distinct segments.</p>
     </div>
-    <div class="card">
-      <h3>Marcus</h3>
-      <div class="sub">Miles-Hoarder</div>
-      <p>Retired engineer in Amsterdam, 138,000 dormant miles, 12,400 expiring in 88 days. Lever: dormant-value redemption.</p>
-    </div>
-    <div class="card">
-      <h3>Theo</h3>
-      <div class="sub">Alliance-Drifter</div>
-      <p>Madrid-based consultant, 14 SkyLoyal segments and 11 partner segments in 12 months. Lever: share-of-wallet.</p>
-    </div>
-    <div class="card">
-      <h3>Rashida</h3>
-      <div class="sub">Complaint-Scarred</div>
-      <p>Edinburgh academic, 4-day baggage delay, NPS -50, hesitant return. Lever: acknowledgement-first reset.</p>
+    <div class="stats">
+      <div class="stat">
+        <div class="num">500</div>
+        <span class="label">Members analysed in the pilot dataset</span>
+      </div>
+      <div class="stat">
+        <div class="num">41.2%<span class="delta down">silent quiet</span></div>
+        <span class="label">Members who flew last year and zero in last 3 months</span>
+      </div>
+      <div class="stat">
+        <div class="num">831k</div>
+        <span class="label">Miles expiring in the next 90 days</span>
+      </div>
+      <div class="stat">
+        <div class="num">7 / 8</div>
+        <span class="label">Octalysis Core Drives represented (CD6 deliberately omitted)</span>
+      </div>
     </div>
   </div>
 </section>
 
-<section>
-  <h2>Octalysis at a glance</h2>
-  <p>The flyer-facing view explicitly tags every gamification element with its Octalysis Core Drive. The flyer view exposes seven of the eight drives (CD6 Scarcity is deliberately omitted from the pilot, no fake countdowns). Every CD-bearing element carries a <code>data-cd="CD&lt;n&gt;"</code> attribute for audit.</p>
-  <ul>
-    <li><strong>CD1</strong> Epic Meaning: Sustainable Aviation Fuel attribution.</li>
-    <li><strong>CD2</strong> Development: tier-progress ring, retention progress.</li>
-    <li><strong>CD3</strong> Empowerment: trip-mode picker, choice gestures.</li>
-    <li><strong>CD4</strong> Ownership: miles balance, year-in-review.</li>
-    <li><strong>CD5</strong> Social Influence: peer cohort recognition, alliance pool.</li>
-    <li><strong>CD7</strong> Unpredictability: real surprise upgrades, never fake.</li>
-    <li><strong>CD8</strong> Loss Avoidance: framed as opportunity, not threat.</li>
-  </ul>
+<!-- The pipeline -->
+<section class="alt">
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">How it works</span>
+      <h2>Five agents, one unbroken pipeline.</h2>
+      <p>Each agent produces a markdown artefact that is the next agent's sole input. The Manager runs quality gates between every handoff and maintains a cycle log. This site is the third artefact; the others live in the repository.</p>
+    </div>
+    <div class="pipeline">
+      <div class="node">
+        <span class="step">1</span>
+        <strong>Researcher</strong>
+        <div class="role">Dr. Aiko Tanaka</div>
+        <p>Analyses the data. Produces <code>01-research-brief.md</code>: four at-risk segments, five testable hypotheses.</p>
+      </div>
+      <div class="node">
+        <span class="step">2</span>
+        <strong>Designer</strong>
+        <div class="role">Leo Marín</div>
+        <p>Designs the journey. Produces <code>02-design-spec.md</code>: four flyer archetypes, Octalysis-anchored.</p>
+      </div>
+      <div class="node">
+        <span class="step">3</span>
+        <strong>Maker</strong>
+        <div class="role">Priya Shah</div>
+        <p>Builds the prototype. Produces this <code>docs/</code> site, no framework, no build step.</p>
+      </div>
+      <div class="node">
+        <span class="step">4</span>
+        <strong>Communicator</strong>
+        <div class="role">Dara Okafor</div>
+        <p>Writes the GTM pack. Produces <code>04-gtm-pack.md</code>: positioning, three emails, press release.</p>
+      </div>
+      <div class="node">
+        <span class="step">5</span>
+        <strong>Manager</strong>
+        <div class="role">Claire Dubois</div>
+        <p>Synthesises. Produces <code>05-executive-summary.md</code>: KPIs, ethics, rollout, rubric self-assessment.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
+<!-- Where SkyLoyal flies (destinations grid) -->
 <section>
-  <h2>How to read this submission</h2>
-  <ol>
-    <li>Browse the <a href="dashboard.html">CSM dashboard</a> to see the at-risk flyer list, click any flyer to see risk reasons and suggested interventions.</li>
-    <li>Open the <a href="flyer-view.html">flyer view</a> to see Nuala's gamified retention page with Octalysis CDs labelled.</li>
-    <li>Read the agent artefacts in the <a href="https://github.com/pramithirks-dev/skyloyal/tree/main/outputs" target="_blank" rel="noopener">outputs/</a> folder of the repo: research brief, design spec, GTM pack, executive summary.</li>
-    <li>Read the <a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/manager-log.md" target="_blank" rel="noopener">Manager log</a> to see the cycle history and the substantive return on the Designer's first pass.</li>
-  </ol>
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">Where we fly</span>
+      <h2>Five hubs, one programme.</h2>
+      <p>The pilot starts in Dublin, our home hub, and scales to Amsterdam and Madrid in Phase 2. These are the cities the four flyer archetypes call home.</p>
+    </div>
+
+    <div class="destinations">
+      <a class="dest" href="flyer-view.html" aria-label="Dublin, home hub">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1465778893808-9b3d1b443be4?auto=format&fit=crop&w=1400&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label">
+          <span class="city">Dublin</span>
+          <span class="meta">DUB · Home hub · Nuala &amp; Rashida fly here</span>
+        </div>
+      </a>
+      <a class="dest" href="dashboard.html" aria-label="Amsterdam">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label"><span class="city">Amsterdam</span><span class="meta">AMS · Marcus's home hub</span></div>
+      </a>
+      <a class="dest" href="dashboard.html" aria-label="Madrid">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label"><span class="city">Madrid</span><span class="meta">MAD · Theo's home hub</span></div>
+      </a>
+      <a class="dest" href="dashboard.html" aria-label="Boston">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label"><span class="city">Boston</span><span class="meta">BOS · Nuala's North-American route</span></div>
+      </a>
+      <a class="dest" href="dashboard.html" aria-label="Lisbon">
+        <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80');"></div>
+        <div class="scrim"></div>
+        <div class="label"><span class="city">Lisbon</span><span class="meta">LIS · Marcus's redemption pick</span></div>
+      </a>
+    </div>
+  </div>
 </section>
 
-</main>
+<!-- Story split: aviation discipline -->
+<section class="alt">
+  <div class="container">
+    <div class="story-split">
+      <div class="image" style="background-image: url('https://images.unsplash.com/photo-1436491865332-7a61a109cc05?auto=format&fit=crop&w=1400&q=80');"></div>
+      <div class="text">
+        <span class="eyebrow" style="color:var(--metal-2); font-size:.76rem; letter-spacing:.22em; text-transform:uppercase;">Built for trust</span>
+        <h3>Loyalty done the way it should be.</h3>
+        <p>Our previous model assumed loyalty looked like cancellations. It does not. Loyalty looks like a flyer quietly choosing another carrier for the next trip.</p>
+        <p>We do not chase. We notice. Every contact opens with the reason it was sent. Every "surprise" is a real benefit, already loaded to the account. Every risk score is reviewed by a Customer Success Manager before a flyer ever hears from us.</p>
+        <p style="margin-top:1.2rem;"><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/05-executive-summary.md" target="_blank" rel="noopener" class="btn btn-dark">Read the executive summary</a></p>
+      </div>
+    </div>
+  </div>
+</section>
 
+<!-- Four archetypes -->
+<section>
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">Four archetypes</span>
+      <h2>The flyers we built this for.</h2>
+      <p>From the Researcher's segment analysis, refined by the Designer through Manager Cycle 2 critique. The dashboard rotates around them. The flyer view is built for Nuala.</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="arch-img"></div>
+        <h3>Nuala</h3>
+        <div class="sub">Status-Slipper</div>
+        <p>Gold-tier Dubliner, 6 of 9 segments toward year-end retention. Lever: tier-downgrade exposure. Octalysis CD2, CD8.</p>
+      </div>
+      <div class="card">
+        <div class="arch-img"></div>
+        <h3>Marcus</h3>
+        <div class="sub">Miles-Hoarder</div>
+        <p>Retired engineer in Amsterdam. 138,000 dormant miles, 12,400 expiring in 88 days. Lever: dormant-value redemption. CD4.</p>
+      </div>
+      <div class="card">
+        <div class="arch-img"></div>
+        <h3>Theo</h3>
+        <div class="sub">Alliance-Drifter</div>
+        <p>Madrid consultant. 14 SkyLoyal segments and 11 partner segments. Lever: share-of-wallet. CD1, CD5.</p>
+      </div>
+      <div class="card">
+        <div class="arch-img"></div>
+        <h3>Rashida</h3>
+        <div class="sub">Complaint-Scarred</div>
+        <p>Edinburgh academic, 4-day baggage delay, NPS -50. Lever: acknowledgement-first reset. CD3.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Octalysis at a glance -->
+<section class="alt">
+  <div class="container">
+    <div class="header-block">
+      <span class="eyebrow">Octalysis Framework</span>
+      <h2>Seven of eight Core Drives, one deliberately absent.</h2>
+      <p>The flyer-facing view explicitly tags every gamification element with its Octalysis Core Drive via a <code>data-cd</code> attribute. CD6 Scarcity (countdown timers, fake seat counts) is deliberately omitted from the pilot.</p>
+    </div>
+    <div class="cd-grid">
+      <div class="cd-chip"><span class="cd-num">CD1</span><span class="cd-name">Epic Meaning</span><span class="cd-use">Sustainable Aviation Fuel attribution</span></div>
+      <div class="cd-chip"><span class="cd-num">CD2</span><span class="cd-name">Development</span><span class="cd-use">Tier ring, retention progress</span></div>
+      <div class="cd-chip"><span class="cd-num">CD3</span><span class="cd-name">Empowerment</span><span class="cd-use">Trip-mode picker, choice gestures</span></div>
+      <div class="cd-chip"><span class="cd-num">CD4</span><span class="cd-name">Ownership</span><span class="cd-use">Miles balance, year-in-review</span></div>
+      <div class="cd-chip"><span class="cd-num">CD5</span><span class="cd-name">Social</span><span class="cd-use">Peer recognition, alliance pool</span></div>
+      <div class="cd-chip disabled"><span class="cd-num">CD6</span><span class="cd-name">Scarcity</span><span class="cd-use">Omitted from pilot, by design</span></div>
+      <div class="cd-chip"><span class="cd-num">CD7</span><span class="cd-name">Unpredictability</span><span class="cd-use">Real surprises, never fake</span></div>
+      <div class="cd-chip"><span class="cd-num">CD8</span><span class="cd-name">Loss Avoidance</span><span class="cd-use">Always white-hat-framed as opportunity</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA strip with sky background -->
+<section class="cta-strip">
+  <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1540339832862-474599807836?auto=format&fit=crop&w=2000&q=80');"></div>
+  <div class="scrim"></div>
+  <div class="container">
+    <h2>Read the four artefacts. Watch the agents talk.</h2>
+    <p>The agentic chain is unbroken. Every artefact references the prior one by filename. The Manager log captures all six cycles, including the substantive return on the Designer's first pass.</p>
+    <div style="display:flex; gap:.8rem; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="https://github.com/pramithirks-dev/skyloyal/tree/main/outputs" target="_blank" rel="noopener">Browse the artefacts</a>
+      <a class="btn btn-ghost" href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/manager-log.md" target="_blank" rel="noopener">Read the Manager log</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer class="foot">
-  Pramithi Raroth Karimpanakkal · National College of Ireland · MSCAIBUS1 · H9CEAI Customer Engagement and AI · 2026
+  <div class="container">
+    <div class="brand-block">
+      <div class="logo">SkyLoyal</div>
+      <p class="blurb">A 5-agent agentic organisation built for the H9CEAI Customer Engagement &amp; AI module at the National College of Ireland.</p>
+    </div>
+    <div>
+      <h4>The Programme</h4>
+      <ul>
+        <li><a href="flyer-view.html">My SkyLoyal</a></li>
+        <li><a href="#">Earn miles</a></li>
+        <li><a href="#">Use miles</a></li>
+        <li><a href="#">Tiers and benefits</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For CSM Teams</h4>
+      <ul>
+        <li><a href="dashboard.html">CSM Dashboard</a></li>
+        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/02-design-spec.md" target="_blank" rel="noopener">Design spec</a></li>
+        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/04-gtm-pack.md" target="_blank" rel="noopener">GTM pack</a></li>
+        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/manager-log.md" target="_blank" rel="noopener">Manager log</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Trust &amp; Ethics</h4>
+      <ul>
+        <li><a href="#">Privacy notice</a></li>
+        <li><a href="#">GDPR Article 15 access</a></li>
+        <li><a href="#">EU AI Act disclosure</a></li>
+        <li><a href="#">White-Hat audit</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Project</h4>
+      <ul>
+        <li><a href="https://github.com/pramithirks-dev/skyloyal" target="_blank" rel="noopener">GitHub</a></li>
+        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/BRD.md" target="_blank" rel="noopener">Business Requirements</a></li>
+        <li><a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/05-executive-summary.md" target="_blank" rel="noopener">Executive summary</a></li>
+        <li><a href="https://www.ncirl.ie/" target="_blank" rel="noopener">NCI</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div>© 2026 SkyLoyal Airways (fictional). Synthetic data only. Pramithi Raroth Karimpanakkal · NCI MSCAIBUS1.</div>
+    <div class="legal">
+      <a href="#">Terms</a>
+      <a href="#">Privacy</a>
+      <a href="#">Cookies</a>
+    </div>
+  </div>
 </footer>
+
+<script>
+  // Toggle nav appearance once user scrolls past the cinematic hero
+  (function () {
+    var nav = document.getElementById('topnav');
+    var hero = document.querySelector('.hero-cinema');
+    if (!nav || !hero) return;
+    function update() {
+      var threshold = hero.offsetHeight - 80;
+      if (window.scrollY > threshold) {
+        nav.classList.remove('on-hero');
+      } else {
+        nav.classList.add('on-hero');
+      }
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+</script>
 
 </body>
 </html>

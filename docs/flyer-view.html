@@ -3,24 +3,34 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SkyLoyal: My Loyalty</title>
+<title>My SkyLoyal: Nuala D.</title>
 <link rel="stylesheet" href="assets/style.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<header class="top">
-  <div class="brand">SkyLoyal<span class="tag">My Loyalty</span></div>
-  <nav>
-    <a href="index.html">Overview</a>
+
+<header class="nav" id="topnav">
+  <div class="brand">SkyLoyal<span class="tag">Airways</span></div>
+  <nav class="nav-links">
+    <a href="index.html">Loyalty</a>
     <a href="dashboard.html">CSM Dashboard</a>
-    <a href="flyer-view.html">Flyer View</a>
+    <a href="flyer-view.html" class="active">My SkyLoyal</a>
+    <a href="https://github.com/pramithirks-dev/skyloyal" target="_blank" rel="noopener">Repo</a>
+    <a href="flyer-view.html" class="login">Sign in</a>
   </nav>
 </header>
 
-<main class="flyer-page">
+<main class="flyer-page" style="padding: 2rem 1.5rem 4rem;">
 
-<section>
-  <h2 class="greeting">Hello, <span class="name">Nuala</span>.</h2>
-  <p style="color: var(--muted);">Here is your loyalty year so far. Every element on this page is something we earned, not something we are taking.</p>
+  <!-- Personal hero strip with Boston route imagery -->
+  <div class="flyer-hero">
+    <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1581373449483-37449f962b6c?auto=format&fit=crop&w=1600&q=80');"></div>
+    <div class="scrim"></div>
+    <div class="inner">
+      <h1 class="greeting">Hello, <span class="name">Nuala</span>.</h1>
+      <p class="sub">Here is your loyalty year so far. Every element on this page is something we earned, not something we are taking.</p>
+    </div>
+  </div>
 
   <article class="tier-card" data-cd="CD2" data-cd-name="Development &amp; Accomplishment" aria-label="Tier progress">
     <div class="tier-badge serif">GOLD</div>
@@ -55,9 +65,9 @@
     </div>
   </div>
 
-  <article class="tile" data-cd="CD1" data-cd-name="Epic Meaning &amp; Calling" style="margin: 1rem 0; background: linear-gradient(95deg, #f0f3fa 0%, #e1e8f5 100%); border-color: #c4cfe5;" aria-label="Sustainable aviation contribution">
+  <article class="tile tile-epic" data-cd="CD1" data-cd-name="Epic Meaning &amp; Calling" aria-label="Sustainable aviation contribution">
     <div class="head">Why your flying matters</div>
-    <p style="margin: .4rem 0; font-size: 1rem;">Your Gold-tier flying contributed <strong>1.2 tonnes</strong> of Sustainable Aviation Fuel this quarter. Your seat funded this. Across the fleet, our Gold cohort displaced 412 tonnes of conventional fuel.</p>
+    <p>Your Gold-tier flying contributed <strong>1.2 tonnes</strong> of Sustainable Aviation Fuel this quarter. Your seat funded this. Across the fleet, our Gold cohort displaced 412 tonnes of conventional fuel.</p>
     <span class="cd-label">CD1: Epic Meaning</span>
   </article>
 
@@ -66,20 +76,20 @@
     <div class="body">
       <h4>This month's gift</h4>
       <p>A complimentary lounge pass for your next Dublin departure. No expiry. No conditions. Already in your wallet.</p>
-      <span class="cd-label" style="background: rgba(184,120,16,.15); color: #6a4500;">CD7: Unpredictability</span>
+      <span class="cd-label" style="background: rgba(184,120,16,.18); color: #6a4500;">CD7: Unpredictability</span>
     </div>
   </article>
 
   <article class="style-picker" data-cd="CD3" data-cd-name="Empowerment of Creativity &amp; Feedback" aria-label="Trip mode picker">
     <h4>Pick your trip mode</h4>
-    <p style="color: var(--muted); font-size: .9rem; margin: 0 0 .6rem;">We will tailor route suggestions and seat hold defaults to the mode you choose. Change any time.</p>
+    <p style="color: var(--muted); font-size: .9rem; margin: 0 0 .8rem;">We will tailor route suggestions and seat hold defaults to the mode you choose. Change any time.</p>
     <div class="options">
       <label class="checked"><input type="radio" name="mode" value="business-quick" checked> Business-quick</label>
       <label><input type="radio" name="mode" value="family-slow"> Family-slow</label>
       <label><input type="radio" name="mode" value="off-piste"> Off-piste</label>
       <label><input type="radio" name="mode" value="custom"> Custom</label>
     </div>
-    <span class="cd-label" style="background: rgba(15,31,61,.06); color: var(--navy-2);">CD3: Empowerment &amp; Feedback</span>
+    <span class="cd-label" style="background: rgba(15,31,61,.06); color: var(--navy-2); margin-top:.6rem;">CD3: Empowerment &amp; Feedback</span>
   </article>
 
   <div class="transparency">
@@ -87,12 +97,52 @@
     You can <a href="#">adjust your contact frequency</a>, see how we calculated your tier ring (<a href="#">Article 15 explanation</a>), or <a href="#">opt out of profiling</a> at any time.
     Risk-scoring of your account is reviewed by a human Customer Success Manager before any contact is sent (Article 22).
   </div>
-</section>
 
 </main>
 
 <footer class="foot">
-  Synthetic data only. Pramithi Raroth Karimpanakkal · NCI MSCAIBUS1 · 2026
+  <div class="container">
+    <div class="brand-block">
+      <div class="logo">SkyLoyal</div>
+      <p class="blurb">A 5-agent agentic organisation built for the H9CEAI module at the National College of Ireland.</p>
+    </div>
+    <div>
+      <h4>The Programme</h4>
+      <ul>
+        <li><a href="flyer-view.html">My SkyLoyal</a></li>
+        <li><a href="#">Earn miles</a></li>
+        <li><a href="#">Use miles</a></li>
+        <li><a href="#">Tiers</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>For CSM Teams</h4>
+      <ul>
+        <li><a href="dashboard.html">CSM Dashboard</a></li>
+        <li><a href="https://github.com/pramithirks-dev/skyloyal" target="_blank" rel="noopener">Repo</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Trust &amp; Ethics</h4>
+      <ul>
+        <li><a href="#">Privacy notice</a></li>
+        <li><a href="#">EU AI Act disclosure</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Project</h4>
+      <ul>
+        <li><a href="index.html">Overview</a></li>
+        <li><a href="https://www.ncirl.ie/" target="_blank" rel="noopener">NCI</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="bottom">
+    <div>© 2026 SkyLoyal Airways (fictional). Synthetic data only. Pramithi Raroth Karimpanakkal · NCI MSCAIBUS1.</div>
+    <div class="legal">
+      <a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a>
+    </div>
+  </div>
 </footer>
 
 <script src="assets/app.js"></script>
