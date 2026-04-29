@@ -37,12 +37,14 @@
 
   <!-- Booking-style lookup card -->
   <div class="lookup-card" role="region" aria-label="Plan your next trip">
-    <div class="tabs">
-      <div class="tab active">Book a flight</div>
-      <div class="tab">Use miles</div>
-      <div class="tab">My status</div>
+    <div class="tabs" role="tablist">
+      <button class="tab active" role="tab" aria-selected="true" data-tab="book">Book a flight</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="miles">Use miles</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="status">My status</button>
     </div>
-    <div class="row">
+
+    <!-- Book a flight panel -->
+    <div class="row" data-panel="book">
       <div class="field">
         <label>From</label>
         <input type="text" placeholder="Dublin (DUB)" value="Dublin (DUB)">
@@ -72,6 +74,55 @@
       <div class="field">
         <label>&nbsp;</label>
         <a href="flyer-view.html" class="btn btn-dark" style="text-align:center;">Search →</a>
+      </div>
+    </div>
+
+    <!-- Use miles panel -->
+    <div class="row" data-panel="miles" hidden>
+      <div class="field">
+        <label>From</label>
+        <input type="text" placeholder="Dublin (DUB)" value="Dublin (DUB)">
+      </div>
+      <div class="field">
+        <label>To</label>
+        <select>
+          <option>Lisbon (LIS) · 11,000 miles</option>
+          <option>Amsterdam (AMS) · 12,000 miles</option>
+          <option>Madrid (MAD) · 14,000 miles</option>
+          <option>Boston (BOS) · 32,000 miles</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Cabin</label>
+        <select>
+          <option>Economy</option>
+          <option>Premium economy</option>
+          <option>Business</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Miles available</label>
+        <input type="text" value="92,400" readonly>
+      </div>
+      <div class="field">
+        <label>&nbsp;</label>
+        <a href="flyer-view.html" class="btn btn-dark" style="text-align:center;">Find awards →</a>
+      </div>
+    </div>
+
+    <!-- My status panel -->
+    <div class="row" data-panel="status" hidden style="grid-template-columns: 1.4fr 1fr 0.9fr;">
+      <div class="field">
+        <label>Member ID</label>
+        <input type="text" placeholder="SKY000234" value="SKY000234">
+      </div>
+      <div class="field">
+        <label>Last name</label>
+        <input type="text" placeholder="Doyle" value="Doyle">
+      </div>
+      <div class="field">
+        <label>&nbsp;</label>
+        <a href="flyer-view.html" class="btn btn-dark" style="text-align:center;">View status →</a>
       </div>
     </div>
   </div>
@@ -304,20 +355,39 @@
 </footer>
 
 <script>
+  // Sticky-nav transparency on hero
   (function () {
     var nav = document.getElementById('topnav');
     var hero = document.querySelector('.hero-cinema');
     if (!nav || !hero) return;
     function update() {
       var threshold = hero.offsetHeight - 80;
-      if (window.scrollY > threshold) {
-        nav.classList.remove('on-hero');
-      } else {
-        nav.classList.add('on-hero');
-      }
+      if (window.scrollY > threshold) nav.classList.remove('on-hero');
+      else nav.classList.add('on-hero');
     }
     window.addEventListener('scroll', update, { passive: true });
     update();
+  })();
+
+  // Lookup card: tab switching (Book / Miles / Status)
+  (function () {
+    var card = document.querySelector('.lookup-card');
+    if (!card) return;
+    var tabs = card.querySelectorAll('.tab');
+    var panels = card.querySelectorAll('[data-panel]');
+    function activate(name) {
+      tabs.forEach(function (t) {
+        var active = t.dataset.tab === name;
+        t.classList.toggle('active', active);
+        t.setAttribute('aria-selected', active ? 'true' : 'false');
+      });
+      panels.forEach(function (p) {
+        p.hidden = p.dataset.panel !== name;
+      });
+    }
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () { activate(t.dataset.tab); });
+    });
   })();
 </script>
 
