@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkyLoyal: My Loyalty</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">SkyLoyal<span class="tag">My Loyalty</span></div>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="dashboard.html">CSM Dashboard</a>
+    <a href="flyer-view.html">Flyer View</a>
+  </nav>
+</header>
+
+<main class="flyer-page">
+
+<section>
+  <h2 class="greeting">Hello, <span class="name">Nuala</span>.</h2>
+  <p style="color: var(--muted);">Here is your loyalty year so far. Every element on this page is something we earned, not something we are taking.</p>
+
+  <article class="tier-card" data-cd="CD2" data-cd-name="Development &amp; Accomplishment" aria-label="Tier progress">
+    <div class="tier-badge serif">GOLD</div>
+    <div class="progress-row">
+      <span class="label">Year-to-date segments toward retention</span>
+      <div class="bar" role="img" aria-valuenow="6" aria-valuemin="0" aria-valuemax="9">
+        <div class="fill" style="width: 66.6%;"></div>
+      </div>
+      <span class="small">6 of 9 segments. 3 to retain Gold by 31 December. 9 more to unlock Platinum.</span>
+      <span class="cd-label">CD2: Development</span>
+    </div>
+  </article>
+
+  <div class="tile-row">
+    <div class="tile" data-cd="CD4" data-cd-name="Ownership &amp; Possession" aria-label="Miles balance">
+      <div class="head">My miles, my history</div>
+      <div class="big serif">92,400</div>
+      <div class="sub">47 hubs visited · 184,000 km flown</div>
+      <span class="cd-label">CD4: Ownership</span>
+    </div>
+    <div class="tile" data-cd="CD8" data-cd-secondary="CD4" data-cd-name="Loss Avoidance, white-hat-framed" aria-label="Expiring miles">
+      <div class="head">Expiring miles</div>
+      <div class="big serif">7,800</div>
+      <div class="sub">in 76 days. Three trip ideas waiting: Lisbon weekend, Boston extension, charity donation.</div>
+      <span class="cd-label">CD8: Loss, opportunity-framed</span>
+    </div>
+    <div class="tile" data-cd="CD5" data-cd-name="Social Influence &amp; Relatedness" aria-label="Peer recognition">
+      <div class="head">Recognition</div>
+      <div class="big serif">Top 12%</div>
+      <div class="sub">of Dublin flyers in your tier this year.</div>
+      <span class="cd-label">CD5: Social</span>
+    </div>
+  </div>
+
+  <article class="tile" data-cd="CD1" data-cd-name="Epic Meaning &amp; Calling" style="margin: 1rem 0; background: linear-gradient(95deg, #f0f3fa 0%, #e1e8f5 100%); border-color: #c4cfe5;" aria-label="Sustainable aviation contribution">
+    <div class="head">Why your flying matters</div>
+    <p style="margin: .4rem 0; font-size: 1rem;">Your Gold-tier flying contributed <strong>1.2 tonnes</strong> of Sustainable Aviation Fuel this quarter. Your seat funded this. Across the fleet, our Gold cohort displaced 412 tonnes of conventional fuel.</p>
+    <span class="cd-label">CD1: Epic Meaning</span>
+  </article>
+
+  <article class="surprise" data-cd="CD7" data-cd-name="Unpredictability &amp; Curiosity" aria-label="Surprise gift">
+    <div class="gift" aria-hidden="true">🎁</div>
+    <div class="body">
+      <h4>This month's gift</h4>
+      <p>A complimentary lounge pass for your next Dublin departure. No expiry. No conditions. Already in your wallet.</p>
+      <span class="cd-label" style="background: rgba(184,120,16,.15); color: #6a4500;">CD7: Unpredictability</span>
+    </div>
+  </article>
+
+  <article class="style-picker" data-cd="CD3" data-cd-name="Empowerment of Creativity &amp; Feedback" aria-label="Trip mode picker">
+    <h4>Pick your trip mode</h4>
+    <p style="color: var(--muted); font-size: .9rem; margin: 0 0 .6rem;">We will tailor route suggestions and seat hold defaults to the mode you choose. Change any time.</p>
+    <div class="options">
+      <label class="checked"><input type="radio" name="mode" value="business-quick" checked> Business-quick</label>
+      <label><input type="radio" name="mode" value="family-slow"> Family-slow</label>
+      <label><input type="radio" name="mode" value="off-piste"> Off-piste</label>
+      <label><input type="radio" name="mode" value="custom"> Custom</label>
+    </div>
+    <span class="cd-label" style="background: rgba(15,31,61,.06); color: var(--navy-2);">CD3: Empowerment &amp; Feedback</span>
+  </article>
+
+  <div class="transparency">
+    <strong>Why am I seeing this?</strong> Because you are a SkyLoyal Gold member with active consent for tier-progress and retention communications.
+    You can <a href="#">adjust your contact frequency</a>, see how we calculated your tier ring (<a href="#">Article 15 explanation</a>), or <a href="#">opt out of profiling</a> at any time.
+    Risk-scoring of your account is reviewed by a human Customer Success Manager before any contact is sent (Article 22).
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  Synthetic data only. Pramithi Raroth Karimpanakkal · NCI MSCAIBUS1 · 2026
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

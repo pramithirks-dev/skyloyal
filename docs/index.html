@@ -3,20 +3,105 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SkyLoyal, scaffolding</title>
-<style>
-  body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;max-width:40rem;margin:4rem auto;padding:0 1rem;colour:#1a2840;line-height:1.55}
-  h1{font-size:1.6rem;margin:0 0 .5rem}
-  .badge{display:inline-block;background:#eef3ff;colour:#1f3a8a;padding:.15rem .55rem;border-radius:999px;font-size:.8rem;font-weight:600}
-  p{margin:.6rem 0}
-  code{background:#f5f5f5;padding:.1rem .3rem;border-radius:.2rem}
-</style>
+<title>SkyLoyal: Loyalty Rescue, a 5-agent agentic organisation</title>
+<meta name="description" content="A working multi-agent organisation that predicts, diagnoses, and intervenes on frequent-flyer loyalty churn for SkyLoyal Airways. H9CEAI Final Project, NCI MSCAIBUS1.">
+<link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <span class="badge">Scaffold</span>
-  <h1>SkyLoyal</h1>
-  <p>This is the placeholder page for the H9CEAI final-project agentic organisation. The Maker agent will replace this with the full prototype (landing page, CSM dashboard, flyer-facing gamified view) during pipeline execution.</p>
-  <p>Repo: <a href="https://github.com/pramithirks-dev/skyloyal">github.com/pramithirks-dev/skyloyal</a></p>
-  <p>Author: Pramithi Raroth Karimpanakkal · National College of Ireland · MSCAIBUS1</p>
+<header class="top">
+  <div class="brand">SkyLoyal<span class="tag">Loyalty Rescue</span></div>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="dashboard.html">CSM Dashboard</a>
+    <a href="flyer-view.html">Flyer View</a>
+    <a href="https://github.com/pramithirks-dev/skyloyal" target="_blank" rel="noopener">Repo</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="eyebrow">National College of Ireland · MSCAIBUS1 · H9CEAI</div>
+  <h1>SkyLoyal: Loyalty Rescue</h1>
+  <p>A working five-agent organisation that predicts which frequent flyers are about to lapse, designs an Octalysis-driven intervention journey, builds the dashboard, writes the marketing pack, and reports it commercially. Researcher to Designer to Maker to Communicator to Manager. Unbroken pipeline.</p>
+  <div class="cta">
+    <a class="btn btn-primary" href="dashboard.html">Open the CSM dashboard</a>
+    <a class="btn btn-ghost" href="flyer-view.html">See the flyer view</a>
+  </div>
+</section>
+
+<main>
+
+<section>
+  <h2>The pipeline</h2>
+  <p>Five agents collaborate by handing off typed markdown artefacts. Each agent's output is the next agent's sole input. The Manager runs quality gates between every handoff and maintains a cycle log. This site is the third artefact; the others live in the repository.</p>
+  <div class="pipeline">
+    <div class="node"><strong>Researcher</strong><div class="role">Dr. Aiko Tanaka</div><div>Identifies the opportunity. Produces <code>01-research-brief.md</code>.</div></div>
+    <div class="arrow">→</div>
+    <div class="node"><strong>Designer</strong><div class="role">Leo Marín</div><div>Designs the journey. Produces <code>02-design-spec.md</code>.</div></div>
+    <div class="arrow">→</div>
+    <div class="node"><strong>Maker</strong><div class="role">Priya Shah</div><div>Builds the prototype. Produces this <code>docs/</code> site.</div></div>
+    <div class="arrow">→</div>
+    <div class="node"><strong>Communicator</strong><div class="role">Dara Okafor</div><div>Writes the GTM pack. Produces <code>04-gtm-pack.md</code>.</div></div>
+    <div class="arrow">→</div>
+    <div class="node"><strong>Manager</strong><div class="role">Claire Dubois</div><div>Synthesises. Produces <code>05-executive-summary.md</code>.</div></div>
+  </div>
+</section>
+
+<section>
+  <h2>The four flyer archetypes</h2>
+  <p>From the Researcher's segment analysis, refined by the Designer through Manager Cycle 2 critique. The dashboard rotates around them.</p>
+  <div class="cards">
+    <div class="card">
+      <h3>Nuala</h3>
+      <div class="sub">Status-Slipper</div>
+      <p>Gold-tier Dubliner, 6 of 9 segments to retain Gold by year-end. Lever: tier-downgrade exposure.</p>
+    </div>
+    <div class="card">
+      <h3>Marcus</h3>
+      <div class="sub">Miles-Hoarder</div>
+      <p>Retired engineer in Amsterdam, 138,000 dormant miles, 12,400 expiring in 88 days. Lever: dormant-value redemption.</p>
+    </div>
+    <div class="card">
+      <h3>Theo</h3>
+      <div class="sub">Alliance-Drifter</div>
+      <p>Madrid-based consultant, 14 SkyLoyal segments and 11 partner segments in 12 months. Lever: share-of-wallet.</p>
+    </div>
+    <div class="card">
+      <h3>Rashida</h3>
+      <div class="sub">Complaint-Scarred</div>
+      <p>Edinburgh academic, 4-day baggage delay, NPS -50, hesitant return. Lever: acknowledgement-first reset.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Octalysis at a glance</h2>
+  <p>The flyer-facing view explicitly tags every gamification element with its Octalysis Core Drive. The flyer view exposes seven of the eight drives (CD6 Scarcity is deliberately omitted from the pilot, no fake countdowns). Every CD-bearing element carries a <code>data-cd="CD&lt;n&gt;"</code> attribute for audit.</p>
+  <ul>
+    <li><strong>CD1</strong> Epic Meaning: Sustainable Aviation Fuel attribution.</li>
+    <li><strong>CD2</strong> Development: tier-progress ring, retention progress.</li>
+    <li><strong>CD3</strong> Empowerment: trip-mode picker, choice gestures.</li>
+    <li><strong>CD4</strong> Ownership: miles balance, year-in-review.</li>
+    <li><strong>CD5</strong> Social Influence: peer cohort recognition, alliance pool.</li>
+    <li><strong>CD7</strong> Unpredictability: real surprise upgrades, never fake.</li>
+    <li><strong>CD8</strong> Loss Avoidance: framed as opportunity, not threat.</li>
+  </ul>
+</section>
+
+<section>
+  <h2>How to read this submission</h2>
+  <ol>
+    <li>Browse the <a href="dashboard.html">CSM dashboard</a> to see the at-risk flyer list, click any flyer to see risk reasons and suggested interventions.</li>
+    <li>Open the <a href="flyer-view.html">flyer view</a> to see Nuala's gamified retention page with Octalysis CDs labelled.</li>
+    <li>Read the agent artefacts in the <a href="https://github.com/pramithirks-dev/skyloyal/tree/main/outputs" target="_blank" rel="noopener">outputs/</a> folder of the repo: research brief, design spec, GTM pack, executive summary.</li>
+    <li>Read the <a href="https://github.com/pramithirks-dev/skyloyal/blob/main/outputs/manager-log.md" target="_blank" rel="noopener">Manager log</a> to see the cycle history and the substantive return on the Designer's first pass.</li>
+  </ol>
+</section>
+
+</main>
+
+<footer class="foot">
+  Pramithi Raroth Karimpanakkal · National College of Ireland · MSCAIBUS1 · H9CEAI Customer Engagement and AI · 2026
+</footer>
+
 </body>
 </html>

@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SkyLoyal: CSM Dashboard</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="brand">SkyLoyal<span class="tag">CSM Dashboard</span></div>
+  <nav>
+    <a href="index.html">Overview</a>
+    <a href="dashboard.html">CSM Dashboard</a>
+    <a href="flyer-view.html">Flyer View</a>
+  </nav>
+</header>
+
+<main>
+
+<section>
+  <h2>At-risk flyers</h2>
+  <p style="color: var(--muted);">A Customer Success Manager's working view. Click any flyer to see risk reasons and the suggested next-best action with Octalysis tagging. Risk score composition is visible so the CSM can defend the score to the flyer if asked, this addresses the Article 22 explanation right.</p>
+
+  <div class="filters">
+    <label>Tier
+      <select id="filter-tier">
+        <option value="">All</option>
+        <option>Blue</option><option>Silver</option><option>Gold</option><option>Platinum</option>
+      </select>
+    </label>
+    <label>Risk
+      <select id="filter-risk">
+        <option value="">All</option>
+        <option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option>
+      </select>
+    </label>
+    <label>Archetype
+      <select id="filter-archetype">
+        <option value="">All</option>
+      </select>
+    </label>
+    <input id="filter-q" type="search" placeholder="Search name, ID, hub...">
+    <span id="count-pill" style="margin-left:auto; color: var(--muted); font-size: .85rem;"></span>
+  </div>
+
+  <div class="dash-grid">
+    <div class="panel">
+      <h3>Flyer list</h3>
+      <table class="flyer-list" aria-label="At-risk flyer list">
+        <thead>
+          <tr>
+            <th>Member ID</th><th>Name</th><th>Tier</th><th>Hub</th><th>Risk</th><th>Archetypes</th>
+          </tr>
+        </thead>
+        <tbody id="flyer-list-body">
+          <tr><td colspan="6" style="color: var(--muted);">Loading...</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel flyer-detail">
+      <h3 id="detail-name">Select a flyer</h3>
+      <div class="meta" id="detail-meta">Click any row in the list to see profile and interventions.</div>
+
+      <h4 style="font-family: Georgia, serif; color: var(--navy); margin: 1rem 0 .4rem;">Profile</h4>
+      <div id="detail-rows"></div>
+
+      <h4 style="font-family: Georgia, serif; color: var(--navy); margin: 1.2rem 0 .4rem;">Risk reasons</h4>
+      <ul id="detail-reasons" style="color: var(--ink); padding-left: 1.2rem;"></ul>
+
+      <h4 style="font-family: Georgia, serif; color: var(--navy); margin: 1.2rem 0 .4rem;">Suggested next-best action</h4>
+      <div id="detail-interventions"></div>
+
+      <div style="margin-top: 1.2rem;">
+        <button class="action">Approve and send</button>
+        <button class="action secondary">Modify</button>
+        <button class="action secondary">Defer 14 days</button>
+        <button class="action secondary">Mark not at risk</button>
+      </div>
+    </div>
+  </div>
+
+  <p style="color: var(--muted); font-size: .85rem; margin-top: 1.5rem;">Risk scores derive from the model described in <code>outputs/01-research-brief.md</code>. Every flyer can request an explanation of their score under GDPR Article 15. The CSM has discretion on every intervention, no decision is taken automatically (Article 22).</p>
+</section>
+
+</main>
+
+<footer class="foot">
+  Synthetic data only. Pramithi Raroth Karimpanakkal · NCI MSCAIBUS1 · 2026
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>

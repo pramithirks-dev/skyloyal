@@ -1,0 +1,574 @@
+[
+  {
+    "member_id": "SKY000250",
+    "name": "Cillian B.",
+    "tier": "Gold",
+    "home_hub": "FRA",
+    "miles_balance": 129910,
+    "miles_expiring_90d": 13343,
+    "flights_last_12m": 11,
+    "flights_last_3m": 0,
+    "last_complaint_nps": -100,
+    "last_complaint_type": "cancellation",
+    "alliance_partner_flights": 1,
+    "tenure_years": 3,
+    "archetypes": [
+      "Status-Slipper",
+      "Miles-Hoarder",
+      "Complaint-Scarred"
+    ],
+    "risk_label": "high",
+    "risk_score": 5
+  },
+  {
+    "member_id": "SKY000303",
+    "name": "Theo R.",
+    "tier": "Silver",
+    "home_hub": "JFK",
+    "miles_balance": 43870,
+    "miles_expiring_90d": 12905,
+    "flights_last_12m": 13,
+    "flights_last_3m": 1,
+    "last_complaint_nps": 0,
+    "last_complaint_type": "cancellation",
+    "alliance_partner_flights": 1,
+    "tenure_years": 12,
+    "archetypes": [
+      "Complaint-Scarred"
+    ],
+    "risk_label": "high",
+    "risk_score": 4
+  },
+  {
+    "member_id": "SKY000049",
+    "name": "Eoin K.",
+    "tier": "Gold",
+    "home_hub": "AMS",
+    "miles_balance": 46728,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 29,
+    "flights_last_3m": 0,
+    "last_complaint_nps": -50,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 7,
+    "tenure_years": 11,
+    "archetypes": [
+      "Status-Slipper"
+    ],
+    "risk_label": "high",
+    "risk_score": 3
+  },
+  {
+    "member_id": "SKY000074",
+    "name": "Aisling H.",
+    "tier": "Blue",
+    "home_hub": "EDI",
+    "miles_balance": 8770,
+    "miles_expiring_90d": 518,
+    "flights_last_12m": 2,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 20,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 1,
+    "tenure_years": 2,
+    "archetypes": [
+      "Alliance-Drifter"
+    ],
+    "risk_label": "high",
+    "risk_score": 3
+  },
+  {
+    "member_id": "SKY000353",
+    "name": "Caoimhe L.",
+    "tier": "Blue",
+    "home_hub": "CDG",
+    "miles_balance": 21369,
+    "miles_expiring_90d": 10048,
+    "flights_last_12m": 2,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "service",
+    "alliance_partner_flights": 1,
+    "tenure_years": 2,
+    "archetypes": [
+      "Alliance-Drifter"
+    ],
+    "risk_label": "high",
+    "risk_score": 3
+  },
+  {
+    "member_id": "SKY000042",
+    "name": "Fionnuala K.",
+    "tier": "Blue",
+    "home_hub": "CDG",
+    "miles_balance": 21136,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 4,
+    "flights_last_3m": 0,
+    "last_complaint_nps": -50,
+    "last_complaint_type": "baggage",
+    "alliance_partner_flights": 0,
+    "tenure_years": 4,
+    "archetypes": [
+      "Complaint-Scarred"
+    ],
+    "risk_label": "high",
+    "risk_score": 3
+  },
+  {
+    "member_id": "SKY000093",
+    "name": "Quinn C.",
+    "tier": "Gold",
+    "home_hub": "CDG",
+    "miles_balance": 93156,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 19,
+    "flights_last_3m": 7,
+    "last_complaint_nps": -50,
+    "last_complaint_type": "cancellation",
+    "alliance_partner_flights": 6,
+    "tenure_years": 14,
+    "archetypes": [
+      "Complaint-Scarred"
+    ],
+    "risk_label": "medium",
+    "risk_score": 3
+  },
+  {
+    "member_id": "SKY000216",
+    "name": "Nuala D.",
+    "tier": "Blue",
+    "home_hub": "EDI",
+    "miles_balance": 24739,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 1,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 20,
+    "last_complaint_type": "service",
+    "alliance_partner_flights": 1,
+    "tenure_years": 2,
+    "archetypes": [
+      "Alliance-Drifter"
+    ],
+    "risk_label": "high",
+    "risk_score": 2
+  },
+  {
+    "member_id": "SKY000103",
+    "name": "Aoife M.",
+    "tier": "Blue",
+    "home_hub": "LIS",
+    "miles_balance": 6209,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 2,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 1,
+    "tenure_years": 1,
+    "archetypes": [
+      "Alliance-Drifter"
+    ],
+    "risk_label": "high",
+    "risk_score": 2
+  },
+  {
+    "member_id": "SKY000316",
+    "name": "Ronan F.",
+    "tier": "Blue",
+    "home_hub": "BOS",
+    "miles_balance": 15792,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 2,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "delay",
+    "alliance_partner_flights": 1,
+    "tenure_years": 7,
+    "archetypes": [
+      "Alliance-Drifter"
+    ],
+    "risk_label": "high",
+    "risk_score": 2
+  },
+  {
+    "member_id": "SKY000050",
+    "name": "Marcus V.",
+    "tier": "Blue",
+    "home_hub": "LHR",
+    "miles_balance": 12922,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 2,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 75,
+    "last_complaint_type": "service",
+    "alliance_partner_flights": 1,
+    "tenure_years": 4,
+    "archetypes": [
+      "Alliance-Drifter"
+    ],
+    "risk_label": "high",
+    "risk_score": 2
+  },
+  {
+    "member_id": "SKY000386",
+    "name": "Saoirse R.",
+    "tier": "Silver",
+    "home_hub": "EDI",
+    "miles_balance": 41393,
+    "miles_expiring_90d": 14153,
+    "flights_last_12m": 7,
+    "flights_last_3m": 0,
+    "last_complaint_nps": -100,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 2,
+    "tenure_years": 11,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "high",
+    "risk_score": 1
+  },
+  {
+    "member_id": "SKY000065",
+    "name": "Niamh O.",
+    "tier": "Blue",
+    "home_hub": "LIS",
+    "miles_balance": 18943,
+    "miles_expiring_90d": 13024,
+    "flights_last_12m": 2,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "downgrade",
+    "alliance_partner_flights": 0,
+    "tenure_years": 2,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "high",
+    "risk_score": 1
+  },
+  {
+    "member_id": "SKY000232",
+    "name": "Tadhg McG.",
+    "tier": "Blue",
+    "home_hub": "DUB",
+    "miles_balance": 7278,
+    "miles_expiring_90d": 6414,
+    "flights_last_12m": 4,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 20,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 0,
+    "tenure_years": 8,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "high",
+    "risk_score": 1
+  },
+  {
+    "member_id": "SKY000139",
+    "name": "Rashida H.",
+    "tier": "Blue",
+    "home_hub": "AMS",
+    "miles_balance": 14256,
+    "miles_expiring_90d": 14208,
+    "flights_last_12m": 5,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 0,
+    "tenure_years": 8,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "high",
+    "risk_score": 1
+  },
+  {
+    "member_id": "SKY000072",
+    "name": "Diarmuid N.",
+    "tier": "Blue",
+    "home_hub": "FRA",
+    "miles_balance": 6240,
+    "miles_expiring_90d": 5295,
+    "flights_last_12m": 3,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 0,
+    "tenure_years": 8,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "high",
+    "risk_score": 1
+  },
+  {
+    "member_id": "SKY000343",
+    "name": "Alex T.",
+    "tier": "Blue",
+    "home_hub": "CDG",
+    "miles_balance": 19277,
+    "miles_expiring_90d": 2444,
+    "flights_last_12m": 3,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 1,
+    "tenure_years": 2,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 1
+  },
+  {
+    "member_id": "SKY000038",
+    "name": "Drew B.",
+    "tier": "Silver",
+    "home_hub": "CDG",
+    "miles_balance": 53475,
+    "miles_expiring_90d": 5844,
+    "flights_last_12m": 5,
+    "flights_last_3m": 1,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "delay",
+    "alliance_partner_flights": 0,
+    "tenure_years": 6,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 1
+  },
+  {
+    "member_id": "SKY000348",
+    "name": "Sam P.",
+    "tier": "Blue",
+    "home_hub": "FRA",
+    "miles_balance": 6744,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 5,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 90,
+    "last_complaint_type": "service",
+    "alliance_partner_flights": 0,
+    "tenure_years": 6,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000043",
+    "name": "Jordan W.",
+    "tier": "Blue",
+    "home_hub": "FRA",
+    "miles_balance": 23303,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 4,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 20,
+    "last_complaint_type": "service",
+    "alliance_partner_flights": 1,
+    "tenure_years": 8,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000180",
+    "name": "Kim N.",
+    "tier": "Silver",
+    "home_hub": "DUB",
+    "miles_balance": 59539,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 8,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 2,
+    "tenure_years": 7,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000061",
+    "name": "Pat L.",
+    "tier": "Blue",
+    "home_hub": "JFK",
+    "miles_balance": 23531,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 3,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 20,
+    "last_complaint_type": "baggage",
+    "alliance_partner_flights": 0,
+    "tenure_years": 5,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000446",
+    "name": "Robin S.",
+    "tier": "Silver",
+    "home_hub": "LHR",
+    "miles_balance": 44842,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 10,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "cancellation",
+    "alliance_partner_flights": 3,
+    "tenure_years": 5,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000344",
+    "name": "Casey D.",
+    "tier": "Blue",
+    "home_hub": "MAD",
+    "miles_balance": 18492,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 0,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 75,
+    "last_complaint_type": "delay",
+    "alliance_partner_flights": 1,
+    "tenure_years": 2,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000471",
+    "name": "Riley A.",
+    "tier": "Blue",
+    "home_hub": "CDG",
+    "miles_balance": 17964,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 5,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "downgrade",
+    "alliance_partner_flights": 1,
+    "tenure_years": 2,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "medium",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000496",
+    "name": "Morgan F.",
+    "tier": "Silver",
+    "home_hub": "MAD",
+    "miles_balance": 11226,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 7,
+    "flights_last_3m": 2,
+    "last_complaint_nps": 90,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 0,
+    "tenure_years": 11,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "low",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000124",
+    "name": "Avery G.",
+    "tier": "Silver",
+    "home_hub": "MAD",
+    "miles_balance": 43231,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 10,
+    "flights_last_3m": 4,
+    "last_complaint_nps": 20,
+    "last_complaint_type": "service",
+    "alliance_partner_flights": 1,
+    "tenure_years": 9,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "low",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000342",
+    "name": "Reese H.",
+    "tier": "Gold",
+    "home_hub": "LHR",
+    "miles_balance": 39812,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 25,
+    "flights_last_3m": 10,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 3,
+    "tenure_years": 8,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "low",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000339",
+    "name": "Skyler M.",
+    "tier": "Silver",
+    "home_hub": "FRA",
+    "miles_balance": 33501,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 13,
+    "flights_last_3m": 5,
+    "last_complaint_nps": 20,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 3,
+    "tenure_years": 2,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "low",
+    "risk_score": 0
+  },
+  {
+    "member_id": "SKY000314",
+    "name": "Taylor V.",
+    "tier": "Silver",
+    "home_hub": "EDI",
+    "miles_balance": 54413,
+    "miles_expiring_90d": 0,
+    "flights_last_12m": 7,
+    "flights_last_3m": 1,
+    "last_complaint_nps": 20,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 0,
+    "tenure_years": 6,
+    "archetypes": [
+      "No-flag"
+    ],
+    "risk_label": "low",
+    "risk_score": 0
+  }
+]
