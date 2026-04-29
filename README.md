@@ -6,7 +6,7 @@
 
 ## What this is
 
-A working multi-agent organisation that predicts, diagnoses, and intervenes on frequent-flyer loyalty churn for a fictional carrier, **SkyLoyal Airways**. Five AI agents, Researcher, Designer, Maker, Communicator, Manager, collaborate in an unbroken pipeline to produce a live retention programme, from data analysis through to executive rollout plan, all grounded in Yu-kai Chou's **Octalysis** gamification framework.
+A working multi-agent organisation that predicts, diagnoses, and intervenes on frequent-flyer loyalty churn for a fictional carrier, **SkyJet Airways**. Five AI agents, Researcher, Designer, Maker, Communicator, Manager, collaborate in an unbroken pipeline to produce a live retention programme, from data analysis through to executive rollout plan, all grounded in Yu-kai Chou's **Octalysis** gamification framework.
 
 ## The pipeline
 

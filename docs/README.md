@@ -1,6 +1,6 @@
 # SkyLoyal docs/, prototype site
 
-**Author:** Priya Shah, Staff Front-end Engineer, SkyLoyal Airways
+**Author:** Priya Shah, Staff Front-end Engineer, SkyJet Airways
 **Source spec:** `outputs/02-design-spec.md` (Cycle 2)
 **Date:** 2026-04-29
 

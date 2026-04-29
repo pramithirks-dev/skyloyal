@@ -1,6 +1,6 @@
 # Go-to-Market Pack: SkyLoyal Loyalty Rescue
 
-**Author:** Dara Okafor, VP Brand & Retention Marketing, SkyLoyal Airways
+**Author:** Dara Okafor, VP Brand & Retention Marketing, SkyJet Airways
 **Date:** 2026-04-29
 **Status:** Cycle 1 launch pack for Manager review
 **Source artefacts:** `outputs/02-design-spec.md` (Cycle 2), `docs/` prototype site
@@ -101,7 +101,7 @@ Aoife (your CSM at SkyLoyal)
 
 ### LinkedIn (150 words)
 
-We are launching Loyalty Rescue, the first proactive retention programme at SkyLoyal Airways. The premise is simple: most of our churn is silent. Flyers do not cancel a programme, they just stop flying. By the time a tier downgrade is processed at year-end, the relationship is often already with another carrier.
+We are launching Loyalty Rescue, the first proactive retention programme at SkyJet Airways. The premise is simple: most of our churn is silent. Flyers do not cancel a programme, they just stop flying. By the time a tier downgrade is processed at year-end, the relationship is often already with another carrier.
 
 Loyalty Rescue listens to four signals (tier-slip, dormant miles, alliance drift, post-IROP residue), passes them through a risk model, and gives our Customer Success team a one-screen view of who needs a conversation, why, and what kind of intervention would help. Every contact is human-reviewed. Every email tells the flyer why they got it. Every "surprise" is a real benefit, no theatre.
 
@@ -136,9 +136,9 @@ Most loyalty programmes wait for you to leave. We built one that listens before 
 **FOR IMMEDIATE RELEASE**
 **Dublin, 2026-04-29**
 
-**SkyLoyal Airways pilots agentic AI to spot loyalty lapse before it happens**
+**SkyJet Airways pilots agentic AI to spot loyalty lapse before it happens**
 
-SkyLoyal Airways has begun the closed pilot of Loyalty Rescue, a proactive retention programme that uses an agentic AI organisation to identify frequent flyers at risk of silent churn and to design ethically-grounded interventions. The pilot targets 4,200 Gold-tier members across the Dublin hub for six months from Q3 2026.
+SkyJet Airways has begun the closed pilot of Loyalty Rescue, a proactive retention programme that uses an agentic AI organisation to identify frequent flyers at risk of silent churn and to design ethically-grounded interventions. The pilot targets 4,200 Gold-tier members across the Dublin hub for six months from Q3 2026.
 
 The programme replaces SkyLoyal's previous reactive customer-success model, which engaged flyers only after a complaint or cancellation. The new system reads four behavioural signals (tier-slip exposure, miles-balance dormancy, alliance partner-airline leakage, and post-IROP residue) and produces a risk score reviewed by a human Customer Success Manager before any contact. No fully-automated decisions affecting flyers are taken by the model, satisfying GDPR Article 22 protections.
 

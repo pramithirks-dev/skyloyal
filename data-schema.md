@@ -29,8 +29,8 @@ The CSV is generated deterministically from a Python script with `seed=42`. The 
 | `tier` | enum | Blue, Silver, Gold, Platinum | Frequent flyer tier |
 | `miles_balance` | int | 500..400,262 | Total miles currently in the account |
 | `miles_expiring_90d` | int | 0..14,932 | Miles reaching the inactivity window in the next 90 days |
-| `flights_last_12m` | int | 0..80 | Segments flown on SkyLoyal metal in the trailing 12 months |
-| `flights_last_3m` | int | 0..30 | Segments flown on SkyLoyal metal in the trailing 3 months |
+| `flights_last_12m` | int | 0..80 | Segments flown on SkyJet metal in the trailing 12 months |
+| `flights_last_3m` | int | 0..30 | Segments flown on SkyJet metal in the trailing 3 months |
 | `last_complaint_nps` | int | -100..90 | NPS rating from the most recent contact (no complaint = neutral) |
 | `last_complaint_type` | enum | none, delay, baggage, downgrade, service, cancellation | Reason category for last logged complaint |
 | `alliance_partner_flights` | int | 0..27 | Segments flown on alliance partner carriers in trailing 12 months |
@@ -144,9 +144,9 @@ The BRD, design spec, GTM pack, executive summary, and the live prototype all re
 ### Character narratives (from `outputs/02-design-spec.md` §2)
 
 - **Nuala D.** 47, marketing director in Dublin, flies twice a year to Boston for a North-American account. Six segments year-to-date, needs three more by 31 December to retain Gold. Trip pattern: 2 long-haul, 4 short-haul Dublin-London a year. Primary risk lever: tier-downgrade exposure.
-- **Marcus V.** 61, retired engineer in Amsterdam. 138,000 dormant miles, 12,400 expiring in 88 days. Last flew SkyLoyal 14 months ago. Trip pattern: 1-2 leisure trips a year, mostly Mediterranean. Primary risk lever: dormant-value redemption.
-- **Theo R.** 38, consultant based in Madrid. 14 SkyLoyal segments and 11 partner segments in 12 months. Trip pattern: heavy intra-European business. Primary risk lever: share-of-wallet leakage.
-- **Rashida H.** 53, academic from Edinburgh. Flew SkyLoyal Edinburgh-Madrid for a conference, baggage delayed 4 days, NPS rated -50. Has flown twice since but reluctantly. Trip pattern: 2-3 conference trips a year. Primary risk lever: trust deficit after IROP.
+- **Marcus V.** 61, retired engineer in Amsterdam. 138,000 dormant miles, 12,400 expiring in 88 days. Last flew SkyJet 14 months ago. Trip pattern: 1-2 leisure trips a year, mostly Mediterranean. Primary risk lever: dormant-value redemption.
+- **Theo R.** 38, consultant based in Madrid. 14 SkyJet segments and 11 partner segments in 12 months. Trip pattern: heavy intra-European business. Primary risk lever: share-of-wallet leakage.
+- **Rashida H.** 53, academic from Edinburgh. Flew SkyJet Edinburgh-Madrid for a conference, baggage delayed 4 days, NPS rated -50. Has flown twice since but reluctantly. Trip pattern: 2-3 conference trips a year. Primary risk lever: trust deficit after IROP.
 
 ---
 

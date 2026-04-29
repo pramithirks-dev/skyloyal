@@ -13,7 +13,7 @@
 | Date issued | 2026-04-21 |
 | Author | Pramithi Raroth Karimpanakkal, Product Manager |
 | Module context | H9CEAI Customer Engagement & AI, MSCAIBUS1, National College of Ireland |
-| Sponsor (fictional) | SkyLoyal Airways, Chief Customer Officer |
+| Sponsor (fictional) | SkyJet Airways, Chief Customer Officer |
 | Target audience | Loyalty P&L owner, Customer Success Leadership, Data Protection Officer, Marketing, Engineering |
 | Related artefacts | `README.md` · `submission/process-log.md` · `.claude/agents/*.md` · `docs/` (prototype) |
 | Repository | https://github.com/pramithirks-dev/skyloyal |
@@ -30,7 +30,7 @@
 
 ## 1. Executive summary
 
-SkyLoyal Airways loses **23% of its Gold-tier and 17% of its Silver-tier frequent flyers** to silent disengagement every year, flyers who do not formally leave the programme but migrate spend to alliance partners, low-cost carriers, or competitor programmes. The commercial impact is estimated at **€42m annually in forgone premium-cabin and ancillary revenue**, dwarfing the cost of any retention intervention.
+SkyJet Airways loses **23% of its Gold-tier and 17% of its Silver-tier frequent flyers** to silent disengagement every year, flyers who do not formally leave the programme but migrate spend to alliance partners, low-cost carriers, or competitor programmes. The commercial impact is estimated at **€42m annually in forgone premium-cabin and ancillary revenue**, dwarfing the cost of any retention intervention.
 
 This document proposes **SkyLoyal**, an agentic AI platform that predicts loyalty lapse, designs ethically-grounded interventions anchored in the **Octalysis gamification framework**, produces the marketing collateral to execute those interventions, and reports commercially to the loyalty P&L. Five specialised AI agents collaborate in an unbroken pipeline to deliver a closed-loop system: Researcher → Designer → Maker → Communicator → Manager.
 
@@ -54,7 +54,7 @@ Industry benchmarks:
 
 ### 2.2 SkyLoyal-specific situation
 
-SkyLoyal Airways is a mid-sized European network carrier hubbed in Dublin (DUB) with focus cities at Amsterdam (AMS) and Madrid (MAD). The airline operates a tiered frequent flyer programme with four tiers: **Blue, Silver, Gold, Platinum**. Current programme metrics (synthetic baseline for this BRD):
+SkyJet Airways is a mid-sized European network carrier hubbed in Dublin (DUB) with focus cities at Amsterdam (AMS) and Madrid (MAD). The airline operates a tiered frequent flyer programme with four tiers: **Blue, Silver, Gold, Platinum**. Current programme metrics (synthetic baseline for this BRD):
 
 | Metric | Current | Benchmark | Gap |
 |---|---|---|---|
@@ -266,7 +266,7 @@ The platform's flyer-facing interventions are designed around **Yu-kai Chou's Oc
 |---|---|---|---|
 | **Status-Slippers** (Gold flown < 3 segments in last quarter) | Avoiding downgrade | CD8, CD2 | Personalised "here are your options to retain Gold" journey, 4 touchpoints over 60 days |
 | **Miles-Hoarders** (balance > 80k, zero redemption in 18m) | Realising value | CD3, CD4 | "Your miles could fly your family to Lisbon" redemption wizard with 5 tailored trip ideas |
-| **Alliance-Drifters** (partner-airline flights > 40% of trailing 12m) | Preference + convenience | CD5, CD1 | "Fly SkyLoyal metal for your next Dublin–London" with value-comparison + shared-identity framing |
+| **Alliance-Drifters** (partner-airline flights > 40% of trailing 12m) | Preference + convenience | CD5, CD1 | "Fly SkyJet metal for your next Dublin–London" with value-comparison + shared-identity framing |
 | **Complaint-Scarred** (recent IROP + NPS ≤ 0) | Recognition + restitution | CD3, CD7 | Personal apology, gesture chosen by flyer (extra miles vs lounge pass vs charity donation) |
 
 ### 9.3 White-Hat / Black-Hat audit discipline

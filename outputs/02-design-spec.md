@@ -1,6 +1,6 @@
 # Design Specification: SkyLoyal Loyalty Rescue
 
-**Author:** Leo Marín, Lead Experience Designer, SkyLoyal Airways
+**Author:** Leo Marín, Lead Experience Designer, SkyJet Airways
 **Date:** 2026-04-29
 **Status:** Cycle 2 (revised after Manager return on segment merge, CD8 tagging, and measurement framework)
 **Source brief:** `outputs/01-research-brief.md`
@@ -25,11 +25,11 @@ Six principles that govern every screen and every touchpoint in this spec.
 
 **Nuala, the Slipping Gold (Status-Slippers).** 47, marketing director in Dublin, flies twice a year to Boston for a North-American account. Six segments year-to-date, needs three more by 31 December to retain Gold. Frustration: tier feels like a treadmill. Hoped-for moment: feeling that her loyalty is recognised, not exploited. Trip pattern: 2 long-haul, 4 short-haul Dublin-London a year. Primary risk lever: tier-downgrade exposure.
 
-**Marcus, the Dormant Hoarder (Miles-Hoarders).** 61, retired engineer in Amsterdam. 138,000 miles in the bank, 12,400 expiring in 88 days. Last flew SkyLoyal 14 months ago. Frustration: programme feels frozen, miles feel like a lapsed gym membership. Hoped-for moment: a tangible use for the miles he forgot he had. Trip pattern: 1-2 leisure trips a year, mostly Mediterranean. Primary risk lever: dormant-value redemption.
+**Marcus, the Dormant Hoarder (Miles-Hoarders).** 61, retired engineer in Amsterdam. 138,000 miles in the bank, 12,400 expiring in 88 days. Last flew SkyJet 14 months ago. Frustration: programme feels frozen, miles feel like a lapsed gym membership. Hoped-for moment: a tangible use for the miles he forgot he had. Trip pattern: 1-2 leisure trips a year, mostly Mediterranean. Primary risk lever: dormant-value redemption.
 
-**Theo, the Drifter (Alliance-Drifters).** 38, consultant based in Madrid, flies SkyLoyal Madrid-Frankfurt monthly but takes Lufthansa to anywhere else in Germany because schedules are tighter. 14 SkyLoyal segments and 11 partner segments in 12 months. Frustration: SkyLoyal feels less convenient than its alliance. Hoped-for moment: a reason to choose metal over partner. Trip pattern: heavy intra-European business.
+**Theo, the Drifter (Alliance-Drifters).** 38, consultant based in Madrid, flies SkyJet Madrid-Frankfurt monthly but takes Lufthansa to anywhere else in Germany because schedules are tighter. 14 SkyJet segments and 11 partner segments in 12 months. Frustration: SkyJet feels less convenient than its alliance. Hoped-for moment: a reason to choose metal over partner. Trip pattern: heavy intra-European business.
 
-**Rashida, the Wronged Loyalist (Complaint-Scarred).** 53, academic from Edinburgh, flew SkyLoyal Edinburgh-Madrid for a conference, baggage delayed 4 days, NPS rated -50. Has flown twice since but reluctantly. Frustration: feels invisible to the airline. Hoped-for moment: someone at SkyLoyal saying "we know what happened, here is what we did about it". Trip pattern: 2-3 conference trips a year, family visits to Lagos via Lisbon.
+**Rashida, the Wronged Loyalist (Complaint-Scarred).** 53, academic from Edinburgh, flew SkyJet Edinburgh-Madrid for a conference, baggage delayed 4 days, NPS rated -50. Has flown twice since but reluctantly. Frustration: feels invisible to the airline. Hoped-for moment: someone at SkyJet saying "we know what happened, here is what we did about it". Trip pattern: 2-3 conference trips a year, family visits to Lagos via Lisbon.
 
 ## 3. Intervention Journeys
 

@@ -1,6 +1,6 @@
 # Executive Summary: SkyLoyal Loyalty Rescue Pilot
 
-**Author:** Claire Dubois, Chief Customer Officer, SkyLoyal Airways
+**Author:** Claire Dubois, Chief Customer Officer, SkyJet Airways
 **Date:** 2026-04-29
 **Status:** Final synthesis after Cycle 1 + Cycle 2 of the agentic pipeline
 **Source artefacts:** `outputs/01-research-brief.md`, `outputs/02-design-spec.md` (Cycle 2), `docs/` prototype, `outputs/04-gtm-pack.md`, `outputs/manager-log.md`

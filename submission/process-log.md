@@ -220,7 +220,7 @@ SkyLoyal/
 | Slide(s) | Section | Words | Content |
 |---|---|---|---|
 | 1 | Title | - | Title, name, module, submission date, GitHub Pages URL |
-| 2–3 | Your Organisation | ~200 | SkyLoyal Airways, the loyalty churn challenge, why agentic beats monolithic |
+| 2–3 | Your Organisation | ~200 | SkyJet Airways, the loyalty churn challenge, why agentic beats monolithic |
 | 4–8 | Agent Designs | ~500 | One slide per agent: persona, role, system-prompt excerpt, sample output, what differentiates them |
 | 9–11 | Pipeline in Action | ~300 + evidence | Pipeline diagram, screenshots of each handoff, excerpt from each artefact, `manager-log.md` excerpt showing Cycle 1 vs Cycle 2, live Pages URL + QR code |
 | 12 | Regulatory & Ethical | ~200 | GDPR (profiling, Art. 22, lawful basis, data minimisation), EU AI Act (limited-risk, transparency obligations), White Hat vs Black Hat Octalysis balance, customer trust framing |

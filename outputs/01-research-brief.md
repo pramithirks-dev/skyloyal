@@ -1,6 +1,6 @@
 # Research Brief: SkyLoyal Frequent-Flyer Churn Risk
 
-**Author:** Dr. Aiko Tanaka, Principal Customer Intelligence Analyst, SkyLoyal Airways
+**Author:** Dr. Aiko Tanaka, Principal Customer Intelligence Analyst, SkyJet Airways
 **Date:** 2026-04-29
 **Status:** Cycle 1 draft for Designer handoff
 **Source data:** `inputs/mock-loyalty-data.csv` (n=500, synthetic, seed=42)
@@ -9,7 +9,7 @@
 
 ## 1. Executive Summary
 
-The dataset of 500 SkyLoyal members exhibits three findings the board should act on. First, **41.2% of members who flew in the last 12 months recorded zero segments in the last 3 months**, the operational definition of silent disengagement adopted in this brief. The Gold cohort silent-quiet rate is 15.8% (12/76), low by absolute count but disproportionately costly given Gold-tier yield. Second, **26.2% of members hold miles expiring in the next 90 days**, with a total expiry exposure of 831,848 miles, a quantifiable Loss & Avoidance lever (Octalysis CD8). Third, **7.2% of members exhibit alliance leakage above 40%**, flying more on partner carriers than on SkyLoyal metal in the trailing 12 months. These three signals do not overlap completely, suggesting at least three distinct intervention populations rather than a single at-risk pool.
+The dataset of 500 SkyLoyal members exhibits three findings the board should act on. First, **41.2% of members who flew in the last 12 months recorded zero segments in the last 3 months**, the operational definition of silent disengagement adopted in this brief. The Gold cohort silent-quiet rate is 15.8% (12/76), low by absolute count but disproportionately costly given Gold-tier yield. Second, **26.2% of members hold miles expiring in the next 90 days**, with a total expiry exposure of 831,848 miles, a quantifiable Loss & Avoidance lever (Octalysis CD8). Third, **7.2% of members exhibit alliance leakage above 40%**, flying more on partner carriers than on SkyJet metal in the trailing 12 months. These three signals do not overlap completely, suggesting at least three distinct intervention populations rather than a single at-risk pool.
 
 ## 2. Churn Hypotheses
 
