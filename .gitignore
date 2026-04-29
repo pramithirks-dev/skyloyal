@@ -16,6 +16,7 @@ Thumbs.db
 *.pem
 submission/screenshots/*.tmp
 build_pptx.py
+build_docx.py
 wordcount.py
 Lib/
 Scripts/
