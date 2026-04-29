@@ -16,5 +16,19 @@ Thumbs.db
 *.pem
 submission/screenshots/*.tmp
 build_pptx.py
+wordcount.py
 Lib/
 Scripts/
+
+# Pramithi's working PPTX draft (local only, not for the public repo)
+SkyLoyal_An_Agentic_AI_Platform_for_Frequent-Flyer_Retention.pptx
+SkyLoyal_Project_Reflection.docx
+# Belt-and-braces: any working draft Office file at the repo root
+/SkyLoyal_*.pptx
+/SkyLoyal_*.docx
+/SkyLoyal_*.xlsx
+
+# PowerPoint lock files (created when a .pptx is open in Office)
+~$*.pptx
+~$*.docx
+~$*.xlsx
