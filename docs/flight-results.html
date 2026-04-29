@@ -64,10 +64,37 @@
 <section class="results-hero">
   <div class="container">
     <div class="breadcrumb">Loyalty · Book a flight · Results</div>
-    <h1>Dublin (DUB) to Boston (BOS)</h1>
-    <p class="summary">Sun 12 Jul 2026 · 1 adult · Economy · Showing 5 of 5 fares</p>
+    <h1 id="route-heading">Dublin (DUB) to Boston (BOS)</h1>
+    <p class="summary" id="route-summary">Sun 12 Jul 2026 · 1 adult · Economy · Showing 5 of 5 fares</p>
   </div>
 </section>
+
+<script>
+  // Dynamic heading from ?to=XXX query string
+  (function () {
+    var params = new URLSearchParams(window.location.search);
+    var to = (params.get('to') || 'BOS').toUpperCase();
+    var routes = {
+      DUB: { city: 'Dublin', code: 'DUB', dur: '0h 0m', stops: 'Home hub' },
+      AMS: { city: 'Amsterdam', code: 'AMS', dur: '1h 50m', stops: 'Direct' },
+      MAD: { city: 'Madrid', code: 'MAD', dur: '2h 50m', stops: 'Direct' },
+      BOS: { city: 'Boston', code: 'BOS', dur: '7h 25m', stops: 'Direct' },
+      LIS: { city: 'Lisbon', code: 'LIS', dur: '3h 10m', stops: 'Direct' },
+      LHR: { city: 'London', code: 'LHR', dur: '1h 25m', stops: 'Direct' }
+    };
+    var r = routes[to] || routes.BOS;
+    var heading = document.getElementById('route-heading');
+    var summary = document.getElementById('route-summary');
+    if (to === 'DUB') {
+      heading.textContent = 'Departures from Dublin (DUB)';
+      summary.textContent = 'Sun 12 Jul 2026 · Onward connections from your home hub';
+    } else {
+      heading.textContent = 'Dublin (DUB) to ' + r.city + ' (' + r.code + ')';
+      summary.textContent = 'Sun 12 Jul 2026 · 1 adult · Economy · ' + r.dur + ' · ' + r.stops;
+    }
+    document.title = 'Flight results: Dublin to ' + r.city + ' · SkyLoyal Airways';
+  })();
+</script>
 
 <section class="results-section">
   <div class="container">
