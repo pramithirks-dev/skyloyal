@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Flight results: Dublin to Boston · SkyLoyal Airways</title>
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link rel="stylesheet" href="assets/style.css?v=7">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
   .results-hero { background: linear-gradient(135deg, var(--navy), var(--navy-2)); color: white; padding: 2.5rem 2rem 1.6rem; }
@@ -51,7 +51,7 @@
 <body>
 
 <header class="nav" id="topnav">
-  <div class="brand">SkyLoyal<span class="tag">Airways</span></div>
+  <a class="brand" href="index.html">SkyLoyal<span class="tag">Airways</span></a>
   <nav class="nav-links">
     <a href="index.html">Loyalty</a>
     <a href="index.html#destinations">Destinations</a>
@@ -60,6 +60,17 @@
     <a href="flyer-view.html" class="login">Sign in</a>
   </nav>
 </header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <a class="home" href="index.html">Loyalty</a>
+    <span class="sep">›</span>
+    <a href="index.html#destinations">Book a flight</a>
+    <span class="sep">›</span>
+    <span class="current" id="bc-current">Results</span>
+    <a class="back-link" href="index.html">Back to home</a>
+  </div>
+</nav>
 
 <section class="results-hero">
   <div class="container">
@@ -85,12 +96,15 @@
     var r = routes[to] || routes.BOS;
     var heading = document.getElementById('route-heading');
     var summary = document.getElementById('route-summary');
+    var bc = document.getElementById('bc-current');
     if (to === 'DUB') {
       heading.textContent = 'Departures from Dublin (DUB)';
       summary.textContent = 'Sun 12 Jul 2026 · Onward connections from your home hub';
+      if (bc) bc.textContent = 'Dublin departures';
     } else {
       heading.textContent = 'Dublin (DUB) to ' + r.city + ' (' + r.code + ')';
       summary.textContent = 'Sun 12 Jul 2026 · 1 adult · Economy · ' + r.dur + ' · ' + r.stops;
+      if (bc) bc.textContent = 'Dublin to ' + r.city;
     }
     document.title = 'Flight results: Dublin to ' + r.city + ' · SkyLoyal Airways';
   })();

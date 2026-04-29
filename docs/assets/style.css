@@ -58,12 +58,16 @@ body.has-hero { padding-top: 0; }
   display: flex; align-items: center; justify-content: space-between;
   height: 64px;
 }
-.nav .brand {
+.nav .brand,
+.nav a.brand {
   font-family: Georgia, serif;
   font-size: 1.45rem;
   letter-spacing: 0.02em;
   color: var(--navy);
+  text-decoration: none;
+  transition: opacity .15s ease;
 }
+.nav a.brand:hover { opacity: 0.85; }
 .nav .brand .tag {
   display: inline-block;
   margin-left: .55rem;
@@ -116,6 +120,35 @@ body.has-hero { padding-top: 0; }
   .nav-links { gap: 1rem; }
   .nav-links a:not(.login) { display: none; }
 }
+
+/* ----------------------------- Breadcrumbs --------------------------------- */
+.breadcrumbs {
+  background: var(--soft-bg);
+  border-bottom: 1px solid var(--line-2);
+  padding: .8rem 2rem;
+  font-size: .88rem;
+}
+.breadcrumbs .container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex; align-items: center; gap: .55rem;
+  flex-wrap: wrap;
+}
+.breadcrumbs a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.breadcrumbs a:hover { color: var(--navy); text-decoration: underline; }
+.breadcrumbs .sep { color: var(--line-2); }
+.breadcrumbs .current { color: var(--ink); font-weight: 600; }
+.breadcrumbs .home { display: inline-flex; align-items: center; gap: .35rem; }
+.breadcrumbs .home::before { content: "⌂"; color: var(--metal-2); }
+.breadcrumbs .back-link {
+  margin-left: auto;
+  color: var(--navy);
+  font-weight: 600;
+}
+.breadcrumbs .back-link::before { content: "← "; color: var(--metal-2); }
 
 /* ----------------------------- Cinematic hero ------------------------------ */
 .hero-cinema {
