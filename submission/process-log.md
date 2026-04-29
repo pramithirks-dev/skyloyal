@@ -28,11 +28,11 @@ Status legend: ✅ done · 🔄 in progress · ⏳ pending
 | 1 | Author 5 agent system prompts | ✅ |
 | 2 | Generate mock loyalty dataset | ✅ |
 | 3 | GitHub repo + Pages live | ✅ |
-| 4 | Cycle 1, run the agentic pipeline | ⏳ |
-| 5 | Cycle 2, act on Manager critique | ⏳ |
-| 6 | Verify the prototype site | ⏳ |
-| 7 | Draft reflection notes (Pramithi's voice) | ⏳ |
-| 8 | Assemble PPTX submission | ⏳ |
+| 4 | Cycle 1: run the agentic pipeline | ✅ |
+| 5 | Cycle 2: act on Manager critique | ✅ (Designer Cycle 2 in same run) |
+| 6 | Verify and refine the prototype site | ✅ (heavy iteration: SkyJet airline page, breadcrumbs, scroll-spy, copy reframe, brightness, more) |
+| 7 | Draft reflection notes (your voice) | ⏳ |
+| 8 | Assemble PPTX submission | ⏳ — scaffolded in `submission/submission-pack.md` |
 | 9 | Final verification & Turnitin submission | ⏳ |
 
 ---
