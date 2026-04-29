@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SkyLoyal Loyalty Rescue: A loyalty programme that notices before you leave</title>
 <meta name="description" content="SkyLoyal Loyalty Rescue. The proactive loyalty programme that listens for the signals other airlines miss, and reaches out the way a good travel agent would. Pilot from Q3 2026.">
-<link rel="stylesheet" href="assets/style.css?v=16">
+<link rel="stylesheet" href="assets/style.css?v=17">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 </head>
 <body class="has-hero">
@@ -51,7 +51,7 @@
       </div>
       <div class="field">
         <label>To</label>
-        <select>
+        <select id="book-to">
           <option>Boston (BOS)</option>
           <option>Lisbon (LIS)</option>
           <option>Amsterdam (AMS)</option>
@@ -73,7 +73,7 @@
       </div>
       <div class="field">
         <label>&nbsp;</label>
-        <a href="flight-results.html" class="btn btn-dark" style="text-align:center;">Search →</a>
+        <a href="flight-results.html" id="book-search" class="btn btn-dark" style="text-align:center;">Search →</a>
       </div>
     </div>
 
@@ -371,6 +371,19 @@
     }
     window.addEventListener('scroll', update, { passive: true });
     update();
+  })();
+
+  // Search button: read the selected destination and pass as ?to=XXX
+  (function () {
+    var sel = document.getElementById('book-to');
+    var btn = document.getElementById('book-search');
+    if (!sel || !btn) return;
+    btn.addEventListener('click', function (e) {
+      var m = sel.value.match(/\(([A-Z]{3})\)/);
+      var code = m ? m[1] : 'BOS';
+      e.preventDefault();
+      window.location.href = 'flight-results.html?to=' + code;
+    });
   })();
 
   // Scroll-spy: highlight the nav link for the section currently in view
