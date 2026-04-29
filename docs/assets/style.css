@@ -171,9 +171,13 @@ body.has-hero { padding-top: 0; }
   overflow: visible;
   display: flex; align-items: flex-end;
   background: linear-gradient(180deg, #0a1a3a, #1f3a6e);
-  padding-top: 64px; /* clear the fixed nav */
+  padding-top: 64px; /* clear the fixed nav (homepage has-hero variant) */
   padding-bottom: 130px; /* room for the lookup card overlap below */
 }
+/* On non-has-hero pages, body already adds 64px padding-top, so the hero
+   should not double up. Used by skyjet.html where a breadcrumb sits
+   between the nav and the hero. */
+body:not(.has-hero) .hero-cinema { padding-top: 1.4rem; min-height: 660px; }
 .hero-cinema .bg {
   position: absolute; inset: 0; z-index: 0;
   background-size: cover;

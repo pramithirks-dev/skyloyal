@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SkyJet Airways: Ireland's network airline · Fly with us</title>
 <meta name="description" content="SkyJet Airways. Ireland's network airline, hubbed in Dublin. 78 destinations across Europe and the Atlantic, served by a modern fleet of A330s and 787s. Book direct, fly direct.">
-<link rel="stylesheet" href="assets/style.css?v=18">
+<link rel="stylesheet" href="assets/style.css?v=19">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
   /* SkyJet-page-specific accents */
@@ -92,9 +92,9 @@
   .trust-strip .item p { color: var(--muted); margin: 0; font-size: .85rem; }
 </style>
 </head>
-<body class="has-hero">
+<body>
 
-<header class="nav on-hero" id="topnav">
+<header class="nav" id="topnav">
   <a class="brand" href="skyjet.html">SkyJet<span class="tag">Airways</span></a>
   <nav class="nav-links">
     <a href="skyjet.html" class="active">Home</a>
@@ -105,6 +105,15 @@
     <a href="flyer-view.html" class="login">Sign in</a>
   </nav>
 </header>
+
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+  <div class="container">
+    <a class="home" href="skyjet.html">SkyJet</a>
+    <span class="sep">›</span>
+    <span class="current">Home</span>
+    <a class="back-link" href="index.html">Visit SkyLoyal</a>
+  </div>
+</nav>
 
 <!-- Cinematic hero with aircraft wing imagery -->
 <section class="hero-cinema" aria-label="SkyJet hero">
@@ -436,20 +445,6 @@
 </footer>
 
 <script>
-  // Sticky-nav transparency on hero
-  (function () {
-    var nav = document.getElementById('topnav');
-    var hero = document.querySelector('.hero-cinema');
-    if (!nav || !hero) return;
-    function update() {
-      var threshold = hero.offsetHeight - 80;
-      if (window.scrollY > threshold) nav.classList.remove('on-hero');
-      else nav.classList.add('on-hero');
-    }
-    window.addEventListener('scroll', update, { passive: true });
-    update();
-  })();
-
   // Scroll-spy: highlight the nav link for the section currently in view
   (function () {
     var nav = document.getElementById('topnav');
