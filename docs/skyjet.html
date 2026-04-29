@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>SkyJet Airways: Ireland's network airline · Fly with us</title>
 <meta name="description" content="SkyJet Airways. Ireland's network airline, hubbed in Dublin. 78 destinations across Europe and the Atlantic, served by a modern fleet of A330s and 787s. Book direct, fly direct.">
-<link rel="stylesheet" href="assets/style.css?v=17">
+<link rel="stylesheet" href="assets/style.css?v=18">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <style>
   /* SkyJet-page-specific accents */
@@ -445,6 +445,51 @@
       var threshold = hero.offsetHeight - 80;
       if (window.scrollY > threshold) nav.classList.remove('on-hero');
       else nav.classList.add('on-hero');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
+  // Scroll-spy: highlight the nav link for the section currently in view
+  (function () {
+    var nav = document.getElementById('topnav');
+    if (!nav) return;
+    var links = nav.querySelectorAll('.nav-links a:not(.login)');
+    var homeLink = null;
+    var sections = [];
+    links.forEach(function (a) {
+      var href = a.getAttribute('href') || '';
+      if (href === 'skyjet.html' || href === '#' || href === '') {
+        homeLink = a;
+        return;
+      }
+      var hash = href.match(/^#(.+)$/);
+      if (hash) {
+        var el = document.getElementById(hash[1]);
+        if (el) sections.push({ link: a, el: el });
+      }
+    });
+    function setActive(link) {
+      links.forEach(function (l) { l.classList.remove('active'); });
+      if (link) link.classList.add('active');
+    }
+    function update() {
+      if (window.scrollY < 60) { setActive(homeLink); return; }
+      var docHeight = Math.max(
+        document.body.scrollHeight, document.documentElement.scrollHeight,
+        document.body.offsetHeight, document.documentElement.offsetHeight
+      );
+      if (window.innerHeight + window.scrollY >= docHeight - 80 && sections.length) {
+        setActive(sections[sections.length - 1].link);
+        return;
+      }
+      var checkpoint = window.scrollY + 90;
+      var current = homeLink;
+      sections.forEach(function (item) {
+        var top = item.el.getBoundingClientRect().top + window.scrollY;
+        if (top <= checkpoint) current = item.link;
+      });
+      setActive(current);
     }
     window.addEventListener('scroll', update, { passive: true });
     update();
