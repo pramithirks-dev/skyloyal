@@ -4,8 +4,294 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>My SkyLoyal: Nuala D.</title>
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link rel="stylesheet" href="assets/style.css?v=6">
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230a1a3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='40' fill='%23c8b478' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<style>
+  /* My SkyLoyal page-specific styles */
+  .account-strip {
+    background: linear-gradient(135deg, #0a1a3a 0%, #122a55 60%, #1f3a6e 100%);
+    color: white;
+    padding: 2.4rem 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 3px solid var(--metal);
+  }
+  .account-strip::after {
+    content: ""; position: absolute; right: -50px; top: -30px; bottom: -30px; width: 380px;
+    background: url('https://images.unsplash.com/photo-1465778893808-9b3d1b443be4?auto=format&fit=crop&w=900&q=80') center/cover;
+    opacity: 0.18; mask: linear-gradient(270deg, black 30%, transparent 95%);
+    -webkit-mask: linear-gradient(270deg, black 30%, transparent 95%);
+  }
+  .account-strip .container { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: auto 1fr auto; gap: 1.6rem; align-items: center; position: relative; z-index: 2; }
+  @media (max-width: 800px) { .account-strip .container { grid-template-columns: auto 1fr; } .account-strip .balance-pill { grid-column: 1 / -1; margin-top: .6rem; } }
+  .avatar {
+    width: 72px; height: 72px;
+    background: var(--metal); color: var(--navy);
+    font-family: Georgia, serif; font-size: 2.2rem; font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    border: 3px solid white;
+  }
+  .greet h1 { font-family: Georgia, serif; font-size: 1.9rem; margin: 0 0 .25rem; font-weight: 500; }
+  .greet h1 .name { color: var(--metal); }
+  .greet .meta { color: rgba(255,255,255,0.85); font-size: .92rem; }
+  .greet .meta .pill {
+    display: inline-block; background: var(--metal); color: var(--navy);
+    padding: .12rem .55rem; border-radius: 999px;
+    font-weight: 600; font-size: .78rem; letter-spacing: .04em; margin-right: .4rem;
+  }
+  .greet .meta .sep { color: rgba(255,255,255,0.4); margin: 0 .35rem; }
+  .balance-pill {
+    text-align: right;
+    border: 1px solid rgba(200,180,120,0.5);
+    background: rgba(255,255,255,0.05);
+    padding: .8rem 1.2rem; border-radius: var(--radius);
+  }
+  .balance-pill .label { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  .balance-pill .num { font-family: Georgia, serif; font-size: 1.8rem; line-height: 1.1; color: var(--metal); }
+  .balance-pill .sub { font-size: .82rem; color: rgba(255,255,255,0.7); margin-top: .15rem; }
+
+  /* Quick actions */
+  .quick-actions {
+    background: white; border-bottom: 1px solid var(--line-2);
+    padding: 1rem 2rem;
+  }
+  .quick-actions .container { max-width: 1240px; margin: 0 auto; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+  @media (max-width: 800px) { .quick-actions .container { grid-template-columns: repeat(2, 1fr); } }
+  .qa-item {
+    display: flex; align-items: center; gap: .8rem;
+    padding: .8rem 1rem;
+    border: 1px solid var(--line-2);
+    border-radius: var(--radius);
+    background: white;
+    text-decoration: none; color: var(--ink);
+    transition: all .15s ease;
+  }
+  .qa-item:hover { border-color: var(--metal); transform: translateY(-2px); box-shadow: var(--shadow-sm); }
+  .qa-item .icon {
+    width: 42px; height: 42px;
+    background: var(--soft-bg); border-radius: var(--radius);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--navy); font-size: 1.4rem;
+  }
+  .qa-item .label { font-weight: 600; color: var(--navy); font-size: .96rem; }
+  .qa-item .meta { color: var(--muted); font-size: .8rem; }
+
+  /* Main page layout */
+  .my-page { max-width: 1240px; margin: 0 auto; padding: 2.5rem 2rem 4rem; }
+  .my-grid {
+    display: grid; grid-template-columns: 2fr 1fr; gap: 2rem;
+  }
+  @media (max-width: 1000px) { .my-grid { grid-template-columns: 1fr; } }
+
+  .section-title {
+    font-family: Georgia, serif;
+    color: var(--navy);
+    font-size: 1.35rem;
+    margin: 2rem 0 .8rem;
+    font-weight: 500;
+    display: flex; justify-content: space-between; align-items: baseline;
+  }
+  .section-title:first-child { margin-top: 0; }
+  .section-title .hint { font-size: .82rem; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; font-weight: normal; }
+
+  /* Tier progress card */
+  .tier-card-2 {
+    background: linear-gradient(135deg, #122a55 0%, #1f3a6e 100%);
+    color: white; border: 1px solid rgba(200,180,120,0.4);
+    border-radius: var(--radius);
+    padding: 2rem 2rem 1.8rem;
+    box-shadow: var(--shadow-md);
+    position: relative; overflow: hidden;
+  }
+  .tier-card-2::after {
+    content: ""; position: absolute; right: -120px; top: -60px; width: 340px; height: 340px;
+    background: radial-gradient(circle at center, rgba(200,180,120,0.18), transparent 60%);
+  }
+  .tier-card-2 .header { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem; position: relative; z-index: 2; }
+  .tier-card-2 .badge {
+    font-family: Georgia, serif; font-size: 1.6rem; color: var(--metal);
+    border: 2px solid var(--metal); padding: .55rem 1.4rem; letter-spacing: .04em;
+    background: rgba(200,180,120,0.06);
+  }
+  .tier-card-2 .expires { color: rgba(255,255,255,0.85); font-size: .85rem; }
+  .tier-card-2 .expires strong { color: white; }
+  .tier-card-2 .progress { position: relative; z-index: 2; }
+  .tier-card-2 .progress .label { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,0.75); margin-bottom: .35rem; }
+  .tier-card-2 .progress .bar { background: rgba(255,255,255,0.12); border: 1px solid rgba(200,180,120,0.45); height: 18px; position: relative; overflow: hidden; }
+  .tier-card-2 .progress .bar .fill { background: linear-gradient(90deg, var(--metal) 0%, #e0c98a 100%); height: 100%; }
+  .tier-card-2 .progress .legend { display: flex; justify-content: space-between; margin-top: .55rem; font-size: .85rem; color: rgba(255,255,255,0.85); }
+  .tier-card-2 .next-tier { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(255,255,255,0.12); font-size: .9rem; color: rgba(255,255,255,0.85); position: relative; z-index: 2; }
+  .tier-card-2 .next-tier strong { color: var(--metal); }
+  .cd-tag-inline {
+    display: inline-block; font-size: .68rem; letter-spacing: .08em; text-transform: uppercase;
+    background: rgba(200,180,120,0.18); color: var(--metal);
+    padding: .12rem .5rem; border-radius: 2px; margin-left: .4rem;
+  }
+
+  /* Stats trio */
+  .stats-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+  @media (max-width: 800px) { .stats-trio { grid-template-columns: 1fr; } }
+  .stat-tile {
+    background: white; border: 1px solid var(--line-2);
+    padding: 1.3rem 1.4rem 1.2rem; border-radius: var(--radius);
+    box-shadow: var(--shadow-sm);
+  }
+  .stat-tile .head { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
+  .stat-tile .big { font-family: Georgia, serif; font-size: 1.9rem; line-height: 1; color: var(--navy); }
+  .stat-tile .sub { color: var(--ink-2); font-size: .9rem; margin: .35rem 0 .55rem; }
+  .stat-tile .cd-mini { font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; background: rgba(15,31,61,0.06); color: var(--navy-2); padding: .12rem .5rem; border-radius: 2px; }
+  .stat-tile a { color: var(--navy); text-decoration: underline; font-size: .85rem; }
+
+  /* Upcoming trip card */
+  .trip-card {
+    background: white; border: 1px solid var(--line-2);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-sm);
+  }
+  .trip-card .pic {
+    height: 140px;
+    background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=1200&q=80');
+    background-size: cover; background-position: center;
+    position: relative;
+  }
+  .trip-card .pic::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(10,26,58,0.55), rgba(10,26,58,0.25));
+  }
+  .trip-card .pic .label {
+    position: absolute; left: 1.4rem; bottom: 1rem;
+    color: white; z-index: 2;
+  }
+  .trip-card .pic .label .small { font-size: .76rem; letter-spacing: .14em; text-transform: uppercase; opacity: 0.85; }
+  .trip-card .pic .label .big { font-family: Georgia, serif; font-size: 1.5rem; }
+  .trip-card .body { padding: 1.2rem 1.4rem 1.4rem; }
+  .trip-card .timeline { display: grid; grid-template-columns: 1fr auto 1fr; gap: 1rem; align-items: center; margin: .4rem 0 1rem; }
+  .trip-card .timeline .city { font-family: Georgia, serif; font-size: 1.4rem; color: var(--navy); line-height: 1.1; }
+  .trip-card .timeline .city .sub { display: block; font-size: .82rem; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin-top: .15rem; }
+  .trip-card .timeline .city.right { text-align: right; }
+  .trip-card .timeline .arrow {
+    position: relative; height: 1px; background: var(--line-2);
+    min-width: 80px;
+  }
+  .trip-card .timeline .arrow::after {
+    content: "✈"; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    background: white; padding: 0 .35rem; color: var(--metal-2); font-size: 1.1rem;
+  }
+  .trip-card .meta-row { display: flex; gap: 1.5rem; flex-wrap: wrap; color: var(--muted); font-size: .9rem; padding-top: 1rem; border-top: 1px solid var(--line-2); }
+  .trip-card .meta-row strong { color: var(--ink); }
+  .trip-card .actions { margin-top: 1rem; display: flex; gap: .6rem; flex-wrap: wrap; }
+  .btn-link { color: var(--navy); text-decoration: none; font-weight: 600; padding: .5rem 1rem; border: 1px solid var(--line-2); border-radius: var(--radius); font-size: .9rem; }
+  .btn-link:hover { background: var(--soft-bg); border-color: var(--metal); }
+
+  /* Activity timeline */
+  .activity { background: white; border: 1px solid var(--line-2); border-radius: var(--radius); padding: .4rem 1.4rem; box-shadow: var(--shadow-sm); }
+  .activity-row {
+    display: grid; grid-template-columns: 1fr 1.4fr 1fr 0.8fr; gap: 1rem;
+    padding: .9rem 0; border-bottom: 1px solid var(--line-2);
+    align-items: center;
+    font-size: .92rem;
+  }
+  @media (max-width: 700px) { .activity-row { grid-template-columns: 1fr 1fr; } }
+  .activity-row:last-child { border-bottom: none; }
+  .activity-row .date { color: var(--muted); font-size: .85rem; }
+  .activity-row .route strong { color: var(--navy); }
+  .activity-row .route .ic { color: var(--metal-2); margin: 0 .25rem; }
+  .activity-row .flight { color: var(--ink-2); font-size: .88rem; }
+  .activity-row .miles { font-family: Georgia, serif; color: var(--green); font-size: 1.05rem; text-align: right; }
+  .activity-row .miles .x5 { font-size: .72rem; color: var(--muted); display: block; margin-top: .1rem; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
+  /* Recommendation cards */
+  .recos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; }
+  @media (max-width: 900px) { .recos { grid-template-columns: 1fr; } }
+  .reco {
+    background: white; border: 1px solid var(--line-2); border-radius: var(--radius);
+    overflow: hidden; box-shadow: var(--shadow-sm);
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  .reco:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
+  .reco .pic { height: 130px; background-size: cover; background-position: center; }
+  .reco .body { padding: 1rem 1.1rem; }
+  .reco h4 { margin: 0 0 .15rem; font-family: Georgia, serif; color: var(--navy); font-size: 1.1rem; }
+  .reco .meta { color: var(--muted); font-size: .82rem; margin-bottom: .55rem; }
+  .reco .miles { font-family: Georgia, serif; color: var(--navy); font-size: 1.15rem; }
+  .reco .miles .unit { font-size: .8rem; color: var(--muted); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin-left: .25rem; }
+  .reco .tag { display: inline-block; background: rgba(200,180,120,0.15); color: var(--metal-2); font-size: .68rem; letter-spacing: .08em; text-transform: uppercase; padding: .12rem .45rem; border-radius: 2px; margin-top: .35rem; }
+
+  /* Sustainability tile */
+  .epic-tile {
+    background: linear-gradient(135deg, #f0f3fa 0%, #e1e8f5 100%);
+    border: 1px solid #c4cfe5;
+    padding: 1.4rem 1.5rem 1.2rem;
+    border-radius: var(--radius);
+  }
+  .epic-tile .head { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--navy-2); margin-bottom: .35rem; }
+  .epic-tile h4 { margin: 0 0 .3rem; font-family: Georgia, serif; color: var(--navy); font-size: 1.2rem; }
+  .epic-tile p { margin: .4rem 0; color: var(--ink); font-size: .96rem; line-height: 1.5; }
+  .epic-tile .num { font-family: Georgia, serif; font-size: 1.6rem; color: var(--navy); }
+
+  /* Surprise gift */
+  .surprise-2 {
+    background: linear-gradient(95deg, #fdf6e2 0%, #f3e6b9 100%);
+    border: 1px solid var(--metal);
+    border-radius: var(--radius);
+    padding: 1.3rem 1.4rem;
+    display: grid; grid-template-columns: auto 1fr auto; gap: 1.1rem; align-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+  @media (max-width: 600px) { .surprise-2 { grid-template-columns: 1fr; text-align: center; } }
+  .surprise-2 .gift {
+    width: 56px; height: 56px;
+    border-radius: 50%; background: var(--metal); color: var(--navy);
+    display: flex; align-items: center; justify-content: center; font-size: 1.8rem;
+  }
+  .surprise-2 h4 { margin: 0 0 .15rem; font-family: Georgia, serif; color: var(--navy); font-size: 1.15rem; }
+  .surprise-2 p { margin: 0; color: var(--ink-2); font-size: .92rem; }
+
+  /* Trip mode picker */
+  .picker-2 { background: white; border: 1px solid var(--line-2); border-radius: var(--radius); padding: 1.3rem 1.4rem; box-shadow: var(--shadow-sm); }
+  .picker-2 h4 { margin: 0 0 .3rem; font-family: Georgia, serif; color: var(--navy); font-size: 1.1rem; }
+  .picker-2 .help { color: var(--muted); font-size: .9rem; margin: 0 0 .8rem; }
+  .picker-2 .options { display: flex; gap: .5rem; flex-wrap: wrap; }
+  .picker-2 label {
+    padding: .55rem 1rem;
+    border: 1px solid var(--line-2);
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: .92rem;
+    background: var(--soft-bg);
+    transition: all .15s ease;
+  }
+  .picker-2 label:hover { background: white; border-color: var(--metal); }
+  .picker-2 input[type=radio] { margin-right: .35rem; }
+  .picker-2 label.checked { background: var(--navy); color: white; border-color: var(--navy); }
+
+  /* Transparency */
+  .transparency-2 {
+    margin-top: 2rem;
+    padding: 1.2rem 1.4rem;
+    border: 1px dashed var(--line);
+    background: var(--soft-bg);
+    border-radius: var(--radius);
+  }
+  .transparency-2 h4 { margin: 0 0 .35rem; font-family: Georgia, serif; color: var(--navy); font-size: 1rem; }
+  .transparency-2 p { margin: 0; color: var(--muted); font-size: .9rem; line-height: 1.55; }
+  .transparency-2 a { color: var(--navy); text-decoration: underline; }
+
+  /* Side column components */
+  .side-card {
+    background: white; border: 1px solid var(--line-2); border-radius: var(--radius);
+    padding: 1.3rem 1.4rem; box-shadow: var(--shadow-sm); margin-bottom: 1rem;
+  }
+  .side-card h4 { margin: 0 0 .8rem; font-family: Georgia, serif; color: var(--navy); font-size: 1.1rem; }
+  .side-card .pref-row { display: flex; justify-content: space-between; padding: .55rem 0; border-bottom: 1px solid var(--line-2); font-size: .9rem; }
+  .side-card .pref-row:last-child { border-bottom: none; }
+  .side-card .pref-row .k { color: var(--muted); }
+  .side-card .pref-row .v { color: var(--ink); font-weight: 600; }
+  .side-card a.full { display: block; text-align: center; padding: .55rem; margin-top: .6rem; color: var(--navy); border: 1px solid var(--line-2); border-radius: var(--radius); font-size: .9rem; font-weight: 600; }
+  .side-card a.full:hover { border-color: var(--metal); }
+</style>
 </head>
 <body>
 
@@ -20,82 +306,268 @@
   </nav>
 </header>
 
-<main class="flyer-page" style="padding: 2rem 1.5rem 4rem;">
-
-  <!-- Personal hero strip with Boston route imagery -->
-  <div class="flyer-hero">
-    <div class="bg" style="background-image: url('https://images.unsplash.com/photo-1581373449483-37449f962b6c?auto=format&fit=crop&w=1600&q=80');"></div>
-    <div class="scrim"></div>
-    <div class="inner">
-      <h1 class="greeting">Hello, <span class="name">Nuala</span>.</h1>
-      <p class="sub">Here is your loyalty year so far. Every element on this page is something we earned, not something we are taking.</p>
+<!-- Account header strip -->
+<section class="account-strip">
+  <div class="container">
+    <div class="avatar" aria-hidden="true">N</div>
+    <div class="greet">
+      <h1>Hello, <span class="name">Nuala</span>.</h1>
+      <div class="meta">
+        <span class="pill">GOLD</span>
+        Member <strong>SKY000234</strong>
+        <span class="sep">·</span> Dublin (DUB)
+        <span class="sep">·</span> Member since 2014
+      </div>
+    </div>
+    <div class="balance-pill">
+      <div class="label">Miles available</div>
+      <div class="num">92,400</div>
+      <div class="sub">7,800 expiring in 76 days</div>
     </div>
   </div>
+</section>
 
-  <article class="tier-card" data-cd="CD2" data-cd-name="Development &amp; Accomplishment" aria-label="Tier progress">
-    <div class="tier-badge serif">GOLD</div>
-    <div class="progress-row">
-      <span class="label">Year-to-date segments toward retention</span>
+<!-- Quick actions -->
+<section class="quick-actions">
+  <div class="container">
+    <a class="qa-item" href="flight-results.html">
+      <div class="icon" aria-hidden="true">✈</div>
+      <div><div class="label">Book a flight</div><div class="meta">Search fares for your routes</div></div>
+    </a>
+    <a class="qa-item" href="award-results.html">
+      <div class="icon" aria-hidden="true">★</div>
+      <div><div class="label">Use miles</div><div class="meta">6 trip ideas with your balance</div></div>
+    </a>
+    <a class="qa-item" href="#upcoming">
+      <div class="icon" aria-hidden="true">⌂</div>
+      <div><div class="label">Manage trip</div><div class="meta">SL188 to Boston, 12 Jul</div></div>
+    </a>
+    <a class="qa-item" href="#">
+      <div class="icon" aria-hidden="true">▦</div>
+      <div><div class="label">Check in</div><div class="meta">Opens 24h before departure</div></div>
+    </a>
+  </div>
+</section>
+
+<main class="my-page">
+
+  <!-- Tier progress card (CD2) -->
+  <h2 class="section-title">Your tier <span class="hint">3 segments to retain Gold</span></h2>
+
+  <article class="tier-card-2" data-cd="CD2" data-cd-name="Development &amp; Accomplishment" aria-label="Tier progress">
+    <div class="header">
+      <div class="badge serif">GOLD</div>
+      <div class="expires">Tier expires <strong>31 December 2026</strong> · 6 of 9 segments flown</div>
+    </div>
+    <div class="progress">
+      <div class="label">Year-to-date toward retention</div>
       <div class="bar" role="img" aria-valuenow="6" aria-valuemin="0" aria-valuemax="9">
         <div class="fill" style="width: 66.6%;"></div>
       </div>
-      <span class="small">6 of 9 segments. 3 to retain Gold by 31 December. 9 more to unlock Platinum.</span>
-      <span class="cd-label">CD2: Development</span>
+      <div class="legend">
+        <span>Blue</span><span>Silver</span><span style="color:var(--metal);">Gold ●</span><span>Platinum</span>
+      </div>
+    </div>
+    <div class="next-tier">
+      <strong>9 more segments</strong> would unlock Platinum: priority check-in, two free upgrades a year, and miles-pool sharing across your household.
+      <span class="cd-tag-inline">CD2: Development</span>
     </div>
   </article>
 
-  <div class="tile-row">
-    <div class="tile" data-cd="CD4" data-cd-name="Ownership &amp; Possession" aria-label="Miles balance">
+  <!-- Three stat tiles (CD4, CD8, CD5) -->
+  <div class="stats-trio">
+    <div class="stat-tile" data-cd="CD4" data-cd-name="Ownership &amp; Possession" aria-label="Miles balance">
       <div class="head">My miles, my history</div>
-      <div class="big serif">92,400</div>
-      <div class="sub">47 hubs visited · 184,000 km flown</div>
-      <span class="cd-label">CD4: Ownership</span>
+      <div class="big">92,400</div>
+      <div class="sub">47 hubs visited · 184,000 km flown · 11 years a member</div>
+      <span class="cd-mini">CD4: Ownership</span>
     </div>
-    <div class="tile" data-cd="CD8" data-cd-secondary="CD4" data-cd-name="Loss Avoidance, white-hat-framed" aria-label="Expiring miles">
-      <div class="head">Expiring miles</div>
-      <div class="big serif">7,800</div>
-      <div class="sub">in 76 days. Three trip ideas waiting: Lisbon weekend, Boston extension, charity donation.</div>
-      <span class="cd-label">CD8: Loss, opportunity-framed</span>
+    <div class="stat-tile" data-cd="CD8" data-cd-secondary="CD4" data-cd-name="Loss Avoidance, white-hat-framed" aria-label="Expiring miles">
+      <div class="head">Expiring in 76 days</div>
+      <div class="big">7,800</div>
+      <div class="sub">Use them on Lisbon, a Boston extension, or donate to charity. <a href="award-results.html">See ideas</a></div>
+      <span class="cd-mini">CD8: Loss, opportunity-framed</span>
     </div>
-    <div class="tile" data-cd="CD5" data-cd-name="Social Influence &amp; Relatedness" aria-label="Peer recognition">
+    <div class="stat-tile" data-cd="CD5" data-cd-name="Social Influence &amp; Relatedness" aria-label="Peer recognition">
       <div class="head">Recognition</div>
-      <div class="big serif">Top 12%</div>
-      <div class="sub">of Dublin flyers in your tier this year.</div>
-      <span class="cd-label">CD5: Social</span>
+      <div class="big">Top 12%</div>
+      <div class="sub">of Dublin Gold flyers in 2026. You are flying more than 88% of your peers.</div>
+      <span class="cd-mini">CD5: Social</span>
     </div>
   </div>
 
-  <article class="tile tile-epic" data-cd="CD1" data-cd-name="Epic Meaning &amp; Calling" aria-label="Sustainable aviation contribution">
-    <div class="head">Why your flying matters</div>
-    <p>Your Gold-tier flying contributed <strong>1.2 tonnes</strong> of Sustainable Aviation Fuel this quarter. Your seat funded this. Across the fleet, our Gold cohort displaced 412 tonnes of conventional fuel.</p>
-    <span class="cd-label">CD1: Epic Meaning</span>
-  </article>
+  <!-- Two-column main grid -->
+  <div class="my-grid">
 
-  <article class="surprise" data-cd="CD7" data-cd-name="Unpredictability &amp; Curiosity" aria-label="Surprise gift">
-    <div class="gift" aria-hidden="true">🎁</div>
-    <div class="body">
-      <h4>This month's gift</h4>
-      <p>A complimentary lounge pass for your next Dublin departure. No expiry. No conditions. Already in your wallet.</p>
-      <span class="cd-label" style="background: rgba(184,120,16,.18); color: #6a4500;">CD7: Unpredictability</span>
+    <!-- Left column -->
+    <div>
+
+      <!-- Upcoming trip -->
+      <h2 class="section-title" id="upcoming">Your next trip <span class="hint">Departing in 74 days</span></h2>
+      <div class="trip-card">
+        <div class="pic">
+          <div class="label">
+            <span class="small">SkyLoyal · SL188</span>
+            <span class="big">Dublin to Boston</span>
+          </div>
+        </div>
+        <div class="body">
+          <div class="timeline">
+            <div class="city">DUB <span class="sub">07:25 · Sun 12 Jul</span></div>
+            <div class="arrow"></div>
+            <div class="city right">BOS <span class="sub">09:50 · Sun 12 Jul</span></div>
+          </div>
+          <div class="meta-row">
+            <span><strong>Direct</strong> · 7h 25m</span>
+            <span>Cabin: <strong>Premium economy</strong></span>
+            <span>Seat: <strong>14A</strong></span>
+            <span>Earn: <strong>+7,520 miles</strong> (Gold 5x)</span>
+          </div>
+          <div class="actions">
+            <a class="btn-link" href="#">Manage booking</a>
+            <a class="btn-link" href="#">Choose seat</a>
+            <a class="btn-link" href="#">Add bag</a>
+            <a class="btn-link" href="#">Add to calendar</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent activity -->
+      <h2 class="section-title">Recent flights <span class="hint">Last 12 months</span></h2>
+      <div class="activity">
+        <div class="activity-row">
+          <div class="date">2 May 2026</div>
+          <div class="route"><strong>DUB</strong><span class="ic">→</span><strong>LHR</strong></div>
+          <div class="flight">SL022 · Economy</div>
+          <div class="miles">+ 624<span class="x5">Gold 5x</span></div>
+        </div>
+        <div class="activity-row">
+          <div class="date">14 Mar 2026</div>
+          <div class="route"><strong>DUB</strong><span class="ic">→</span><strong>LHR</strong></div>
+          <div class="flight">SL022 · Economy</div>
+          <div class="miles">+ 624<span class="x5">Gold 5x</span></div>
+        </div>
+        <div class="activity-row">
+          <div class="date">12 Feb 2026</div>
+          <div class="route"><strong>BOS</strong><span class="ic">→</span><strong>DUB</strong></div>
+          <div class="flight">SL189 · Economy</div>
+          <div class="miles">+ 5,580<span class="x5">Gold 5x</span></div>
+        </div>
+        <div class="activity-row">
+          <div class="date">8 Feb 2026</div>
+          <div class="route"><strong>DUB</strong><span class="ic">→</span><strong>BOS</strong></div>
+          <div class="flight">SL188 · Economy</div>
+          <div class="miles">+ 5,580<span class="x5">Gold 5x</span></div>
+        </div>
+        <div class="activity-row">
+          <div class="date">18 Jan 2026</div>
+          <div class="route"><strong>DUB</strong><span class="ic">→</span><strong>LHR</strong></div>
+          <div class="flight">SL022 · Economy</div>
+          <div class="miles">+ 624<span class="x5">Gold 5x</span></div>
+        </div>
+        <div class="activity-row">
+          <div class="date">22 Sep 2025</div>
+          <div class="route"><strong>DUB</strong><span class="ic">→</span><strong>BOS</strong></div>
+          <div class="flight">SL188 · Premium economy</div>
+          <div class="miles">+ 7,520<span class="x5">Gold 5x</span></div>
+        </div>
+      </div>
+
+      <!-- Recommended for you (CD3 + CD7 elements) -->
+      <h2 class="section-title">Recommended for you <span class="hint">Tailored to your travel pattern</span></h2>
+      <div class="recos">
+        <a class="reco" href="award-results.html" data-cd="CD3" data-cd-name="Empowerment of Creativity &amp; Feedback">
+          <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1555881400-74d7acaacd8b?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="body">
+            <h4>Lisbon weekend</h4>
+            <div class="meta">DUB to LIS · 3h 10m direct</div>
+            <div class="miles">11,000<span class="unit">miles return</span></div>
+            <span class="tag">Uses your expiring miles</span>
+          </div>
+        </a>
+        <a class="reco" href="award-results.html" data-cd="CD3">
+          <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1543783207-ec64e4d95325?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="body">
+            <h4>Madrid family bundle</h4>
+            <div class="meta">2 returns · pooled miles</div>
+            <div class="miles">22,000<span class="unit">miles total</span></div>
+            <span class="tag">Bring a companion</span>
+          </div>
+        </a>
+        <a class="reco" href="award-results.html" data-cd="CD7" data-cd-name="Unpredictability &amp; Curiosity">
+          <div class="pic" style="background-image: url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?auto=format&fit=crop&w=900&q=80');"></div>
+          <div class="body">
+            <h4>Boston extension</h4>
+            <div class="meta">Add 3 days to your July trip</div>
+            <div class="miles">8,000<span class="unit">miles upgrade</span></div>
+            <span class="tag">Mystery cabin upgrade · CD7</span>
+          </div>
+        </a>
+      </div>
+
+      <!-- Sustainability story (CD1) -->
+      <h2 class="section-title">Why your flying matters</h2>
+      <div class="epic-tile" data-cd="CD1" data-cd-name="Epic Meaning &amp; Calling" aria-label="Sustainable aviation contribution">
+        <div class="head">Sustainability · Q2 2026</div>
+        <h4>You contributed 1.2 tonnes of Sustainable Aviation Fuel</h4>
+        <p>Your seat funded this. Across the fleet, our Gold cohort displaced <span class="num">412 tonnes</span> of conventional fuel this quarter. That is the same as taking 90 cars off the road for a year.</p>
+        <span class="cd-mini" style="background: rgba(15,31,61,0.06); color: var(--navy-2);">CD1: Epic Meaning</span>
+      </div>
+
+      <!-- Surprise gift (CD7) -->
+      <h2 class="section-title">A small thank-you</h2>
+      <div class="surprise-2" data-cd="CD7" data-cd-name="Unpredictability &amp; Curiosity" aria-label="Surprise lounge pass">
+        <div class="gift" aria-hidden="true">★</div>
+        <div>
+          <h4>Complimentary lounge pass for your next Dublin departure</h4>
+          <p>No expiry. No conditions. Already in your wallet, ready when you scan your boarding pass.</p>
+        </div>
+        <a class="btn-link" href="#">View pass</a>
+      </div>
+
     </div>
-  </article>
 
-  <article class="style-picker" data-cd="CD3" data-cd-name="Empowerment of Creativity &amp; Feedback" aria-label="Trip mode picker">
-    <h4>Pick your trip mode</h4>
-    <p style="color: var(--muted); font-size: .9rem; margin: 0 0 .8rem;">We will tailor route suggestions and seat hold defaults to the mode you choose. Change any time.</p>
-    <div class="options">
-      <label class="checked"><input type="radio" name="mode" value="business-quick" checked> Business-quick</label>
-      <label><input type="radio" name="mode" value="family-slow"> Family-slow</label>
-      <label><input type="radio" name="mode" value="off-piste"> Off-piste</label>
-      <label><input type="radio" name="mode" value="custom"> Custom</label>
-    </div>
-    <span class="cd-label" style="background: rgba(15,31,61,.06); color: var(--navy-2); margin-top:.6rem;">CD3: Empowerment &amp; Feedback</span>
-  </article>
+    <!-- Right side column -->
+    <aside>
 
-  <div class="transparency">
-    <strong>Why am I seeing this?</strong> Because you are a SkyLoyal Gold member with active consent for tier-progress and retention communications.
-    You can <a href="#">adjust your contact frequency</a>, see how we calculated your tier ring (<a href="#">Article 15 explanation</a>), or <a href="#">opt out of profiling</a> at any time.
-    Risk-scoring of your account is reviewed by a human Customer Success Manager before any contact is sent (Article 22).
+      <div class="side-card">
+        <h4>Your preferences</h4>
+        <div class="pref-row"><span class="k">Seat</span><span class="v">Window, front of cabin</span></div>
+        <div class="pref-row"><span class="k">Meal</span><span class="v">Vegetarian</span></div>
+        <div class="pref-row"><span class="k">Cabin</span><span class="v">Premium economy</span></div>
+        <div class="pref-row"><span class="k">Communications</span><span class="v">Tier-progress on, marketing on</span></div>
+        <a class="full" href="#">Edit preferences</a>
+      </div>
+
+      <div class="side-card picker-2" data-cd="CD3" data-cd-name="Empowerment of Creativity &amp; Feedback">
+        <h4>Trip mode</h4>
+        <p class="help">Choose how we should suggest trips and seats.</p>
+        <div class="options">
+          <label class="checked"><input type="radio" name="mode" value="business-quick" checked> Business-quick</label>
+          <label><input type="radio" name="mode" value="family-slow"> Family-slow</label>
+          <label><input type="radio" name="mode" value="off-piste"> Off-piste</label>
+          <label><input type="radio" name="mode" value="custom"> Custom</label>
+        </div>
+        <span class="cd-mini" style="background: rgba(15,31,61,0.06); color: var(--navy-2); margin-top:.6rem; display: inline-block;">CD3: Empowerment</span>
+      </div>
+
+      <div class="side-card">
+        <h4>Tier benefits</h4>
+        <div class="pref-row"><span class="k">Lounge access</span><span class="v">Yes, with 1 guest</span></div>
+        <div class="pref-row"><span class="k">Priority security</span><span class="v">Yes</span></div>
+        <div class="pref-row"><span class="k">Extra baggage</span><span class="v">+1 piece</span></div>
+        <div class="pref-row"><span class="k">Miles earn</span><span class="v">5x base fare</span></div>
+        <div class="pref-row"><span class="k">Companion vouchers</span><span class="v">2 / year</span></div>
+        <a class="full" href="index.html#tiers">All tier benefits</a>
+      </div>
+
+    </aside>
+  </div>
+
+  <!-- Transparency block -->
+  <div class="transparency-2">
+    <h4>Why am I seeing what I am seeing?</h4>
+    <p>Your tier ring, expiring-miles tile, and recommended trips are all generated from your account activity. We use your flight history, miles balance, tier, and preferences to tailor the page. No automated decision affecting your account is taken without a human Customer Success Manager review (GDPR Article 22). You can <a href="#">see exactly how your tier ring is calculated</a>, <a href="#">adjust your contact frequency</a>, or <a href="#">opt out of profiling</a> at any time. We will keep talking to you, just on your terms.</p>
   </div>
 
 </main>
@@ -146,12 +618,26 @@
   </div>
   <div class="bottom">
     <div>© 2026 SkyLoyal Airways. All rights reserved.</div>
-    <div class="legal">
-      <a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a>
-    </div>
+    <div class="legal"><a href="#">Terms</a><a href="#">Privacy</a><a href="#">Cookies</a></div>
   </div>
 </footer>
 
-<script src="assets/app.js"></script>
+<script>
+  // Trip mode picker visual feedback
+  (function () {
+    var picker = document.querySelector('.picker-2');
+    if (!picker) return;
+    var labels = picker.querySelectorAll('label');
+    function refresh() {
+      labels.forEach(function (l) {
+        var r = l.querySelector('input[type=radio]');
+        l.classList.toggle('checked', r && r.checked);
+      });
+    }
+    labels.forEach(function (l) { l.addEventListener('change', refresh); });
+    refresh();
+  })();
+</script>
+
 </body>
 </html>
