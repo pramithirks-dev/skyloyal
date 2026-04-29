@@ -89,7 +89,14 @@ body.has-hero { padding-top: 0; }
 .nav-links a:hover { color: var(--navy); }
 .nav-links a.active::after {
   content: ""; position: absolute; left: 0; right: 0; bottom: -.55rem;
-  height: 3px; background: var(--metal);
+  height: 4px;
+  background: #e6b94a; /* brighter, more saturated gold than --metal so it reads on navy and white */
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+  transition: background-color .15s ease;
+}
+.nav.on-hero .nav-links a.active::after {
+  background: #f1c453; /* a touch brighter still over the dark hero nav */
+  box-shadow: 0 1px 2px rgba(0,0,0,0.35);
 }
 .nav-links .login {
   background: var(--navy); color: white; padding: .4rem 1rem;
