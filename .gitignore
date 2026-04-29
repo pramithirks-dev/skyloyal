@@ -15,3 +15,5 @@ Thumbs.db
 *.key
 *.pem
 submission/screenshots/*.tmp
+build_pptx.py
+Lib/
