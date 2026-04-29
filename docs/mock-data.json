@@ -1,5 +1,25 @@
 [
   {
+    "member_id": "SKY000234",
+    "name": "Nuala D.",
+    "tier": "Gold",
+    "home_hub": "DUB",
+    "miles_balance": 92400,
+    "miles_expiring_90d": 7800,
+    "flights_last_12m": 6,
+    "flights_last_3m": 0,
+    "last_complaint_nps": 50,
+    "last_complaint_type": "none",
+    "alliance_partner_flights": 3,
+    "tenure_years": 11,
+    "archetypes": [
+      "Status-Slipper",
+      "Miles-Hoarder"
+    ],
+    "risk_label": "high",
+    "risk_score": 5
+  },
+  {
     "member_id": "SKY000250",
     "name": "Cillian B.",
     "tier": "Gold",
@@ -136,7 +156,7 @@
   },
   {
     "member_id": "SKY000216",
-    "name": "Nuala D.",
+    "name": "Niamh O.",
     "tier": "Blue",
     "home_hub": "EDI",
     "miles_balance": 24739,
